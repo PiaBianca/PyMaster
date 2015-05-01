@@ -1,0 +1,14 @@
+{
+    "master_address": [
+        "<python>\"ma'am\" if lib.master.sex == FEMALE else 'sir'</python>",
+        "<python>\"ma'am\" if lib.master.sex == FEMALE else 'sir'</python>",
+        "<python>\"ma'am\" if lib.master.sex == FEMALE else 'sir'</python>",
+        "<python>\"ma'am\" if lib.master.sex == FEMALE else 'sir'</python>",
+        "<python>'Miss' if lib.master.sex == FEMALE else 'Master'</python> <python>lib.master.name</python>"
+    ],
+    "ok": [
+        "Okay",
+        "Alright",
+        "Very well"
+    ]
+}

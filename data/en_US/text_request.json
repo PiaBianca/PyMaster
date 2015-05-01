@@ -1,0 +1,196 @@
+{
+    "ask_what": [
+        "Let's hear it.",
+        "What is your request?",
+        "Go on."
+    ],
+    "beg_toilet": [
+        "Please, <python>lib.message.load_text('extra', 'master_address')</python>, I really have to go!",
+        "Please, <python>lib.message.load_text('extra', 'master_address')</python>, it's an emergency!"
+    ],
+    "beg_toilet_accept": [
+        "Very well. I am disappointed in your lack of discipline.",
+        "Fine, then, I'll make an exception this time."
+    ],
+    "beg_toilet_accept_game": [
+        "Well, since it's an emergency, let's play a little game! You can go when you win.",
+        "You know what? Let's play a game. When you win, then you can use the toilet.",
+        "I'll make an exception, but on one condition: you must play a game first. If you win, you can use the toilet.",
+        "I am disappointed, in you, but I'll give you a deal: we will play a game. You can use the toilet when you win the game."
+    ],
+    "beg_toilet_game_win": [
+        "Looks like you've won, so you can use the toilet now.",
+        "Alright, you've won the game. You may use the toilet now.",
+        "Aw, it's over already? Oh, well. I wanted to torture you some more, but since you've won the game, you can use the toilet now.",
+        "Wow, that was fun! But, since you've won the game, you can use the toilet now.",
+        "You're in luck, slave: you've won the game! Go ahead and use the toilet now."
+    ],
+    "beg_toilet_deny": [
+        "No.",
+        "Too bad. You'll have to wait.",
+        "You'll just have to hold it in.",
+        "You'll just have to hold it in, because I'm not letting you use the toilet yet."
+    ],
+    "choice_masturbation": [
+        "Permission to masturbate"
+    ],
+    "choice_porn": [
+        "Permission to look at porn"
+    ],
+    "choice_shower": [
+        "Permission to take a bath or shower"
+    ],
+    "choice_junk_food": [
+        "Permission to eat junk food"
+    ],
+    "choice_drink": [
+        "Permission to drink something other than water"
+    ],
+    "choice_toilet": [
+        "Permission to use the toilet"
+    ],
+    "choice_fun": [
+        "Permission to entertain myself"
+    ],
+    "special_choice_bed": [
+        "Permission to go to bed"
+    ],
+    "special_choice_nothing": [
+        "Nothing",
+        "Nevermind"
+    ],
+    "common_accept": [
+        "<python>lib.message.load_text('extra', 'ok')</python>.",
+        "Permission granted.",
+        "I will allow it.",
+        "You have my permission.",
+        "<python>lib.message.load_text('extra', 'ok')</python><python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>, permission granted.",
+        "<python>lib.message.load_text('extra', 'ok')</python><python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>, I will allow it.",
+        "<python>lib.message.load_text('extra', 'ok')</python><python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>, I will allow it this time.",
+        "<python>lib.message.load_text('extra', 'ok')</python><python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>, you have my permission.",
+        "<python>lib.message.load_text('extra', 'ok')</python><python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>, you have my permission now."
+    ],
+    "common_deny": [
+        "No<python>'{}, not right now'.format(', {}'.format(lib.slave.name) if random.random() < 0.5 else '') if random.random() < 0.5 else ''</python>.",
+        "Not right now, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>.",
+        "No, you may not.",
+        "Permission denied."
+    ],
+    "drink_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "<python>lib.message.load_text('request', 'common_accept')</python> Drink whatever it is you wanted to drink.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you may have a drink.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, I'll let you have a drink.",
+        "You may have a drink now."
+    ],
+    "drink_alternative": [
+        "If you're thirsty, have some water.",
+        "You'll just have to have water if you're thirsty.",
+        "You can drink water if you're thirsty.",
+        "Drink some water instead."
+    ],
+    "drink_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python> <python>lib.message.load_text('request', 'drink_alternative')</python>",
+        "<python>lib.message.load_text('request', 'common_deny')</python> I don't think you need beverages. <python>lib.message.load_text('request', 'drink_alternative')</python>",
+        "I don't think you need beverages. <python>lib.message.load_text('request', 'drink_alternative')</python>",
+        "Whatever drink you were thinking of having, you certainly don't need it. <python>lib.message.load_text('request', 'drink_alternative')</python>",
+        "You will make do without unhealthy drinks for now. <python>lib.message.load_text('request', 'drink_alternative')</python>"
+    ],
+    "fun_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "Yes, you may entertain yourself.",
+        "<python>lib.message.load_text('extra', 'ok')</python>. You can entertain yourself now.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you have my permission to entertain yourself.",
+        "Permission to entertain yourself granted."
+    ],
+    "fun_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "You don't need to have fun right now.",
+        "No, you may not entertain yourself."
+    ],
+    "junk_food_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you can have a little junk food.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you may have some junk food now.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, I will let you have a little junk food."
+    ],
+    "junk_food_alternative": [
+        "If you're hungry, eat something healthy.",
+        "You can have something healthy if you're hungry.",
+        "You will have to eat something healthy if you're hungry.",
+        "Eat something healthy instead."
+    ],
+    "junk_food_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python> <python>lib.message.load_text('request', 'junk_food_alternative')</python>",
+        "<python>lib.message.load_text('request', 'common_deny')</python> No junk food. <python>lib.message.load_text('request', 'junk_food_alternative')</python>",
+        "No, you may not have junk food. <python>lib.message.load_text('request', 'junk_food_alternative')</python>",
+        "No, I won't let you eat junk food right now. <python>lib.message.load_text('request', 'junk_food_alternative')</python>"
+    ],
+    "masturbation_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "No, you may not masturbate at this time.",
+        "Not right now, my horny slut."
+    ],
+    "porn_accept_no_masturbation": [
+        "<python>lib.message.load_text('extra', 'ok')</python>. I will let you look at your porn. Don't forget: no masturbating.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, go ahead and look at your porn. Don't you dare masturbate.",
+        "If you promise not to masturbate, you may look at some porn."
+    ],
+    "porn_accept_with_masturbation": [
+        "<python>lib.message.load_text('extra', 'ok')</python>, you can masturbate to your porn.",
+        "<python>lib.message.load_text('extra', 'ok')</python>. I will let you masturbate to your porn.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, I will let you masturbate to porn."
+    ],
+    "porn_ask_masturbation": [
+        "Do you want to masturbate, too?",
+        "Did you want to masturbate while you look at it?"
+    ],
+    "porn_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "No porn for you this time.",
+        "No, I won't allow you to look at porn right now."
+    ],
+    "porn_deny_masturbation": [
+        "Well, too bad.",
+        "Well, I won't allow that."
+    ],
+    "shower_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you can wash up now.",
+        "<python>lib.message.load_text('extra', 'ok')</python>. You may wash up.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you have my permission to wash up.",
+        "<python>lib.message.load_text('request', 'common_accept')</python> Go wash yourself up now."
+    ],
+    "shower_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "You will stay dirty for now.",
+        "My slave will stay dirty for now.",
+        "Maybe later. For now, you will stay dirty."
+    ],
+    "time_limit": [
+        " You have {}. Let me know when you're done.",
+        " I'm giving you {}. Tell me when you're finished.",
+        " You've got {}. Tell me when you're done.",
+        " I'll give you {}. Let me know when you're finished."
+    ],
+    "toilet_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "Permission granted to use the toilet.",
+        "You may use the toilet now.",
+        "<python>lib.message.load_text('extra', 'ok')</python>. You may use the toilet."
+    ],
+    "toilet_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "You will hold it in for now.",
+        "You will have to wait to use the toilet.",
+        "I won't allow you to use the toilet right now.",
+        "You will not use the toilet at this time.",
+        "You will just have to wait."
+    ],
+    "too_long": [
+        "You took too long!",
+        "You took longer than you were supposed to!",
+        "I gave you an explicit time limit, and you disobeyed me!",
+        "You breached your time limit!"
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "exercise": [
+        "I want my slave in good shape. Do some exercises to start your day. I'll tell you when to stop.",
+        "Time to wake you up! Do exercises until I tell you to stop.",
+        "Since I don't want a fat, lazy slave, you will do some exercises now. I'll tell you when to stop.",
+        "Time to get you out of that daze of yours. Do some exercises. I'll tell you when to stop.",
+        "You will do some exercises now, <python>lib.slave.name</python>. Keep at it until I tell you to stop."
+    ],
+    "exercise_end": [
+        "Alright, you can stop now.",
+        "That's enough. I'm sure you're wide awake now.",
+        "That will do.",
+        "You can stop now."
+    ],
+    "gift_birthday": [
+        "I see it's your birthday, slave. I have a present for you.",
+        "I have a present for you, <python>'birthday boy' if lib.slave.sex == MALE else 'birthday girl' if lib.slave sex == FEMALE else lib.slave.name</python>.",
+        "It's your birthday today. I have a special surprise for you."
+    ],
+    "gift_christmas": [
+        "It's Christmas, slave. Are you ready for your present?",
+        "I have a Christmas present for you, <python>lib.slave.name</python>.",
+        "It's Christmas, and I have a special surprise for you."
+    ],
+    "have_chore": [
+        "I have a task for you.",
+        "I have a task I want you to complete today.",
+        "I have a task for you, <python>lib.slave.name</python>."
+    ],
+    "oath": [
+        "You will recite your oath of servitude to me now.",
+        "Alright, slave, it's time for you to recite your oath of servitude to me.",
+        "As a reminder of your place, I want you to recite your oath of servitude to me."
+    ],
+    "oath_cheater": [
+        "Slow down, slave! I can't tell if you really did type that fast or if you cheated, but either way, that was too fast. Do it over again.",
+        "I highly doubt my worthless slave can really type at a rate of over 120 words per minute, but even if you can, you need to slow down while reciting your oath of servitude to me. Start over.",
+        "Even if you really are one of those people who can type incredibly fast, this is not the place for it. Do it again, more slowly this time."
+    ],
+    "oath_fail": [
+        "Pathetic slave. It seems you don't have your oath of servitude written down properly. Write it down properly this time.",
+        "I am very disappointed in you. Here is the oath again. Write it down so you can recite it properly tomorrow.",
+        "I'm giving it to you again. You had better write it down this time."
+    ],
+    "oath_success": [
+        "That's right, slave.",
+        "That's right. Don't forget your place.",
+        "That's a good <python>'boy' if lib.slave.sex == MALE else 'girl' if lib.slave.sex == FEMALE else 'slave'</python>.",
+        "It pleases me to know that my slave knows <python>'her' if lib.slave.sex == FEMALE else 'his'</python> place.",
+        "Good.",
+        "That's right. Know your place, slave.",
+        "That's right. All worthless slaves should know their place.",
+        "Yes, don't you forget that you are my worthless slave.",
+        "Perfect."
+    ],
+    "oath_wrong": [
+        "No, that's wrong.",
+        "That's wrong.",
+        "No, that's not right.",
+        "That's not right.",
+        "No, that's not it.",
+        "That's not it.",
+        "That isn't your oath of servitude."
+    ]
+}

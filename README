@@ -1,0 +1,58 @@
+This file has been dedicated to the public domain via CC0. See
+<https://creativecommons.org/publicdomain/zero/1.0/> for more
+information.
+------------------------------------------------------------------------
+
+PyMaster is a virtual master or mistress: it dominates your life,
+controlling when you are allowed to masturbate, have fun, and other such
+things.
+
+REQUIREMENTS
+
+Just Python 3.2 or later. Once you have Python 3 installed, just execute
+pymaster.py to run PyMaster. Alternatively, you can use a command such
+as "python3 pymaster.py".
+
+Windows doesn't support hashbangs, so if you are a Windows user, you
+need to explicitly pass pymaster.py as an argument to Python.
+Assuming the PyMaster directory is the current working directory, the
+command on Windows is usually "C:\PythonXX\python.exe pymaster.py", with
+"XX" replaced by the major and minor version of Python you are using.
+So if you're using Python 3.4, the command you probably need to use is
+"C:\Python34\python.exe pymaster.py".
+
+This only applies to the source distribution. If you have a build
+specific to your OS, just run the executable.
+
+LICENSE
+
+Copyright (C) 2014 FreedomOfRestriction <FreedomOfRestriction@openmailbox.org>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+USAGE
+
+Use of PyMaster is simple: first, run PyMaster for the first time;
+introduce yourself to your master or mistress and listen to the rules.
+Then, any time a rule requires you to talk to your master or mistress,
+run PyMaster again.
+
+PyMaster is a command-line program, so make sure you execute it inside
+a terminal; otherwise it will just hang in the background and do
+nothing.
+
+Everything else will be explained by your master or mistress. Enjoy!
+
+Run PyMaster with the "-h" or "--help" argument for information about
+PyMaster's command options.

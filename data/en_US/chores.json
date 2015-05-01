@@ -1,0 +1,349 @@
+{
+    "ass_bowl": {
+        "text": [
+            "Smear some soft, spreadable food, such as peanut butter or a squished banana, between your ass cheeks. Scoop it all out with your hands and eat it.<python>' If any of it drips on the floor, eat that, too.' if lib.slave.get_fact('clean_floor') else ''</python>"
+        ]
+    },
+    "ass_fuck": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.get_fact('dildo_ass') or lib.slave.get_fact('buttplug')",
+        "text": [
+            "Fuck yourself in the ass with a dildo or buttplug for <python>random.randint(1, 4) * 5</python> minutes."
+        ]
+    },
+    "bladder_stk_race": {
+        "activities": [
+            "fun"
+        ],
+        "text": [
+            "Wait until you have a strong urge to pee, then do a <python>random.randint(15, 20)</python>-lap race in SuperTuxKart on the <python>random.choice(['Bovine Barnyard', \"Oliver's Math Class\", 'Shifting Sands', 'Scotland', 'Subsea'])</python> track with <python>random.randint(1, 7)</python> AI karts. No bathroom breaks allowed until you finish the race. If you don't have SuperTuxKart, download it from http://supertuxkart.sf.net/."
+        ]
+    },
+    "blowjob_orgasm": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('autofellatio')",
+        "text": [
+            "Masturbate to orgasm by sucking on your cock. Cum inside your mouth, and swallow your cum.",
+            "Give yourself a blowjob until you cum. Cum inside your mouth, and swallow your cum."
+        ]
+    },
+    "body_art": {
+        "text": [
+            "Write \"<python>random.choice(['Worthless slave', 'Property of {}'.format(lib.master.name), \"{}'s bitch\".format(lib.master.name), 'Slut bitch'])</python>\" <python>random.choice(['on one of your arms', 'on one of your thighs', 'on one of your feet', 'on your {}'.format('boobs' if lib.slave.sex == FEMALE else 'chest'), 'above your {}'.format('dick' if lib.slave.sex == MALE else 'pussy' if lib.slave.sex == FEMALE else 'genitals'), 'on one of your shoulders', 'somewhere on your body'])</python> with a permanent marker."
+        ]
+    },
+    "body_art_foreign": {
+        "requires": "lib.slave.get_fact('language')",
+        "text": [
+            "Write \"<python>random.choice(['Slave', 'Property of {}'.format(lib.master.name)])</python>\" in a language that is not your primary language <python>random.choice(['on one of your arms', 'on one of your thighs', 'on one of your feet', 'on your {}'.format('boobs' if lib.slave.sex == FEMALE else 'chest'), 'above your {}'.format('dick' if lib.slave.sex == MALE else 'pussy' if lib.slave.sex == FEMALE else 'genitals'), 'on one of your shoulders', 'on one of your hands', 'somewhere on your body'])</python> with a permanent marker."
+        ]
+    },
+    "collar": {
+        "requires": "lib.slave.get_fact('collar')",
+        "text": [
+            "Wear a collar for at least <python>random.randint(4, 10)</python> hours today."
+        ]
+    },
+    "cum_floor": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Cum onto the floor, then lick up all of your cum and swallow it."
+        ]
+    },
+    "cum_sandwich": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Cum onto some food, then eat it."
+        ]
+    },
+    "dildo_blowjob": {
+        "requires": "lib.slave.get_fact('dildo_suck')",
+        "text": [
+            "Suck on a dildo or penis-shaped object for <python>random.randint(1, 3) * 5</python> minutes. Make sure you suck back and forth like a good slut."
+        ]
+    },
+    "dildo_deep_throat": {
+        "requires": "lib.slave.get_fact('dildo_deepthroat')",
+        "text": [
+            "Deep-throat a dildo or penis-shaped object for <python>random.randint(1, 3) * 5</python> minutes."
+        ]
+    },
+    "edging": {
+        "activities": [
+            "masturbation"
+        ],
+        "text": [
+            "Edge for me! Masturbate until you're just about to cum, then stop. Do this <python>random.randint(1, 3) * 5</python> times. No cumming."
+        ]
+    },
+    "food_birth": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Insert a small food item, such as a small fruit, berry, or baby carrot, into your pussy. Leave it there for <python>random.randint(1, 3) * 5</python> minutes, then take it out and eat it."
+        ]
+    },
+    "food_bowl": {
+        "text": [
+            "Fill a bowl with food and place the bowl on the floor. Eat it all using nothing but your mouth."
+        ]
+    },
+    "food_floor_dry": {
+        "requires": "lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Put a pile of dry, bite-sized food (such as cereal) on your floor. Eat it all using nothing but your mouth, and don't leave a single crumb."
+        ]
+    },
+    "food_floor_wet": {
+        "requires": "lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Put a puddle of thick, liquidy food (such as applesauce) on your floor. Eat it all using nothing but your mouth, and make sure the floor is licked clean when you're done."
+        ]
+    },
+    "food_fuck": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Fuck yourself with an edible penis-shaped item, such as a carrot or peeled banana, for <python>random.randint(1, 3) * 5</python> minutes, without cumming. You must then eat the item entirely."
+        ]
+    },
+    "golden_shower_feet": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Piss on your feet. You may not clean them after this for <python>random.randint(2, 5) * 10</python> minutes."
+        ]
+    },
+    "golden_shower_stomache": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "<python>'Piss on your stomache.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your stomache.'</python> You may not clean yourself up after this for <python>random.randint(2, 5) * 10</python> minutes."
+        ]
+    },
+    "maid": {
+        "requires": "lib.slave.get_fact('maid')",
+        "text": [
+            "Put on a maid outfit and clean a room in your house.",
+            "Do the dishes while wearing a maid outfit."
+        ]
+    },
+    "maid_clamped": {
+        "requires": "lib.slave.get_fact('nippleclamps') >= 2",
+        "text": [
+            "Clean a room in your house with a nipple clamp or clothespin on each of your nipples.",
+            "Clean a room in your house while wearing nothing but a nipple clamp or clothespin on each of your nipples.",
+            "Do the dishes with a nipple clamp or clothespin on each of your nipples.",
+            "Do the dishes while wearing nothing but a nipple clamp or clothespin on each of your nipples."
+        ]
+    },
+    "maid_gagged": {
+        "text": [
+            "Clean a room in your house while gagged. Use a sock or underwear if you don't have a proper gag.",
+            "Clean a room in your house while wearing nothing but a gag. Use a sock or underwear if you don't have a proper gag.",
+            "Do the dishes while gagged. Use a sock or underwear if you don't have a proper gag.",
+            "Do the dishes while wearing nothing but a gag. Use a sock or underwear if you don't have a proper gag."
+        ]
+    },
+    "maid_naked": {
+        "text": [
+            "Clean a room in your house while completely naked.",
+            "Do the dishes while completely naked."
+        ]
+    },
+    "maid_plugged": {
+        "requires": "lib.slave.get_fact('buttplug')",
+        "text": [
+            "Clean a room in your house with a buttplug in your ass.",
+            "Clean a room in your house while wearing nothing but a buttplug.",
+            "Do the dishes with a buttplug in your ass.",
+            "Do the dishes while wearing nothing but a buttplug."
+        ]
+    },
+    "minetest_house": {
+        "activities": [
+            "fun"
+        ],
+        "text": [
+            "Create a new account on a non-creative public Minetest server. Build me a house with three stories and a basement. You are not allowed to use dirt, sand, or ladders in any part of it, it must be well-lit at night, the roof must not be flat, and it must look nice. When you are finished, place a sign on the front of the house which says \"Property of <python>lib.master.name</python>\". If you don't have Minetest, download it from http://www.minetest.net/."
+        ]
+    },
+    "no_furniture": {
+        "text": [
+            "Don't sit or lay on any furniture until you go to bed for the night. This includes all chairs and stools."
+        ]
+    },
+    "no_underwear": {
+        "text": [
+            "Take off any underwear you are wearing. You will not wear underwear today."
+        ]
+    },
+    "outdoor_masturbation": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.get_fact('temperature') >= 5",
+        "text": [
+            "Masturbate somewhere outside for <python>random.randint(2, 4) * 5</python> minutes. You are not allowed to cum."
+        ]
+    },
+    "outdoor_masturbation_naked": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.get_fact('temperature') >= 10",
+        "text": [
+            "Find a private place outside. Take off all of your clothes, and masturbate for at least <python>random.randint(1, 3) * 5</python> minutes. You are not allowed to cum."
+        ]
+    },
+    "outdoor_orgasm": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.get_fact('temperature') >= 10",
+        "text": [
+            "Masturbate to orgasm somewhere outside."
+        ]
+    },
+    "piss_mop": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Clean one of the floors with your piss, scrubbing with your underwear. When you are done, wear this underwear for the next <python>random.randint(2, 4)</python> hours."
+        ]
+    },
+    "piss_outdoor": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>."
+        ]
+    },
+    "piss_snow": {
+        "activities": [
+            "toilet"
+        ],
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('snow')",
+        "text": [
+            "Use your piss to draw a heart in the snow, and then the letter \"<python>lib.master.name[0]</python>\" (for \"<python>lib.master.name</python>\") in the middle. You're not allowed to cover it up."
+        ]
+    },
+    "piss_target": {
+        "activities": [
+            "toilet"
+        ],
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "With the toilet seat down, piss in the toilet while standing up. Then lick up any piss you get on the toilet seat and spit it into the toilet."
+        ]
+    },
+    "pornstar": {
+        "requires": "lib.slave.get_fact('photo')",
+        "text": [
+            "Take <python>random.randint(2, 6)</python> pictures of yourself looking sexy and masturbating, but without ever actually masturbating. Use your imagination; I want different pictures, not minor variations of the same one."
+        ]
+    },
+    "pornstar_bondage": {
+        "requires": "lib.slave.get_fact('photo')",
+        "text": [
+            "Take <python>random.randint(2, 6)</python> pictures of yourself in bondage. You don't have to actually be trapped in the bondage; just make it look like you are. Use your imagination; I want different pictures, not minor variations of the same one."
+        ]
+    },
+    "pornstar_video": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.get_fact('video')",
+        "text": [
+            "Make a sexy porn video of you masturbating and having an orgasm, at least <python>random.randint(1, 3) * 5</python> minutes long."
+        ]
+    },
+    "public_masturbation": {
+        "activities": [
+            "masturbation"
+        ],
+        "text": [
+            "Masturbate on a public toilet for <python>random.randint(3, 8)</python> minutes. You are not allowed to cum.",
+            "Masturbate on a public toilet while completely naked for <python>random.randint(3, 8)</python> minutes. You are not allowed to cum."
+        ]
+    },
+    "public_orgasm": {
+        "activities": [
+            "masturbation"
+        ],
+        "text": [
+            "Masturbate to orgasm on a public toilet."
+        ]
+    },
+    "sissy_walk": {
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('sissy')",
+        "text": [
+            "Dress up like a girl and take a walk for at least <python>random.randint(3, 9) * 5</python> minutes."
+        ]
+    },
+    "sit_pee": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Do not pee while standing up today. You must sit down every time.",
+            "Every time you pee today, do it while sitting down on the toilet seat."
+        ]
+    },
+    "skirt_no_panties": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Go shopping for at least <python>random.randint(3, 6) * 5</python> minutes while wearing a skirt, but no panties.",
+            "Go to a store wearing a skirt and panties. In a place where someone might see you, slide off your panties and put them away somewhere. Then shop for at least <python>random.randint(3, 6) * 5</python> minutes."
+        ]
+    },
+    "tease": {
+        "text": [
+            "I want you to tease <python>'your cock' if lib.slave.sex == MALE else 'your pussy' if lib.slave.sex == FEMALE else 'yourself'</python>. <python>'Give yourself an erection' if lib.slave.sex == MALE else 'Get your pussy wet' if lib.slave.sex == FEMALE else 'Get yourself sexually excited'</python> without actually masturbating<python>', and without so much as touching your clit' if lib.slave.sex == FEMALE else ''</python>. Then wait until <python>'your dick goes flaccid again' if lib.slave.sex == MALE else 'your pussy is dry again' if lib.slave.sex == FEMALE else 'you are no longer sexually excited'</python>. Do this <python>random.randint(2, 5)</python> times."
+        ]
+    },
+    "trampled_food": {
+        "requires": "lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Mash up some soft food, such as a banana, on the floor with your bare foot. Eat it all up, then lick your foot clean if you are flexible enough, or scrape it off with your hands and then eat it if you are not."
+        ]
+    },
+    "vibrator": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.sex == FEMALE and lib.slave.get_fact('vibrator')",
+        "text": [
+            "Turn your vibrator on at its highest setting. Press it against your clit for <python>random.randint(1, 2) * 5</python> minutes, then take it off. You are not allowed to touch yourself or cum."
+        ]
+    },
+    "vibrator_tease": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.get_fact('vibrator')",
+        "text": [
+            "Turn your vibrator on at its lowest setting. Press it against your <python>'clit' if lib.slave.sex == FEMALE else 'dick' if lib.slave.sex == MALE else 'genitals'</python> for <python>random.randint(1, 4) * 5</python> minutes, then take it off. You are not allowed to touch yourself or cum."
+        ]
+    },
+    "write_foreign": {
+        "requires": "lib.slave.get_fact('language')",
+        "text": [
+            "Hand-write a love letter to me in a language that is not your primary language. Abandon the story in a public place.",
+            "Hand-write a story about me dominating someone in a language that is not your primary language. Abandon the story in a public place."
+        ]
+    }
+}

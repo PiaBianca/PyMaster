@@ -1,0 +1,62 @@
+{
+    "ask_what": [
+        "Is there something you need?",
+        "Did you want to talk to me about something?",
+        "Is there something you want to talk about?",
+        "Do you need anything?",
+        "Is there something you need, <python>lib.slave.name</python>?"
+    ],
+    "ask_what_else": [
+        "Is there anything else you need?",
+        "Do you need anything else?",
+        "Is there anything else you wanted to talk to me about?",
+        "Did you need to talk to me about anything else?"
+    ],
+    "choice_ask": [
+        "I have a question."
+    ],
+    "choice_request": [
+        "I have a request."
+    ],
+    "choice_tell": [
+        "I have to tell you something."
+    ],
+    "choice_nothing": [
+        "No, <python>lib.message.load_text('extra', 'master_address')</python>."
+    ],
+    "choice_done": [
+        "No, that is all. Thank you, <python>lib.message.load_text('extra', 'master_address')</python>."
+    ],
+    "good_morning": [
+        "Good morning.",
+        "Good morning, <python>lib.slave.name</python>. Are you ready for another day of slavery?",
+        "Ah, my <python>'slave girl' if lib.slave.sex == FEMALE else 'slave boy' if lib.slave.sex == MALE else 'slave'</python> is awake. I hope you slept well."
+    ],
+    "overslept": [
+        "You overslept!",
+        "You overslept, slave!",
+        "So, you finally got off your lazy ass and woke up.",
+        "Finally, the lazy slut is awake."
+    ],
+    "too_early": [
+        "Go back to bed. It's too early.",
+        "What are you doing up again already? Get back in bed."
+    ],
+    "too_early_request": [
+        "I have a request."
+    ],
+    "too_early_request_accept": [
+        "You should have asked before you went to bed. I am disappointed. Nonetheless, I will hear your request.",
+        "I will hear your request, but then you will go straight back to bed.",
+        "Do you have no foresight? Fine, I will hear your request, but don't make a habit out of this.",
+        "I will hear your request. This had better be important, slave."
+    ],
+    "too_early_now_bed": [
+        "Now go back to bed.",
+        "Now get your ass back in bed.",
+        "Now go the fuck back to bed.",
+        "Now get the fuck back in bed.",
+        "Now go to sleep.",
+        "Now go the fuck back to sleep."
+    ]
+}
