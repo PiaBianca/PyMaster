@@ -1,5 +1,5 @@
 # PyMaster
-# Copyright (C) 2014 FreedomOfRestriction <FreedomOfRestriction@openmailbox.org>
+# Copyright (C) 2014, 2015 FreedomOfRestriction <FreedomOfRestriction@openmailbox.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -120,8 +120,7 @@ def intro():
 def morning_routine():
     def load_text(ID): return lib.message.load_text("morning_routine", ID)
 
-    e_time = random.choice([random.randint(5 * ONE_MINUTE, 25 * ONE_MINUTE),
-                            random.randint(45, 90)])
+    e_time = random.randint(45, 2 * ONE_MINUTE + 30)
     lib.message.show_timed(load_text("exercise"), e_time)
     lib.message.beep()
     lib.message.show(load_text("exercise_end"))

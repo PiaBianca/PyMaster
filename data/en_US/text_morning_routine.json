@@ -1,8 +1,7 @@
 {
     "exercise": [
-        "I want my slave in good shape. Do some exercises to start your day. I'll tell you when to stop.",
-        "Time to wake you up! Do exercises until I tell you to stop.",
-        "Since I don't want a fat, lazy slave, you will do some exercises now. I'll tell you when to stop.",
+        "Time to wake you up! Do some exercises until I tell you to stop.",
+        "Since I don't want you to be asleep while you recite your oath, you will do some exercises now. I'll tell you when to stop.",
         "Time to get you out of that daze of yours. Do some exercises. I'll tell you when to stop.",
         "You will do some exercises now, <python>lib.slave.name</python>. Keep at it until I tell you to stop."
     ],
