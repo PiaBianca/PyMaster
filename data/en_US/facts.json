@@ -26,6 +26,10 @@
         "firstcheck": "lib.message.get_int('How many clothespins do you have?')",
         "forget": "7 * ONE_DAY"
     },
+    "cockring": {
+        "firstcheck": "lib.message.get_bool('Do you have a cock ring that fits you?')",
+        "forget": "30 * ONE_DAY"
+    },
     "cold_winters": {
         "firstcheck": "lib.message.get_bool('Do you have cold winters?')",
         "forget": "1826 * ONE_DAY"
