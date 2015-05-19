@@ -184,11 +184,6 @@ def evening_routine():
         m = load_text("tasks_finish")
         lib.message.show(m, lib.message.load_text("phrases", "finished"))
 
-    if random.randrange(100) < BED_GAME_CHANCE:
-        lib.message.show(lib.message.load_text("game", "wait_bed"),
-                         lib.message.load_text("phrases", "assent"))
-        wait_game("taunt_bed")
-
     lib.message.show(load_text("goodnight"))
 
     lib.slave.bedtime = time.time()
