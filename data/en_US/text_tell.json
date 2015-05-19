@@ -96,31 +96,37 @@
     "response_naughty_masturbation": [
         "Touching yourself without my permission, are you?",
         "You know better than to touch yourself without my permission.",
-        "I will not tolerate this, slave. That's MY property you were playing with."
-    ],
-    "response_naughty_orgasm": [
+        "I will not tolerate this, slave. That's MY property you were playing with!",
         "Your lack of discipline is atrocious!",
-        "How dare you cum without my permission!",
-        "I choose when you cum, not you!"
+        "I choose when you masturbate, not you!",
+        "You filthy whore! How dare you masturbate without my permission?!"
     ],
     "response_naughty_porn": [
         "Filthy slut!",
         "Fucking pervert! Who do you think you are?",
         "You know better than to look at porn without my permission!"
     ],
+    "response_naughty_shower": [
+        "Washing up is a privilege for you, not a right!",
+        "Whether you get to be clean is for me to decide, not you!",
+        "Have you forgotten, slave? I control your life!"
+    ],
     "response_naughty_junk_food": [
         "Gluttonous pig! You do not eat junk food without my permission!",
         "You need to learn self-restraint.",
-        "I choose when you get to indulge in that worthless junk, not you!"
+        "I choose when you get to indulge in that worthless junk, not you!",
+        "I will not stand idly by and allow you to eat shit like a pig!"
     ],
     "response_naughty_drink": [
         "Drinking crap that you don't need, are you?",
-        "Slaves don't need special drinks."
+        "Slaves don't need special drinks!",
+        "For a worthless slave like you, drinks are a privilege, not a right!",
+        "How dare you treat yourself to special drinks without my permission?"
     ],
     "response_naughty_toilet": [
         "I choose when you get to use the toilet, not you!",
         "Do you have no discipline at all?",
-        "Do you forget that you are my slave? I choose when you get to use the toilet!"
+        "Do you forget that you are my slave? I choose when you get to use the toilet."
     ],
     "response_naughty_fun": [
         "Lazy bitch! I decide when you get to entertain yourself.",

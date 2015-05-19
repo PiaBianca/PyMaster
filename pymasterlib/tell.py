@@ -99,6 +99,7 @@ def broke_rule():
     if choice < len(ACTIVITIES):
         ID, activity = ACTIVITIES[choice]
         m = load_text("response_naughty_{}".format(ID))
+        lib.message.show(m)
         lib.slave.add_activity(ID)
         lib.assign.punishment(ID)
     elif choice == len(c) - 2:
