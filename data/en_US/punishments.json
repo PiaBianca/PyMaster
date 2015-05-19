@@ -116,6 +116,11 @@
             "Bite your dick <python>random.randint(1, 3) * 5</python> times. <python>random.choice(['And I mean real bites, not some kind of fake sissy bites.', \"Don't you dare go easy on yourself!\", 'And do it like you mean it!'])</python>"
         ]
     },
+    "new_idea": {
+        "text": [
+            "Come up with a new idea for an appropriate punishment. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(DATADIR, 'punishments.json')</python>\". Carry out the punishment, and then send your idea and your experience with it to FreedomOfRestriction@openmailbox.org."
+        ]
+    },
     "pegged_pussy": {
         "requires": "lib.slave.sex == FEMALE and lib.slave.get_fact('clothespins') >= 8",
         "text": [

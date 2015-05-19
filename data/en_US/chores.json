@@ -67,6 +67,12 @@
             "Cum onto some food, then eat it."
         ]
     },
+    "develop_pymaster": {
+        "text": [
+            "Come up with a new idea for a task or punishment to add to PyMaster. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(DATADIR, 'chores.json')</python>\" and \"<python>os.path.join(DATADIR, 'punishments.json')</python>\". Send your idea to FreedomOfRestriction@openmailbox.org.",
+            "Come up with a new idea for a birthday gift I could give to slaves. Send your idea to FreedomOfRestriction@openmailbox.org."
+        ]
+    },
     "dildo_blowjob": {
         "requires": "lib.slave.get_fact('dildo_suck')",
         "text": [
