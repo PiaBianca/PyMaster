@@ -165,10 +165,6 @@ def morning_routine():
         m = load_text("gift_birthday")
         lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
         gift()
-    elif STARTUP_DAY[1:] == (12, 25):
-        m = load_text("gift_christmas")
-        lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
-        gift()
 
 
 def evening_routine():
@@ -291,11 +287,6 @@ def masturbate():
             break
 
 
-def wait_game(taunt):
-    games = [game_exercise, game_letters, game_math]
-    random.choice(games)(taunt)
-
-
 def game_exercise(taunt):
     def load_text(ID): return lib.message.load_text("game", ID)
     lib.message.show(load_text("rules_exercise"))
@@ -415,9 +406,9 @@ def game_math(taunt):
             print("Warning: operator \"{}\" unhandled.".format(op))
 
 
-def gift():
-    gifts = [gift_surf]
-    random.choice(gifts)()
+def wait_game(taunt):
+    games = [game_exercise, game_letters, game_math]
+    random.choice(games)(taunt)
 
 
 def gift_surf():
@@ -441,3 +432,13 @@ def gift_surf():
             lib.message.beep()
             m = load_text("gift_surf_abort")
             lib.message.show(m, lib.message.load_text("phrases", "assent"))
+
+
+def gift_special_permission():
+    m = lib.message.load_text("morning_routine", "gift_special_permission")
+    lib.message.show(m)
+
+
+def gift():
+    gifts = [gift_surf, gift_special_permission]
+    random.choice(gifts)()

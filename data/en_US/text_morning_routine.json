@@ -14,12 +14,12 @@
     "gift_birthday": [
         "I see it's your birthday, slave. I have a present for you.",
         "I have a present for you, <python>'birthday boy' if lib.slave.sex == MALE else 'birthday girl' if lib.slave sex == FEMALE else lib.slave.name</python>.",
-        "It's your birthday today. I have a special surprise for you."
+        "It's your birthday today. I have a special surprise for you.",
+        "I have a special birthday surprise for my slave!",
+        "Oh, it's your birthday, isn't it? I guess it's time for your present."
     ],
-    "gift_christmas": [
-        "It's Christmas, slave. Are you ready for your present?",
-        "I have a Christmas present for you, <python>lib.slave.name</python>.",
-        "It's Christmas, and I have a special surprise for you."
+    "gift_special_permission": [
+        "I'm going to allow you to eat cake for free today, under the following condition: <python>random.choice(['you must mash it up with your feet and eat it off the floor like a dog.', 'smear it on your asshole first, then scoop it out and eat it with your hands.'])</python>"
     ],
     "have_chore": [
         "I have a task for you.",
