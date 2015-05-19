@@ -47,7 +47,7 @@
             "shower"
         ],
         "text": [
-            "Take a cold <python>random.randint(7, 13)</python>-minute shower. You must be entirely in the shower for the duration, and I want you to clean every inch of your body. You are not allowed to dry yourself afterwards."
+            "Take a cold <python>random.randint(5, 10)</python>-minute shower. You must be entirely in the shower for the duration, and I want you to clean every inch of your body. You are not allowed to dry yourself afterwards."
         ]
     },
     "golden_shower": {
