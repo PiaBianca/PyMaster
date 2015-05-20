@@ -31,8 +31,6 @@ __all__ = ["DATADIR", "SAVEDIR", "RESET", "RESET_FACTS",
 
            "ACTIVITIES", "ACTIVITIES_DICT",
 
-           "TOO_EARLY", "TOO_LATE", "OATH_FAIL", "BED", "LIE",
-
            "TIME_LIMIT", "TIME_LIMIT_MIN", "TIME_LIMIT_MAX",
 
            "ORGASM_ASK_DELAY_MIN", "ORGASM_ASK_DELAY_MAX", "ORGASM_CHANCE",
@@ -52,7 +50,7 @@ __all__ = ["DATADIR", "SAVEDIR", "RESET", "RESET_FACTS",
 
            "LIMIT",
 
-           "BED_GAME_CHANCE", "BEG_GAME_CHANCE", "AGONY_THRESHOLD"]
+           "BEG_GAME_CHANCE", "AGONY_THRESHOLD"]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--data-dir",
@@ -103,13 +101,6 @@ ACTIVITIES_DICT = {}
 for i, activity in ACTIVITIES:
     ACTIVITIES_DICT[i] = activity
 
-# Misdeeds
-TOO_EARLY = "too_early"
-TOO_LATE = "too_late"
-OATH_FAIL = "oath_fail"
-BED = "bed"
-LIE = "lie"
-
 # The target for the effective maximum number of chores; if the slave
 # has done this many chores, the oldest is guaranteed to be forgotten by
 # the time another chore is assigned, and if there are no misdeeds on
@@ -120,7 +111,7 @@ CHORES_TARGET = 14
 FORGET_TIME_TARGET = CHORES_TARGET * ONE_DAY
 FORGET_TIME_ADJUST = 0.9
 FORGET_TIME = FORGET_TIME_TARGET * (1 / FORGET_TIME_ADJUST) ** CHORES_TARGET
-ACTIVITY_FORGET_TIME = {"__beg": 7 * ONE_DAY}
+ACTIVITY_FORGET_TIME = {"__beg": 7 * ONE_DAY, "orgasm": 1}
 REJECTED_FORGET_TIME = 2 * ONE_DAY
 
 # Required wait for permission (adjusted by chores and misdeeds)
@@ -131,16 +122,17 @@ GRANT_INTERVAL_GOOD = {"__beg": 1}
 LIMIT = {"__beg": 2}
 
 # Time limits
-TIME_LIMIT = {"__orgasm": 60}
-TIME_LIMIT_MIN = {"__orgasm": 45}
-TIME_LIMIT_MAX = {"__orgasm": 90}
+TIME_LIMIT = {"orgasm": 60}
+TIME_LIMIT_MIN = {"orgasm": 45}
+TIME_LIMIT_MAX = {"orgasm": 90}
 
 # Penalties
-MISDEED_PENALTY = {TOO_EARLY: 1.03,
-                   TOO_LATE: 1.03,
-                   OATH_FAIL: 1.1,
-                   BED: 1.2,
-                   LIE: 2}
+MISDEED_PENALTY = {"orgasm": 1.25,
+                   "too_early": 1.03,
+                   "too_late": 1.03,
+                   "oath_fail": 1.1,
+                   "bed": 1.2,
+                   "lie": 2}
 MISDEED_PUNISHED_PENALTY = 1.005
 REJECTED_PENALTY = 1.0025
 

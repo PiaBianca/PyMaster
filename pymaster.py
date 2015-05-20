@@ -58,7 +58,7 @@ def main():
                      load_text("too_early_request")]
                 choice = lib.message.get_choice(m, c, 0)
                 if choice == 1:
-                    lib.slave.add_misdeed(TOO_EARLY)
+                    lib.slave.add_misdeed("too_early")
                     a = lib.message.load_text("phrases", "thank_you")
                     lib.message.show(load_text("too_early_request_accept"), a)
                     lib.request.what()
@@ -71,7 +71,7 @@ def main():
                 lib.message.show(load_text("good_morning"))
                 lib.scripts.morning_routine()
             else:
-                lib.slave.add_misdeed(TOO_LATE)
+                lib.slave.add_misdeed("too_late")
                 lib.message.show(load_text("overslept"))
                 lib.scripts.morning_routine()
 

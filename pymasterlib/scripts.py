@@ -154,7 +154,7 @@ def morning_routine():
         m = load_text("oath_fail")
         lib.message.show(m, lib.message.load_text("phrases", "assent"))
         lib.message.show(oath, lib.message.load_text("phrases", "finished"))
-        lib.assign.punishment(OATH_FAIL)
+        lib.assign.punishment("oath_fail")
 
     lib.message.show(load_text("have_chore"))
     lib.assign.chore()
@@ -240,7 +240,7 @@ def masturbate():
                         if lib.message.get_interruption(m, wait, a) is None:
                             lib.message.beep()
                             m = load_text("orgasm_signal")
-                            limit = lib.request.get_time_limit("__orgasm")
+                            limit = lib.request.get_time_limit("orgasm")
                             a = [lib.message.load_text("phrases", "finished")]
                             if lib.message.get_interruption(m, limit, a) is None:
                                 lib.message.beep()
@@ -253,7 +253,7 @@ def masturbate():
                             break
                     else:
                         m = load_text("orgasm_now")
-                        limit = lib.request.get_time_limit("__orgasm")
+                        limit = lib.request.get_time_limit("orgasm")
                         a = [lib.message.load_text("phrases", "finished")]
                         if lib.message.get_interruption(m, limit, a) is None:
                             lib.message.beep()
@@ -270,7 +270,7 @@ def masturbate():
             lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
             break
         elif i == 2:
-            lib.tell.had_orgasm()
+            lib.tell.did_without_permission("orgasm")
             m = load_text("masturbate_stop_order")
             lib.message.show(m, lib.message.load_text("phrases", "assent"))
             break
@@ -415,13 +415,13 @@ def gift_surf():
     i = lib.message.get_interruption(m, orgasm_time, a)
 
     if i == 0:
-        lib.tell.had_orgasm()
+        lib.tell.did_without_permission("orgasm")
         m = load_text("masturbate_stop_order")
         lib.message.show(m, lib.message.load_text("phrases", "assent"))
     else:
         lib.message.beep()
         m = load_text("orgasm_signal")
-        limit = lib.request.get_time_limit("__orgasm")
+        limit = lib.request.get_time_limit("orgasm")
         a = [lib.message.load_text("phrases", "finished")]
         if lib.message.get_interruption(m, limit, a) is None:
             lib.message.beep()

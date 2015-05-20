@@ -29,9 +29,6 @@
     "choice_naughty_masturbation": [
         "Masturbated without permission"
     ],
-    "choice_naughty_orgasm": [
-        "Had an orgasm without permission"
-    ],
     "choice_naughty_porn": [
         "Watched porn without permission"
     ],
@@ -100,6 +97,12 @@
         "Your lack of discipline is atrocious!",
         "I choose when you masturbate, not you!",
         "You filthy whore! How dare you masturbate without my permission?!"
+    ],
+    "response_naughty_orgasm": [
+        "I did not give you permission to cum yet!",
+        "Filthy bitch! When did I say you could cum?!",
+        "Fucking cumming before I tell you to? Who do you think you are?",
+        "Fucking whore! You do not cum without my permission!"
     ],
     "response_naughty_porn": [
         "Filthy slut!",

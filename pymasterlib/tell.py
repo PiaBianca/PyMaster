@@ -87,6 +87,13 @@ def completed_punishment():
     lib.settings.save()
 
 
+def did_without_permission(ID):
+    m = load_text("response_naughty_{}".format(ID))
+    lib.message.show(m)
+    lib.slave.add_activity(ID)
+    lib.assign.punishment(ID)
+
+
 def broke_rule():
     m = load_text("ask_what_naughty")
     c = []
@@ -98,19 +105,16 @@ def broke_rule():
 
     if choice < len(ACTIVITIES):
         ID, activity = ACTIVITIES[choice]
-        m = load_text("response_naughty_{}".format(ID))
-        lib.message.show(m)
-        lib.slave.add_activity(ID)
-        lib.assign.punishment(ID)
+        did_without_permission(ID)
     elif choice == len(c) - 2:
         skipped_evening_routine()
 
 
 def skipped_evening_routine():
     lib.message.show(load_text("response_naughty_bed"))
-    lib.assign.punishment(BED)
+    lib.assign.punishment("bed")
 
 
 def lied():
     lib.message.show(load_text("response_lied"))
-    lib.assign.punishment(LIE)
+    lib.assign.punishment("lie")
