@@ -41,6 +41,7 @@ class slave:
     name = "Slave"
     sex = None
     birthday = STARTUP_DAY[1:]
+    oath = None
 
     bedtime = None
     request_denied = {}

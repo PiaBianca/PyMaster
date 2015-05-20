@@ -25,7 +25,7 @@ def save():
     program_settings = {"previous_run": lib.previous_run}
     master_settings = {"name": lib.master.name, "sex": lib.master.sex}
     slave_settings = {"name": lib.slave.name, "sex": lib.slave.sex,
-                      "birthday": lib.slave.birthday,
+                      "birthday": lib.slave.birthday, "oath": lib.slave.oath,
                       "bedtime": lib.slave.bedtime,
                       "queued_chore": lib.slave.queued_chore,
                       "chores": lib.slave.chores,
@@ -58,6 +58,7 @@ def load():
     lib.slave.name = s_slave.get("name", "Slave")
     lib.slave.sex = s_slave.get("sex")
     lib.slave.birthday = tuple(s_slave.get("birthday", (1, 1)))
+    lib.slave.oath = s_slave.get("oath")
     lib.slave.bedtime = s_slave.get("bedtime")
     lib.slave.queued_chore = s_slave.get("queued_chore")
     lib.slave.chores = s_slave.get("chores", [])

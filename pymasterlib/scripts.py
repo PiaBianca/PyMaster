@@ -103,6 +103,7 @@ def intro():
     with open(os.path.join(DATADIR, "oath.txt"), 'r') as f:
         oath = f.read()
     oath = lib.parse.python_tag(oath)
+    lib.slave.oath = oath
     lib.message.show(oath, lib.message.load_text("phrases", "finished"))
 
     lib.message.show(load_text("first_chore"))
@@ -125,9 +126,14 @@ def morning_routine():
     lib.message.beep()
     lib.message.show(load_text("exercise_end"))
 
-    with open(os.path.join(DATADIR, "oath.txt"), 'r') as f:
-        oath = f.read()
-    oath = lib.parse.python_tag(oath)
+    if lib.slave.oath:
+        oath = lib.slave.oath
+    else:
+        with open(os.path.join(DATADIR, "oath.txt"), 'r') as f:
+            oath = f.read()
+        oath = lib.parse.python_tag(oath)
+        lib.slave.oath = oath
+
     s_oath = ''.join([c if c.isalnum() else '' for c in oath]).lower()
 
     wrong = 0
