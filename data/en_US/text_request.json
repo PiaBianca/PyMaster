@@ -168,10 +168,15 @@
         "Maybe later. For now, you will stay dirty."
     ],
     "time_limit": [
-        " You have {}. Let me know when you're done.",
-        " I'm giving you {}. Tell me when you're finished.",
-        " You've got {}. Tell me when you're done.",
-        " I'll give you {}. Let me know when you're finished."
+        " You have {}.",
+        " I'm giving you {}.",
+        " You've got {}.",
+        " I'll give you {}."
+    ],
+    "time_up": [
+        "Time's up!",
+        "Time's up, <python>random.choice([lib.slave.name, 'slave'])</python>!",
+        "Alright, it's time to stop now."
     ],
     "toilet_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
@@ -190,7 +195,7 @@
     "too_long": [
         "You took too long!",
         "You took longer than you were supposed to!",
-        "I gave you an explicit time limit, and you disobeyed me!",
+        "I gave you an explicit time limit, even told you when to stop, and you disobeyed me!",
         "You breached your time limit!"
     ]
 }

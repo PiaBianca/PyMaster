@@ -85,12 +85,16 @@ def allow_timed(activity, m=None):
         m = ''.join([m, load_text("time_limit")]).format(time_limit_text)
     else:
         m = load_text("time_limit").format(time_limit_text)
-    a = lib.message.load_text("phrases", "finished")
-    time_passed = lib.message.get_time(m, a)
-    if time_passed > time_limit + ONE_MINUTE:
-        lib.message.show(load_text("too_long"))
-        for _ in range(0, int(time_passed), int(time_limit)):
-            lib.assign.punishment(activity)
+    a = [lib.message.load_text("phrases", "finished")]
+    if lib.message.get_interruption(m, time_limit, a) is None:
+        lib.message.beep()
+        m = load_text("time_up")
+        a = lib.message.load_text("phrases", "assent")
+        time_passed = lib.message.get_time(m, a)
+        if time_passed > ONE_MINUTE:
+            lib.message.show(load_text("too_long"))
+            for _ in range(0, int(time_passed), int(time_limit)):
+                lib.assign.punishment(activity)
 
 
 def allow(ID, activity, msg):
