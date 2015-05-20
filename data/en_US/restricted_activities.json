@@ -51,7 +51,7 @@
         {
             "forget_time": "28 * ONE_DAY",
             "interval": "7 * ONE_DAY",
-            "interval_good": "10 * ONE_HOUR",
+            "interval_good": "2 * ONE_DAY",
             "limit": 75,
             "time_limit": "20 * ONE_MINUTE",
             "time_limit_min": "15 * ONE_MINUTE",
@@ -64,7 +64,7 @@
         {
             "forget_time": "28 * ONE_DAY",
             "interval": "7 * ONE_DAY",
-            "interval_good": "10 * ONE_HOUR",
+            "interval_good": "2 * ONE_DAY",
             "limit": 75,
             "time_limit": "20 * ONE_MINUTE",
             "time_limit_min": "15 * ONE_MINUTE",
