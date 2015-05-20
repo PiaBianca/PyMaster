@@ -37,9 +37,14 @@
         "Even if you really are one of those people who can type incredibly fast, this is not the place for it. Do it again, more slowly this time."
     ],
     "oath_fail": [
-        "Pathetic slave. It seems you don't have your oath of servitude written down properly. Write it down properly this time.",
+        "Pathetic slave. It seems you don't have your oath of servitude written down properly. Write it down this time.",
         "I am very disappointed in you. Here is the oath again. Write it down so you can recite it properly tomorrow.",
         "I'm giving it to you again. You had better write it down this time."
+    ],
+    "oath_fail_punishment": [
+        "I am assigning a punishment for your failure to recite your oath.",
+        "Now, you must be punished for your neglect.",
+        "Now for your punishment."
     ],
     "oath_success": [
         "That's right, slave.",

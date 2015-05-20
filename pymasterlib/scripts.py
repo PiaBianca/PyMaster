@@ -154,6 +154,8 @@ def morning_routine():
         m = load_text("oath_fail")
         lib.message.show(m, lib.message.load_text("phrases", "assent"))
         lib.message.show(oath, lib.message.load_text("phrases", "finished"))
+        m = load_text("oath_fail_punishment")
+        lib.message.show(m, lib.message.load_text("phrases", "assent"))
         lib.assign.punishment("oath_fail")
 
     lib.message.show(load_text("have_chore"))
@@ -163,7 +165,7 @@ def morning_routine():
 
     if STARTUP_DAY[1:] == lib.slave.birthday:
         m = load_text("gift_birthday")
-        lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+        lib.message.show(m)
         gift()
 
 
@@ -431,7 +433,7 @@ def gift_surf():
 
 def gift_special_permission():
     m = lib.message.load_text("morning_routine", "gift_special_permission")
-    lib.message.show(m)
+    lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
 
 
 def gift():
