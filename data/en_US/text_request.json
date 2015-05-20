@@ -152,7 +152,10 @@
     ],
     "porn_deny_masturbation": [
         "Well, too bad.",
-        "Well, I won't allow that."
+        "Well, I won't allow that.",
+        "Too bad. The answer is \"no\".",
+        "I won't allow that.",
+        "That's too bad, my horny slut. I won't allow it."
     ],
     "shower_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
