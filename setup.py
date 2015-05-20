@@ -11,7 +11,7 @@ executables = [
 ]
 
 setup(name = 'PyMaster',
-      version = '0.7',
+      version = '0.8',
       description = 'Virtual master/mistress program.',
       options = dict(build_exe = buildOptions),
       executables = executables)
