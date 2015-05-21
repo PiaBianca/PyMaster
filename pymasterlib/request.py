@@ -48,7 +48,7 @@ def get_allowed(activity):
 
     interval = GRANT_INTERVAL.get(activity, 0)
     nchores = len(lib.slave.chores) - len(lib.slave.abandoned_chores)
-    interval *= CHORE_BONUS.get(activity, 1) ** nchores
+    interval *= CHORE_BONUS.get(activity, 1) ** max(nchores, 0)
     for i in lib.slave.misdeeds:
         for misdeed in lib.slave.misdeeds[i]:
             penalty = MISDEED_PENALTY.get(i, 1)
