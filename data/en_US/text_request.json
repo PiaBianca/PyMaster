@@ -32,32 +32,32 @@
         "You'll just have to hold it in, because I'm not letting you use the toilet yet."
     ],
     "choice_masturbation": [
-        "Permission to masturbate"
+        "Permission to masturbate."
     ],
     "choice_porn": [
-        "Permission to look at porn"
+        "Permission to look at porn."
     ],
     "choice_shower": [
-        "Permission to take a bath or shower"
+        "Permission to take a bath or shower."
     ],
     "choice_junk_food": [
-        "Permission to eat junk food"
+        "Permission to eat junk food."
     ],
     "choice_drink": [
-        "Permission to drink something other than water"
+        "Permission to drink something other than water."
     ],
     "choice_toilet": [
-        "Permission to use the toilet"
+        "Permission to use the toilet."
     ],
     "choice_fun": [
-        "Permission to entertain myself"
+        "Permission to entertain myself."
     ],
     "special_choice_bed": [
-        "Permission to go to bed"
+        "Permission to go to bed."
     ],
     "special_choice_nothing": [
-        "Nothing",
-        "Nevermind"
+        "Nothing.",
+        "Nevermind."
     ],
     "common_accept": [
         "<python>lib.message.load_text('extra', 'ok')</python>.",
