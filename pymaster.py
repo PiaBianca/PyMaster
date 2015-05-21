@@ -30,6 +30,7 @@ def load_text(ID):
 
 
 def main():
+    lib.message.init()
     if not os.path.exists(SAVEDIR):
         os.makedirs(SAVEDIR)
 

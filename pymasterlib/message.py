@@ -24,7 +24,7 @@ import random
 import pymasterlib as lib
 from pymasterlib.constants import *
 
-__all__ = ["get_printed_time", "show", "show_timed", "get_time",
+__all__ = ["init", "get_printed_time", "show", "show_timed", "get_time",
            "get_interrupted", "get_choice", "get_bool", "get_int",
            "get_string", "beep"]
 
@@ -48,6 +48,13 @@ def _insert_newlines(text, linesize=72):
         new_lines.append(new_line.strip())
 
     return '\n'.join(new_lines)
+
+
+def init():
+    """
+    Initialize the message module.  Can involve things like opening a
+    main window.  Should be called before any of this module is used.
+    """
 
 
 def get_printed_time(time_, round_down=False):
