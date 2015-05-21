@@ -164,8 +164,9 @@ def morning_routine():
         lib.message.show(m, lib.message.load_text("phrases", "assent"))
         lib.assign.punishment("oath_fail")
 
-    lib.message.show(load_text("have_chore"))
-    lib.assign.chore()
+    if random.random() < 0.25:
+        lib.message.show(load_text("have_chore"))
+        lib.assign.chore()
 
     lib.slave.bedtime = None
 
@@ -187,13 +188,6 @@ def evening_routine():
     if (lib.slave.queued_chore is not None and
             lib.message.get_bool(load_text("chore_ask_completed"))):
         lib.tell.completed_chore()
-    else:
-        t = lib.slave.queued_chore["time"]
-        for activity in lib.slave.queued_chore.get("activities", []):
-            lib.slave.activities.setdefault(activity, [])
-            if t in lib.slave.activities[activity]:
-                lib.slave.activities[activity].remove(t)
-        lib.slave.queued_chore = None
 
     if not lib.message.get_bool(load_text("tasks_ask_completed")):
         m = load_text("tasks_finish")
@@ -206,9 +200,10 @@ def evening_routine():
         t = lib.slave.queued_chore.get("time")
         for activity in lib.slave.queued_chore.get("activities", []):
             try:
-                lib.slave.activities[eval(activity)].remove(t)
+                lib.slave.activities[activity].remove(t)
             except (KeyError, ValueError):
                 print("Warning: Didn't find activity \"{}\" at the time of this chore.".format(activity))
+        lib.slave.abandoned_chores.append(lib.slave.queued_chore)
         lib.slave.queued_chore = None
     sys.exit()
 

@@ -47,6 +47,7 @@ class slave:
     request_denied = {}
     queued_chore = None
     chores = []
+    abandoned_chores = []
     activities = {}
     misdeeds = {}
     rejected = []

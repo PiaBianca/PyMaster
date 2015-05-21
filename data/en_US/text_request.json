@@ -55,9 +55,25 @@
     "special_choice_bed": [
         "Permission to go to bed."
     ],
+    "special_choice_new_chore": [
+        "A chance to please my <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>."
+    ],
     "special_choice_nothing": [
         "Nothing.",
         "Nevermind."
+    ],
+    "chore_assign": [
+        "That's a good slave. You should always try to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>.",
+        "Absolutely, my toy.",
+        "Then I will gladly give you that chance.",
+        "Of course. That is, after all, the only reason a worthless slave like you exists.",
+        "Alright, <python>random.choice([lib.slave.name, 'slave'])</python>. I will give you a task to do.",
+        "It would be my pleasure to give you that chance."
+    ],
+    "chore_already_assigned": [
+        "Don't get ahead of yourself. You already have a task to do today. Finish that one first.",
+        "It is good that you want to please me, <python>random.choice([lib.slave.name, 'slave'])</python>, but you need to finish your current task before I can give you a new one.",
+        "Finish your current task first."
     ],
     "common_accept": [
         "<python>lib.message.load_text('extra', 'ok')</python>.",

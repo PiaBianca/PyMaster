@@ -29,6 +29,7 @@ def save():
                       "bedtime": lib.slave.bedtime,
                       "queued_chore": lib.slave.queued_chore,
                       "chores": lib.slave.chores,
+                      "abandoned_chores": lib.slave.abandoned_chores,
                       "activities": lib.slave.activities,
                       "misdeeds": lib.slave.misdeeds,
                       "rejected": lib.slave.rejected,
@@ -62,6 +63,7 @@ def load():
     lib.slave.bedtime = s_slave.get("bedtime")
     lib.slave.queued_chore = s_slave.get("queued_chore")
     lib.slave.chores = s_slave.get("chores", [])
+    lib.slave.abandoned_chores = s_slave.get("abandoned_chores", [])
     lib.slave.activities = s_slave.get("activities", {})
     lib.slave.misdeeds = s_slave.get("misdeeds", {})
     lib.slave.rejected = s_slave.get("rejected", [])

@@ -47,7 +47,8 @@ def get_allowed(activity):
             last_time = a
 
     interval = GRANT_INTERVAL.get(activity, 0)
-    interval *= CHORE_BONUS.get(activity, 1) ** len(lib.slave.chores)
+    nchores = len(lib.slave.chores) - len(lib.slave.abandoned_chores)
+    interval *= CHORE_BONUS.get(activity, 1) ** nchores
     for i in lib.slave.misdeeds:
         for misdeed in lib.slave.misdeeds[i]:
             penalty = MISDEED_PENALTY.get(i, 1)
@@ -142,6 +143,7 @@ def what():
     for i, activity in ACTIVITIES:
         c.append(load_text("choice_{}".format(i)))
     c.append(load_text("special_choice_bed"))
+    c.append(load_text("special_choice_new_chore"))
     c.append(load_text("special_choice_nothing"))
     choice = lib.message.get_choice(m, c, len(c) - 1)
 
@@ -176,5 +178,11 @@ def what():
                 allow(ID, activity, m)
             else:
                 deny(ID, activity)
-    elif choice == len(c) - 2:
+    elif choice == len(c) - 3:
         lib.scripts.evening_routine()
+    elif choice == len(c) - 2:
+        if lib.slave.queued_chore is None:
+            lib.message.show(load_text("chore_assign"))
+            lib.assign.chore()
+        else:
+            lib.message.show(load_text("chore_already_assigned"))
