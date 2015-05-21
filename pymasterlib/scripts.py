@@ -187,6 +187,13 @@ def evening_routine():
     if (lib.slave.queued_chore is not None and
             lib.message.get_bool(load_text("chore_ask_completed"))):
         lib.tell.completed_chore()
+    else:
+        t = lib.slave.queued_chore["time"]
+        for activity in lib.slave.queued_chore.get("activities", []):
+            lib.slave.activities.setdefault(activity, [])
+            if t in lib.slave.activities[activity]:
+                lib.slave.activities[activity].remove(t)
+        lib.slave.queued_chore = None
 
     if not lib.message.get_bool(load_text("tasks_ask_completed")):
         m = load_text("tasks_finish")
