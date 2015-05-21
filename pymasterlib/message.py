@@ -151,20 +151,20 @@ def get_interruption(message, wait, answers=None):
     """
     if answers:
         if len(answers) == 1:
-            m = 'PRESS CTRL+C TO SAY "{}"'.format(answers[0])
+            m = 'Press CTRL+C to say: "{}"'.format(answers[0])
         else:
             a = '", "'.join(answers)
-            m = 'PRESS CTRL+C TO SAY ONE OF THE FOLLOWING: "{}"'.format(a)
+            m = 'Press CTRL+C to say one of the following: "{}"'.format(a)
         lines = _insert_newlines(m, 60).splitlines()
         for i in range(len(lines)):
             lines[i] = ''.join([lines[i], " " * (60 - len(lines[i]))])
             lines[i] = ''.join(["::    ", lines[i], "    ::"])
         infotext = '\n'.join(lines)
     else:
-        infotext = "::    PRESS CTRL+C TO SKIP THE WAIT    ::"
+        infotext = "::    Press CTRL+C to skip the wait    ::"
 
-    print(infotext)
     print(_insert_newlines(message))
+    print(infotext)
     try:
         time.sleep(wait)
     except KeyboardInterrupt:
