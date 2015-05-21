@@ -31,10 +31,10 @@
         "Don't waste my time with this crap. Give me a number between 1 and 12."
     ],
     "master_sex_male": [
-        "Master (man)"
+        "Master (man)."
     ],
     "master_sex_female": [
-        "Mistress (woman)"
+        "Mistress (woman)."
     ],
     "my_property_now": [
         "You will be my property from now on, <python>lib.slave.name</python>. You will do everything I say when I say it. You don't control your own life anymore. Do I make myself clear?"
@@ -46,12 +46,12 @@
         "Now I'm going to tell you the rules. Listen carefully and memorize them."
     ],
     "slave_sex_female": [
-        "Female"
+        "Female."
     ],
     "slave_sex_male": [
-        "Male"
+        "Male."
     ],
     "slave_sex_neither": [
-        "Neither"
+        "Neither."
     ]
 }
