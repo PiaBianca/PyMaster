@@ -66,7 +66,6 @@ class slave:
                 memory_num += len(cls.misdeeds[i])
             memory_num += misdeeds_add
 
-            print(FORGET_TIME_TARGET + f * (CHORES_TARGET - memory_num) ** 3)
             return FORGET_TIME_TARGET + f * (CHORES_TARGET - memory_num) ** 3
 
         forgotten = []
