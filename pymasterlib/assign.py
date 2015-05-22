@@ -43,7 +43,9 @@ def chore():
         keys = list(chores.keys())
         i = keys[random.randrange(len(keys))]
         requires = chores[i].setdefault("requires")
-        if not requires or eval(requires):
+        text_choices = chores[i].setdefault("text", [])
+
+        if text_choices:
             allowed = True
             if not allow_all:
                 for activity in chores[i].setdefault("activities", []):
@@ -51,9 +53,7 @@ def chore():
                         allowed = False
                         break
 
-            text_choices = chores[i].setdefault("text", [])
-
-            if allowed and text_choices:
+            if allowed and (not requires or eval(requires)):
                 text = lib.parse.python_tag(random.choice(text_choices))
                 chores[i]["text"] = text
                 t = time.time()
