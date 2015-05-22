@@ -37,7 +37,10 @@ __all__ = ["DATADIR", "SAVEDIR", "RESET", "RESET_FACTS",
            "ORGASM_WAIT_CHANCE", "ORGASM_WAIT", "ORGASM_WAIT_MIN",
            "ORGASM_WAIT_MAX",
 
-           "FORGET_TIME_ADJUST", "FORGET_TIME", "ACTIVITY_FORGET_TIME",
+           "CHORES_TARGET",
+
+           "FORGET_TIME", "FORGET_TIME_TARGET", "FORGET_TIME_ADJUST",
+           "FORGET_TIME_NEGATIVE_ADJUST", "ACTIVITY_FORGET_TIME",
            "REJECTED_FORGET_TIME",
 
            "GRANT_INTERVAL",
@@ -101,17 +104,23 @@ ACTIVITIES_DICT = {}
 for i, activity in ACTIVITIES:
     ACTIVITIES_DICT[i] = activity
 
-# The target for the effective maximum number of chores; if the slave
-# has done this many chores, they are forgotten at an interval of
+# The target for the best-case number of chores; if the slave has done
+# this many chores, they are forgotten at an interval of
 # FORGET_TIME_TARGET, and if there are no misdeeds on  record,
 # restricted activities are granted at an interval of the respective
 # GRANT_INTERVAL_GOOD.
 CHORES_TARGET = 14
 
+# The effective maximum number of chores; if this many chores have been
+# done, chores are forgotten instantly.
+CHORES_MAX = 17
+
 # Forgetfulness
-FORGET_TIME_TARGET = 7 * ONE_DAY
-FORGET_TIME_ADJUST = 0.85
-FORGET_TIME = FORGET_TIME_TARGET * (1 / FORGET_TIME_ADJUST) ** CHORES_TARGET
+FORGET_TIME_TARGET = 14 * ONE_DAY
+FORGET_TIME = 28 * ONE_DAY
+FORGET_TIME_ADJUST = (FORGET_TIME - FORGET_TIME_TARGET) / (CHORES_TARGET ** 3)
+FORGET_TIME_NEGATIVE_ADJUST = (-FORGET_TIME_TARGET /
+                               ((CHORES_TARGET - CHORES_MAX) ** 3))
 ACTIVITY_FORGET_TIME = {"__beg": 7 * ONE_DAY}
 REJECTED_FORGET_TIME = 2 * ONE_DAY
 

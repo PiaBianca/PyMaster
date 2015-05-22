@@ -55,16 +55,24 @@ class slave:
 
     @classmethod
     def forget(cls):
-        def get_forget_time():
-            memory_num = len(cls.chores)
+        def get_forget_time(chores_add=0, misdeeds_add=0):
+            memory_num = len(cls.chores) + chores_add
+            if memory_num <= CHORES_TARGET:
+                f = FORGET_TIME_ADJUST
+            else:
+                f = FORGET_TIME_NEGATIVE_ADJUST
+
             for i in cls.misdeeds:
                 memory_num += len(cls.misdeeds[i])
+            memory_num += misdeeds_add
 
-            return FORGET_TIME * (FORGET_TIME_ADJUST ** memory_num)
+            print(FORGET_TIME_TARGET + f * (CHORES_TARGET - memory_num) ** 3)
+            return FORGET_TIME_TARGET + f * (CHORES_TARGET - memory_num) ** 3
 
         forgotten = []
         for i in range(len(cls.chores)):
-            if time.time() >= cls.chores[i]["time"] + get_forget_time():
+            if time.time() >= (cls.chores[i]["time"] +
+                               get_forget_time(chores_add=-len(forgotten))):
                 forgotten.append(i)
         for i in sorted(forgotten, reverse=True):
             del cls.chores[i]
@@ -78,7 +86,8 @@ class slave:
 
             forgotten = []
             for j in range(len(cls.misdeeds[i])):
-                if time.time() >= cls.misdeeds[i][j]["time"] + get_forget_time():
+                if time.time() >= (cls.misdeeds[i][j]["time"] +
+                                   get_forget_time(misdeeds_add=-len(forgotten))):
                     forgotten.append(j)
             for j in sorted(forgotten, reverse=True):
                 md = cls.misdeeds[i][j]
