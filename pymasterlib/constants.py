@@ -102,14 +102,15 @@ for i, activity in ACTIVITIES:
     ACTIVITIES_DICT[i] = activity
 
 # The target for the effective maximum number of chores; if the slave
-# has done this many chores, the oldest is guaranteed to be forgotten by
-# the time another chore is assigned, and if there are no misdeeds on
-# record, the best possible permission grant outcomes will occur.
+# has done this many chores, they are forgotten at an interval of
+# FORGET_TIME_TARGET, and if there are no misdeeds on  record,
+# restricted activities are granted at an interval of the respective
+# GRANT_INTERVAL_GOOD.
 CHORES_TARGET = 14
 
 # Forgetfulness
-FORGET_TIME_TARGET = CHORES_TARGET * ONE_DAY
-FORGET_TIME_ADJUST = 0.9
+FORGET_TIME_TARGET = 7 * ONE_DAY
+FORGET_TIME_ADJUST = 0.85
 FORGET_TIME = FORGET_TIME_TARGET * (1 / FORGET_TIME_ADJUST) ** CHORES_TARGET
 ACTIVITY_FORGET_TIME = {"__beg": 7 * ONE_DAY}
 REJECTED_FORGET_TIME = 2 * ONE_DAY
