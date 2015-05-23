@@ -62,6 +62,7 @@ class slave:
             else:
                 f = FORGET_TIME_NEGATIVE_ADJUST
 
+            memory_num += len(cls.abandoned_chores)
             for i in cls.misdeeds:
                 memory_num += len(cls.misdeeds[i])
             memory_num += misdeeds_add
@@ -75,6 +76,14 @@ class slave:
                 forgotten.append(i)
         for i in sorted(forgotten, reverse=True):
             del cls.chores[i]
+
+        forgotten = []
+        for i in range(len(cls.abandoned_chores)):
+            if time.time() >= (cls.abandoned_chores[i]["time"] +
+                               get_forget_time(misdeeds_add=-len(forgotten))):
+                forgotten.append(i)
+        for i in sorted(forgotten, reverse=True):
+            del cls.abandoned_chores[i]
 
         invalid = []
         for i in cls.misdeeds:
