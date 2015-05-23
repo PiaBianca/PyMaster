@@ -439,11 +439,30 @@ def gift_surf():
             lib.message.show(m, lib.message.load_text("phrases", "assent"))
 
 
-def gift_special_permission():
+def gift_other():
+    def load_text(ID): return lib.message.load_text("morning_routine", ID)
+
     m = lib.message.load_text("morning_routine", "gift_special_permission")
-    lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+
+    with open(os.path.join(DATADIR, "gifts.json"), 'r') as f:
+        gifts = json.load(f)
+
+    while gifts:
+        keys = list(gifts.keys())
+        i = random.choice(keys)
+        requires = gifts[i].setdefault("requires")
+        text_choices = gifts[i].setdefault("text", [])
+
+        if text_choices and (not requires or eval(requires)):
+            m = lib.parse.python_tag(random.choice(text_choices))
+            lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+            break
+
+        del gifts[i]
+    else:
+        lib.message.show(load_text("gift_none"))
 
 
 def gift():
-    gifts = [gift_surf, gift_special_permission]
+    gifts = [gift_surf, gift_other]
     random.choice(gifts)()

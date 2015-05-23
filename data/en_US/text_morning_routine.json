@@ -18,8 +18,8 @@
         "I have a special birthday surprise for my slave!",
         "Oh, it's your birthday, isn't it? I guess it's time for your present."
     ],
-    "gift_special_permission": [
-        "I'm going to allow you to eat cake for free today, under the following condition: <python>random.choice(['you must mash it up with your feet and eat it off the floor like a dog.', 'smear it on your asshole first, then scoop it out and eat it with your hands.'])</python>"
+    "gift_none": [
+        "Huh, I can't think of any more ideas for what to give you. I guess you won't be getting a gift this year."
     ],
     "have_chore": [
         "I have a task for you.",

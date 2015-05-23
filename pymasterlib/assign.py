@@ -41,7 +41,7 @@ def chore():
 
     while chores:
         keys = list(chores.keys())
-        i = keys[random.randrange(len(keys))]
+        i = random.choice(keys)
         requires = chores[i].setdefault("requires")
         text_choices = chores[i].setdefault("text", [])
 
