@@ -204,6 +204,11 @@
             "Give yourself a hard spanking with a wooden spoon: <python>random.randint(4, 6) * 10</python> swats on each cheek. If you stop or lose count, start over."
         ]
     },
+    "spice": {
+        "text": [
+            "Eat something spicy enough to make your mouth feel like it's on fire, then do not eat or drink anything else until the feeling goes away on its own."
+        ]
+    },
     "spit_face": {
         "text": [
             "Lie down on the floor and spit so that it lands on your face <python>random.randint(3, 5)</python> times. Stay there like that for <python>random.randint(6, 12)</python> minutes. You are not allowed to touch your face during this time."
