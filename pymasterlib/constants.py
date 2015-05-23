@@ -75,10 +75,14 @@ if args.data_dir:
     DATADIR = args.data_dir
 else:
     DATADIR = os.path.join(os.path.dirname(sys.argv[0]), "data", "en_US")
+DATADIR = os.path.abspath(DATADIR)
+
 if args.save_dir:
     SAVEDIR = args.save_dir
 else:
     SAVEDIR = os.path.join(os.path.expanduser("~"), ".config", ".pymaster")
+SAVEDIR = os.path.abspath(SAVEDIR)
+
 RESET = args.reset
 RESET_FACTS = args.reset_facts
 
