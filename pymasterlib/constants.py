@@ -136,13 +136,12 @@ GRANT_INTERVAL_GOOD = {"__beg": 1}
 LIMIT = {"__beg": 2}
 
 # Time limits
-TIME_LIMIT = {"orgasm": 60}
-TIME_LIMIT_MIN = {"orgasm": 45}
-TIME_LIMIT_MAX = {"orgasm": 90}
+TIME_LIMIT = {"__orgasm": 60}
+TIME_LIMIT_MIN = {"__orgasm": 45}
+TIME_LIMIT_MAX = {"__orgasm": 90}
 
 # Penalties
-MISDEED_PENALTY = {"orgasm": 1.25,
-                   "too_early": 1.03,
+MISDEED_PENALTY = {"too_early": 1.03,
                    "too_late": 1.03,
                    "oath_fail": 1.1,
                    "bed": 1.2,

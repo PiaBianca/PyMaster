@@ -250,7 +250,7 @@ def masturbate():
                         if lib.message.get_interruption(m, wait, a) is None:
                             lib.message.beep()
                             m = load_text("orgasm_signal")
-                            limit = lib.request.get_time_limit("orgasm")
+                            limit = lib.request.get_time_limit("__orgasm")
                             a = [lib.message.load_text("phrases", "finished")]
                             if lib.message.get_interruption(m, limit, a) is None:
                                 lib.message.beep()
@@ -263,7 +263,7 @@ def masturbate():
                             break
                     else:
                         m = load_text("orgasm_now")
-                        limit = lib.request.get_time_limit("orgasm")
+                        limit = lib.request.get_time_limit("__orgasm")
                         a = [lib.message.load_text("phrases", "finished")]
                         if lib.message.get_interruption(m, limit, a) is None:
                             lib.message.beep()
@@ -280,7 +280,7 @@ def masturbate():
             lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
             break
         elif i == 2:
-            lib.tell.did_without_permission("orgasm")
+            lib.tell.did_without_permission("masturbation")
             m = load_text("masturbate_stop_order")
             lib.message.show(m, lib.message.load_text("phrases", "assent"))
             break
@@ -425,13 +425,13 @@ def gift_surf():
     i = lib.message.get_interruption(m, orgasm_time, a)
 
     if i == 0:
-        lib.tell.did_without_permission("orgasm")
+        lib.tell.did_without_permission("masturbation")
         m = load_text("masturbate_stop_order")
         lib.message.show(m, lib.message.load_text("phrases", "assent"))
     else:
         lib.message.beep()
         m = load_text("orgasm_signal")
-        limit = lib.request.get_time_limit("orgasm")
+        limit = lib.request.get_time_limit("__orgasm")
         a = [lib.message.load_text("phrases", "finished")]
         if lib.message.get_interruption(m, limit, a) is None:
             lib.message.beep()
