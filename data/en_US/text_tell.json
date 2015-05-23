@@ -19,9 +19,6 @@
     "choice_naughty": [
         "I broke a rule."
     ],
-    "choice_lied": [
-        "I lied to you."
-    ],
     "choice_nothing": [
         "Nothing.",
         "Nevermind."
@@ -47,8 +44,11 @@
     "choice_naughty_fun": [
         "Entertained myself without permission."
     ],
-    "choice_special_naughty_bed": [
+    "choice_naughty_bed": [
         "Went to bed without permission."
+    ],
+    "choice_naughty_lie": [
+        "Lied to you."
     ],
     "choice_special_naughty_nothing": [
         "Nothing."
@@ -133,7 +133,7 @@
         "I control your life! That includes going to bed.",
         "Have you been avoiding me? That is unacceptable."
     ],
-    "response_lied": [
+    "response_naughty_lie": [
         "Lying to your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python> is intolerable!",
         "You fucking piece of shit! Lying to me!",
         "You fucking lied to me?! Nothing is worse than lying to your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>!",

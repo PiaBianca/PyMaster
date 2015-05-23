@@ -31,6 +31,8 @@ __all__ = ["DATADIR", "SAVEDIR", "RESET", "RESET_FACTS",
 
            "ACTIVITIES", "ACTIVITIES_DICT",
 
+           "MISDEEDS", "MISDEEDS_DICT",
+
            "TIME_LIMIT", "TIME_LIMIT_MIN", "TIME_LIMIT_MAX",
 
            "ORGASM_ASK_DELAY_MIN", "ORGASM_ASK_DELAY_MAX", "ORGASM_CHANCE",
@@ -101,12 +103,27 @@ MALE = "m"
 FEMALE = "f"
 
 # Activities
+# This is a list of pairs instead of a dictionary because their order
+# matters; the user needs to be shown the activities in exactly the same
+# order every time, and this order should be controlled by the JSON
+# file (as opposed to e.g. alphabetical sorting) so that it can be an
+# order that makes logical sense.
 with open(os.path.join(DATADIR, "restricted_activities.json"), "r") as f:
    ACTIVITIES = json.load(f)
 
 ACTIVITIES_DICT = {}
 for i, activity in ACTIVITIES:
     ACTIVITIES_DICT[i] = activity
+
+# Misdeeds
+# See the above explanation for why this is a list of pairs, rather than
+# a dictionary.
+with open(os.path.join(DATADIR, "misdeeds.json"), "r") as f:
+    MISDEEDS = json.load(f)
+
+MISDEEDS_DICT = {}
+for i, misdeed in MISDEEDS:
+    MISDEEDS_DICT[i] = misdeed
 
 # The target for the best-case number of chores; if the slave has done
 # this many chores, they are forgotten at an interval of
@@ -143,9 +160,7 @@ TIME_LIMIT_MAX = {"__orgasm": 90}
 # Penalties
 MISDEED_PENALTY = {"too_early": 1.03,
                    "too_late": 1.03,
-                   "oath_fail": 1.1,
-                   "bed": 1.2,
-                   "lie": 2}
+                   "oath_fail": 1.1}
 MISDEED_PUNISHED_PENALTY = 1.005
 REJECTED_PENALTY = 1.0025
 
@@ -165,6 +180,10 @@ for i, activity in ACTIVITIES:
         TIME_LIMIT_MAX[i] = eval(activity.get("time_limit_max",
                                               activity["time_limit"]))
     MISDEED_PENALTY[i] = activity.get("penalty", 1)
+
+# Add misdeeds
+for i, misdeed in MISDEEDS:
+    MISDEED_PENALTY[i] = misdeed.get("penalty", 1)
 
 # Interval adjustments
 CHORE_BONUS = {}

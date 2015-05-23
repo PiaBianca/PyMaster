@@ -29,7 +29,7 @@ def what():
     m = load_text("ask_what")
     c = [load_text("choice_completed_chore"),
          load_text("choice_completed_punishment"), load_text("choice_naughty"),
-         load_text("choice_lied"), load_text("choice_nothing")]
+         load_text("choice_nothing")]
     choice = lib.message.get_choice(m, c, len(c) - 1)
 
     if choice == 0:
@@ -38,8 +38,6 @@ def what():
         completed_punishment()
     elif choice == 2:
         broke_rule()
-    elif choice == 3:
-        lied()
 
 
 def completed_chore():
@@ -94,27 +92,25 @@ def did_without_permission(ID):
     lib.assign.punishment(ID)
 
 
+def did_misdeed(ID):
+    m = load_text("response_naughty_{}".format(ID))
+    lib.message.show(m)
+    lib.assign.punishment(ID)
+
+
 def broke_rule():
     m = load_text("ask_what_naughty")
     c = []
     for i, activity in ACTIVITIES:
         c.append(load_text("choice_naughty_{}".format(i)))
-    c.append(load_text("choice_special_naughty_bed"))
+    for i, misdeed in MISDEEDS:
+        c.append(load_text("choice_naughty_{}".format(i)))
     c.append(load_text("choice_special_naughty_nothing"))
     choice = lib.message.get_choice(m, c, len(c) - 1)
 
     if choice < len(ACTIVITIES):
         ID, activity = ACTIVITIES[choice]
         did_without_permission(ID)
-    elif choice == len(c) - 2:
-        skipped_evening_routine()
-
-
-def skipped_evening_routine():
-    lib.message.show(load_text("response_naughty_bed"))
-    lib.assign.punishment("bed")
-
-
-def lied():
-    lib.message.show(load_text("response_lied"))
-    lib.assign.punishment("lie")
+    elif choice % len(ACTIVITIES) < len(MISDEEDS):
+        ID, misdeed = MISDEEDS[choice % len(ACTIVITIES)]
+        did_misdeed(ID)
