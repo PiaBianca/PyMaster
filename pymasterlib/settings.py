@@ -32,7 +32,6 @@ def save():
                       "abandoned_chores": lib.slave.abandoned_chores,
                       "activities": lib.slave.activities,
                       "misdeeds": lib.slave.misdeeds,
-                      "rejected": lib.slave.rejected,
                       "facts": lib.slave.facts}
     settings = {"program": program_settings, "master": master_settings,
                 "slave": slave_settings}
@@ -66,6 +65,5 @@ def load():
     lib.slave.abandoned_chores = s_slave.get("abandoned_chores", [])
     lib.slave.activities = s_slave.get("activities", {})
     lib.slave.misdeeds = s_slave.get("misdeeds", {})
-    lib.slave.rejected = s_slave.get("rejected", [])
     if not RESET_FACTS:
         lib.slave.facts = s_slave.get("facts", {})

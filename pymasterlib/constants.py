@@ -43,13 +43,12 @@ __all__ = ["DATADIR", "SAVEDIR", "EXTDIRS", "RESET", "RESET_FACTS",
 
            "FORGET_TIME", "FORGET_TIME_TARGET", "FORGET_TIME_ADJUST",
            "FORGET_TIME_NEGATIVE_ADJUST", "ACTIVITY_FORGET_TIME",
-           "REJECTED_FORGET_TIME",
 
            "GRANT_INTERVAL",
 
            "CHORE_BONUS",
 
-           "MISDEED_PENALTY", "MISDEED_PUNISHED_PENALTY", "REJECTED_PENALTY",
+           "MISDEED_PENALTY", "MISDEED_PUNISHED_PENALTY",
 
            "CHORE_ALLOW_CHANCE", "PUNISHMENT_ALLOW_CHANCE",
 
@@ -148,8 +147,12 @@ for i, misdeed in MISDEEDS:
 # GRANT_INTERVAL_GOOD.
 CHORES_TARGET = 14
 
-# The effective maximum number of chores; if this many chores have been
-# done, chores are forgotten instantly.
+# The effective maximum number of chores; if the number of chores is
+# greater than CHORES_TARGET, and the number of chores + misdeeds is
+# CHORES_MAX + 1, the forget time becomes 0 (ensuring that the oldest
+# chore is forgotten).  Note that the effective maximum number of chores
+# is reduced if any misdeeds are in memory, and can be as low as
+# CHORES_TARGET.
 CHORES_MAX = 17
 
 # Forgetfulness
@@ -157,9 +160,8 @@ FORGET_TIME_TARGET = 14 * ONE_DAY
 FORGET_TIME = 28 * ONE_DAY
 FORGET_TIME_ADJUST = (FORGET_TIME - FORGET_TIME_TARGET) / (CHORES_TARGET ** 3)
 FORGET_TIME_NEGATIVE_ADJUST = (-FORGET_TIME_TARGET /
-                               ((CHORES_TARGET - CHORES_MAX) ** 3))
+                               ((CHORES_TARGET - (CHORES_MAX + 1)) ** 3))
 ACTIVITY_FORGET_TIME = {"__beg": 7 * ONE_DAY}
-REJECTED_FORGET_TIME = 2 * ONE_DAY
 
 # Required wait for permission (adjusted by chores and misdeeds)
 GRANT_INTERVAL = {"__beg": 1}
@@ -178,7 +180,6 @@ MISDEED_PENALTY = {"too_early": 1.03,
                    "too_late": 1.03,
                    "oath_fail": 1.1}
 MISDEED_PUNISHED_PENALTY = 1.005
-REJECTED_PENALTY = 1.0025
 
 # Add restricted activities
 for i, activity in ACTIVITIES:

@@ -56,7 +56,6 @@ def get_allowed(activity):
                 interval *= penalty
             else:
                 interval *= min(penalty, MISDEED_PUNISHED_PENALTY)
-    interval *= REJECTED_PENALTY ** len(lib.slave.rejected)
 
     if (len(lib.slave.activities[activity]) < LIMIT.get(activity, 9999) and
             (last_time is None or time.time() >= last_time + interval)):
@@ -74,7 +73,6 @@ def request(activity):
         lib.slave.add_activity(activity)
         return True
     else:
-        lib.slave.rejected.append(time.time())
         return False
 
 

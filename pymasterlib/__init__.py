@@ -50,7 +50,6 @@ class slave:
     abandoned_chores = []
     activities = {}
     misdeeds = {}
-    rejected = []
     facts = {}
 
     @classmethod
@@ -130,13 +129,6 @@ class slave:
 
         for i in invalid:
             del cls.activities[i]
-
-        forgotten = []
-        for i in range(len(cls.rejected)):
-            if time.time() >= cls.rejected[i] + REJECTED_FORGET_TIME:
-                forgotten.append(i)
-        for i in sorted(forgotten, reverse=True):
-            del cls.rejected[i]
 
         forgotten = []
         for i in cls.facts:
