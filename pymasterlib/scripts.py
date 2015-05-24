@@ -26,8 +26,12 @@ from pymasterlib.constants import *
 
 
 def show_rules():
-    with open(os.path.join(DATADIR, "rules.json"), 'r') as f:
-        rules_list = json.load(f)
+    rules_list = []
+    for d in [DATADIR] + EXTDIRS:
+        fname = os.path.join(d, "rules.json")
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                rules_list.extend(json.load(f))
 
     for i in range(len(rules_list)):
         m = "{}. {}".format(i + 1, rules_list[i])
@@ -444,8 +448,14 @@ def gift_other():
 
     m = lib.message.load_text("morning_routine", "gift_special_permission")
 
-    with open(os.path.join(DATADIR, "gifts.json"), 'r') as f:
-        gifts = json.load(f)
+    gifts = {}
+    for d in [DATADIR] + EXTDIRS:
+        fname = os.path.join(d, "gifts.json")
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                ngifts = json.load(f)
+            for i in ngifts:
+                gifts[i] = ngifts[i]
 
     while gifts:
         keys = list(gifts.keys())

@@ -21,7 +21,7 @@ import time
 import argparse
 import json
 
-__all__ = ["DATADIR", "SAVEDIR", "RESET", "RESET_FACTS",
+__all__ = ["DATADIR", "SAVEDIR", "EXTDIRS", "RESET", "RESET_FACTS",
 
            "STARTUP_DATETIME", "STARTUP_DAY", "STARTUP_TIME",
 
@@ -64,6 +64,9 @@ parser.add_argument(
     "-s", "--save-dir",
     help="The save directory to use (default ~/.config/.pymaster)")
 parser.add_argument(
+    "-e", "--ext-dirs", nargs="*",
+    help="Directories to search for extensions in.")
+parser.add_argument(
     "--reset",
     help="Reset PyMaster to its original state, deleting all user data",
     action="store_true")
@@ -84,6 +87,11 @@ if args.save_dir:
 else:
     SAVEDIR = os.path.join(os.path.expanduser("~"), ".config", ".pymaster")
 SAVEDIR = os.path.abspath(SAVEDIR)
+
+if args.ext_dirs:
+    EXTDIRS = args.ext_dirs
+else:
+    EXTDIRS = []
 
 RESET = args.reset
 RESET_FACTS = args.reset_facts
@@ -108,8 +116,12 @@ FEMALE = "f"
 # order every time, and this order should be controlled by the JSON
 # file (as opposed to e.g. alphabetical sorting) so that it can be an
 # order that makes logical sense.
-with open(os.path.join(DATADIR, "restricted_activities.json"), "r") as f:
-   ACTIVITIES = json.load(f)
+ACTIVITIES = []
+for d in [DATADIR] + EXTDIRS:
+    fname = os.path.join(d, "restricted_activities.json")
+    if os.path.isfile(fname):
+        with open(fname, "r") as f:
+            ACTIVITIES.extend(json.load(f))
 
 ACTIVITIES_DICT = {}
 for i, activity in ACTIVITIES:
@@ -118,8 +130,12 @@ for i, activity in ACTIVITIES:
 # Misdeeds
 # See the above explanation for why this is a list of pairs, rather than
 # a dictionary.
-with open(os.path.join(DATADIR, "misdeeds.json"), "r") as f:
-    MISDEEDS = json.load(f)
+MISDEEDS = []
+for d in [DATADIR] + EXTDIRS:
+    fname = os.path.join(d, "misdeeds.json")
+    if os.path.isfile(fname):
+        with open(fname, "r") as f:
+            MISDEEDS.extend(json.load(f))
 
 MISDEEDS_DICT = {}
 for i, misdeed in MISDEEDS:

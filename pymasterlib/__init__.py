@@ -159,8 +159,15 @@ class slave:
     @classmethod
     def get_fact(cls, fact):
         cls.forget()
-        with open(os.path.join(DATADIR, "facts.json"), 'r') as f:
-            facts = json.load(f)
+
+        facts = {}
+        for d in [DATADIR] + EXTDIRS:
+            fname = os.path.join(d, "facts.json")
+            if os.path.isfile(fname):
+                with open(fname, 'r') as f:
+                    nfacts = json.load(f)
+                for i in nfacts:
+                    facts[i] = nfacts[i]
 
         if fact not in cls.facts:
             fdict = facts.get(fact, {})

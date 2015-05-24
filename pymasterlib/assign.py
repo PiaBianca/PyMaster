@@ -34,8 +34,14 @@ def chore():
     """Assign a random chore to the slave."""
     lib.slave.forget()
 
-    with open(os.path.join(DATADIR, "chores.json"), 'r') as f:
-        chores = json.load(f)
+    chores = {}
+    for d in [DATADIR] + EXTDIRS:
+        fname = os.path.join(d, "chores.json")
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                nchores = json.load(f)
+            for i in nchores:
+                chores[i] = nchores[i]
 
     allow_all = (random.randrange(100) < CHORE_ALLOW_CHANCE)
 
@@ -73,11 +79,26 @@ def punishment(misdeed):
     """Assign and return a random punishment for the misdeed indicated."""
     lib.slave.forget()
 
-    with open(os.path.join(DATADIR, "punishments.json"), 'r') as f:
-        punishments = json.load(f)
+    punishments = {}
+    for d in [DATADIR] + EXTDIR:
+        fname = os.path.join(d, "punishments.json")
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                upunishments = json.load(f)
+            for i in upunishments:
+                punishments[i] = upunishments[i]
 
-    with open(os.path.join(DATADIR, "punishments_list.json"), 'r') as f:
-        punishments_list = json.load(f)
+    punishments_list = {}
+    for d in [DATADIR] + EXTDIR:
+        fname = os.path.join(d, "punishments_list.json")
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                upunishments_list = json.load(f)
+            for i in upunishments_list:
+                if i in punishments_list:
+                    punishments_list[i].extend(upunishments_list[i])
+                else:
+                    punishments_list[i] = upunishments_list[i]
 
     allow_all = (random.randrange(100) < PUNISHMENT_ALLOW_CHANCE)
     punishment_choices = punishments_list.setdefault(misdeed, [])

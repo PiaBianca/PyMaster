@@ -98,16 +98,19 @@ def get_printed_time(time_, round_down=False):
 def load_text(section, ID):
     """
     Return a choice of text with the requested ID in the requested
-    section.  If it does not exist, return "" instead.
+    section.  If it does not exist, return ID instead.
     """
-    fname = os.path.join(DATADIR, "text_{}.json".format(section))
-    with open(fname, "r") as f:
-        texts = json.load(f)
+    dirnames = EXTDIRS[::-1] + [DATADIR]
+    for dirname in dirnames:
+        fname = os.path.join(dirname, "text_{}.json".format(section))
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                texts = json.load(f)
 
-    if ID in texts and texts[ID]:
-        return lib.parse.python_tag(random.choice(texts[ID]))
+            if ID in texts and texts[ID]:
+                return lib.parse.python_tag(random.choice(texts[ID]))
     else:
-        return ""
+        return ID
 
 
 def show(message, answer=None):
