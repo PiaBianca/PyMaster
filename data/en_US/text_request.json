@@ -142,6 +142,10 @@
         "No, you may not have junk food. <python>lib.message.load_text('request', 'junk_food_alternative')</python>",
         "No, I won't let you eat junk food right now. <python>lib.message.load_text('request', 'junk_food_alternative')</python>"
     ],
+    "masturbation_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "Very well, my horny slut."
+    ],
     "masturbation_deny": [
         "<python>lib.message.load_text('request', 'common_deny')</python>",
         "No, you may not masturbate at this time.",
