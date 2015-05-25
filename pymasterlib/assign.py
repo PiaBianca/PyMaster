@@ -34,6 +34,17 @@ def chore():
     """Assign a random chore to the slave."""
     lib.slave.forget()
 
+    def assign_chore(c, i, text_choices):
+        c["id"] = i
+        text = lib.parse.python_tag(random.choice(text_choices))
+        c["text"] = text
+        t = time.time()
+        c["time"] = t
+        lib.slave.queued_chore = c
+        for activity in c.setdefault("activities", []):
+            lib.slave.activities.setdefault(activity, []).append(t)
+        lib.message.show(text)
+
     chores = {}
     for d in [DATADIR] + EXTDIRS:
         fname = os.path.join(d, "chores.json")
@@ -42,6 +53,8 @@ def chore():
                 nchores = json.load(f)
             for i in nchores:
                 chores[i] = nchores[i]
+
+    backup_chores = {}
 
     allow_all = (random.randrange(100) < CHORE_ALLOW_CHANCE)
 
@@ -59,19 +72,30 @@ def chore():
                         allowed = False
                         break
 
-            if allowed and (not requires or eval(requires)):
-                text = lib.parse.python_tag(random.choice(text_choices))
-                chores[i]["text"] = text
-                t = time.time()
-                chores[i]["time"] = t
-                lib.slave.queued_chore = chores[i]
-                for activity in chores[i].setdefault("activities", []):
-                    lib.slave.activities.setdefault(activity, []).append(t)
-                lib.message.show(text)
-                break
+            if allowed:
+                repeat = False
+                for done_chore in lib.slave.chores:
+                    if done_chore.get("id") == i:
+                        repeat = True
+                        break
+
+                if not repeat:
+                    if not requires or eval(requires):
+                        assign_chore(chores[i], i, text_choices)
+                        break
+                else:
+                    backup_chores[i] = chores[i]
 
         del chores[i]
     else:
+        while backup_chores:
+            keys = list(backup_chores.keys())
+            i = random.choice(keys)
+            requires = backup_chores[i].setdefault("requires")
+            text_choices = backup_chores[i].setdefault("text", [])
+            if text_choices and (not requires or eval(requires)):
+                assign_chore(backup_chores[i], i, text_choices)
+            
         lib.message.show(load_text("no_chores"))
 
 
@@ -80,7 +104,7 @@ def punishment(misdeed):
     lib.slave.forget()
 
     punishments = {}
-    for d in [DATADIR] + EXTDIR:
+    for d in [DATADIR] + EXTDIRS:
         fname = os.path.join(d, "punishments.json")
         if os.path.isfile(fname):
             with open(fname, 'r') as f:
@@ -89,7 +113,7 @@ def punishment(misdeed):
                 punishments[i] = upunishments[i]
 
     punishments_list = {}
-    for d in [DATADIR] + EXTDIR:
+    for d in [DATADIR] + EXTDIRS:
         fname = os.path.join(d, "punishments_list.json")
         if os.path.isfile(fname):
             with open(fname, 'r') as f:

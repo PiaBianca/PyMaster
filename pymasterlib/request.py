@@ -99,8 +99,9 @@ def allow_timed(activity, m=None):
                 lib.assign.punishment(activity)
 
 
-def allow(ID, activity, msg):
-    script = activity.get("script")
+def allow(ID, activity, msg, other_ID=None):
+    other = ACTIVITIES_DICT.get(other_ID, {})
+    script = activity.get("script") or other.get("script")
     if script:
         lib.message.show_timed(msg, 5)
         eval(script)()
@@ -162,7 +163,7 @@ def what():
                         script = script or other_activity.get("script")
                         lib.slave.add_activity(ID)
                         m = load_text("{}_accept_with_{}".format(ID, other_ID))
-                        allow(ID, activity, m)
+                        allow(ID, activity, m, other_ID)
                     else:
                         m = load_text("{}_deny_{}".format(ID, other_ID))
                         lib.message.show(m)

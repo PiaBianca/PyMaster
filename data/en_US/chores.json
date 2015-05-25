@@ -110,15 +110,10 @@
             "Fill a bowl with food and place the bowl on the floor. Eat it all using nothing but your mouth."
         ]
     },
-    "food_floor_dry": {
+    "food_floor": {
         "requires": "lib.slave.get_fact('clean_floor')",
         "text": [
-            "Put a pile of dry, bite-sized food (such as cereal) on your floor. Eat it all using nothing but your mouth, and don't leave a single crumb."
-        ]
-    },
-    "food_floor_wet": {
-        "requires": "lib.slave.get_fact('clean_floor')",
-        "text": [
+            "Put a pile of dry, bite-sized food (such as cereal) on your floor. Eat it all using nothing but your mouth, and don't leave a single crumb.",
             "Put a puddle of thick, liquidy food (such as applesauce) on your floor. Eat it all using nothing but your mouth, and make sure the floor is licked clean when you're done."
         ]
     },
@@ -131,19 +126,12 @@
             "Fuck yourself with an edible penis-shaped item, such as a carrot or peeled banana, for <python>random.randint(1, 3) * 5</python> minutes, without cumming. You must then eat the item entirely."
         ]
     },
-    "golden_shower_feet": {
+    "golden_shower": {
         "activities": [
             "toilet"
         ],
         "text": [
-            "Piss on your feet. You may not clean them after this for <python>random.randint(2, 5) * 10</python> minutes."
-        ]
-    },
-    "golden_shower_stomache": {
-        "activities": [
-            "toilet"
-        ],
-        "text": [
+            "Piss on your feet. You may not clean them after this for <python>random.randint(2, 5) * 10</python> minutes.",
             "<python>'Piss on your stomache.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your stomache.'</python> You may not clean yourself up after this for <python>random.randint(2, 5) * 10</python> minutes."
         ]
     },
@@ -163,16 +151,12 @@
             "Do the dishes while wearing nothing but a nipple clamp or clothespin on each of your nipples."
         ]
     },
-    "maid_gagged": {
+    "maid_other": {
         "text": [
             "Clean a room in your house while gagged. Use a sock or underwear if you don't have a proper gag.",
             "Clean a room in your house while wearing nothing but a gag. Use a sock or underwear if you don't have a proper gag.",
             "Do the dishes while gagged. Use a sock or underwear if you don't have a proper gag.",
-            "Do the dishes while wearing nothing but a gag. Use a sock or underwear if you don't have a proper gag."
-        ]
-    },
-    "maid_naked": {
-        "text": [
+            "Do the dishes while wearing nothing but a gag. Use a sock or underwear if you don't have a proper gag.",
             "Clean a room in your house while completely naked.",
             "Do the dishes while completely naked."
         ]
@@ -186,7 +170,7 @@
             "Do the dishes while wearing nothing but a buttplug."
         ]
     },
-    "minetest_house": {
+    "minetest": {
         "activities": [
             "fun"
         ],
