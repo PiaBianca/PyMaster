@@ -11,12 +11,12 @@
     },
     "buttplug": {
         "firstcheck": "lib.message.get_bool('Do you have a buttplug?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "30 * ONE_DAY"
         
     },
     "buttplug_vibrating": {
         "firstcheck": "Do you have a vibrating buttplug?",
-        "forget": "7 * ONE_DAY"
+        "forget": "30 * ONE_DAY"
     },
     "clean_floor": {
         "firstcheck": "lib.message.get_bool('Is your floor clean enough to eat off of?')",
@@ -24,7 +24,7 @@
     },
     "clothespins": {
         "firstcheck": "lib.message.get_int('How many clothespins do you have?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "30 * ONE_DAY"
     },
     "cockring": {
         "firstcheck": "lib.message.get_bool('Do you have a cock ring that fits you?')",
@@ -61,6 +61,10 @@
         "firstcheck": "lib.message.get_bool('Do you have long hair?')",
         "forget": "30 * ONE_DAY"
     },
+    "handcuffs": {
+        "firstcheck": "lib.message.get_bool('Do you have a pair of (real, double-locking) handcuffs?')",
+        "forget": "30 * ONE_DAY"
+    },
     "hemisphere": {
         "firstcheck": "lib.message.get_choice('What hemisphere do you live in?', ['Northern', 'Southern'])",
         "forget": "1826 * ONE_DAY"
@@ -75,7 +79,7 @@
     },
     "nippleclamps": {
         "firstcheck": "lib.message.get_int('How many nipple clamps and clothespins do you have combined?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "30 * ONE_DAY"
     },
     "photo": {
         "firstcheck": "lib.message.get_bool('Do you have something that can take pictures?')",
@@ -83,6 +87,10 @@
     },
     "sissy": {
         "firstcheck": "lib.message.get_bool('Do you have a girly outfit you can wear?')",
+        "forget": "30 * ONE_DAY"
+    },
+    "sissy_nightie": {
+        "firstcheck": "lib.message.get_bool('Do you have a girly nightgown you can wear?')",
         "forget": "30 * ONE_DAY"
     },
     "snow": {
