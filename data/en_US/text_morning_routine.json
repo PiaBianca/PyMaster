@@ -1,4 +1,8 @@
 {
+    "chore_ask_completed": [
+        "<python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> your task<python>random.choice(['', ' last night'])</python>?",
+        "I assigned you a task last night. <python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> it?"
+    ],
     "exercise": [
         "Time to wake you up! Do some exercises until I tell you to stop.",
         "Since I don't want you to be asleep while you recite your oath, you will do some exercises now. I'll tell you when to stop.",

@@ -125,6 +125,20 @@ def intro():
 def morning_routine():
     def load_text(ID): return lib.message.load_text("morning_routine", ID)
 
+    if (lib.slave.queued_chore is not None and
+            lib.message.get_bool(load_text("chore_ask_completed"))):
+        lib.tell.completed_chore()
+
+    if lib.slave.queued_chore is not None:
+        t = lib.slave.queued_chore.get("time")
+        for activity in lib.slave.queued_chore.get("activities", []):
+            try:
+                lib.slave.activities[activity].remove(t)
+            except (KeyError, ValueError):
+                print("Warning: Didn't find activity \"{}\" at the time of this chore.".format(activity))
+        lib.slave.abandoned_chores.append(lib.slave.queued_chore)
+        lib.slave.queued_chore = None
+
     e_time = random.randint(45, 2 * ONE_MINUTE + 30)
     lib.message.show_timed(load_text("exercise"), e_time)
     lib.message.beep()
@@ -193,13 +207,6 @@ def evening_routine():
             lib.message.get_bool(load_text("chore_ask_completed"))):
         lib.tell.completed_chore()
 
-    if not lib.message.get_bool(load_text("tasks_ask_completed")):
-        m = load_text("tasks_finish")
-        lib.message.show(m, lib.message.load_text("phrases", "finished"))
-
-    lib.message.show(load_text("goodnight"))
-
-    lib.slave.bedtime = time.time()
     if lib.slave.queued_chore is not None:
         t = lib.slave.queued_chore.get("time")
         for activity in lib.slave.queued_chore.get("activities", []):
@@ -209,6 +216,17 @@ def evening_routine():
                 print("Warning: Didn't find activity \"{}\" at the time of this chore.".format(activity))
         lib.slave.abandoned_chores.append(lib.slave.queued_chore)
         lib.slave.queued_chore = None
+
+    if not lib.message.get_bool(load_text("tasks_ask_completed")):
+        m = load_text("tasks_finish")
+        lib.message.show(m, lib.message.load_text("phrases", "finished"))
+
+    if lib.message.get_bool(load_text("ask_night_chore")):
+        lib.assign.night_chore()
+
+    lib.message.show(load_text("goodnight"))
+
+    lib.slave.bedtime = time.time()
     sys.exit()
 
 

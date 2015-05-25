@@ -1,4 +1,10 @@
 {
+    "ask_night_chore": [
+        "Do you want to do something extra for me tonight?",
+        "Would you like to do something extra to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python> tonight?",
+        "Would you be interested in doing something special for me tonight?",
+        "Would you like an extra opportunity to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python> tonight?"
+    ],
     "back_to_bed": [
         "Then get the fuck back in bed.",
         "Stop wasting my time! Go the fuck back to bed.",

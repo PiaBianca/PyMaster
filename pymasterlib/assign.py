@@ -23,27 +23,28 @@ import json
 import pymasterlib as lib
 from pymasterlib.constants import *
 
-__all__ = ["chore", "punishment"]
+__all__ = ["chore", "night_chore", "punishment"]
 
 
 def load_text(ID):
     return lib.message.load_text("assign", ID)
 
 
+def _assign_chore(c, i, text_choices):
+    c["id"] = i
+    text = lib.parse.python_tag(random.choice(text_choices))
+    c["text"] = text
+    t = time.time()
+    c["time"] = t
+    lib.slave.queued_chore = c
+    for activity in c.setdefault("activities", []):
+        lib.slave.activities.setdefault(activity, []).append(t)
+    lib.message.show(text)
+
+
 def chore():
     """Assign a random chore to the slave."""
     lib.slave.forget()
-
-    def assign_chore(c, i, text_choices):
-        c["id"] = i
-        text = lib.parse.python_tag(random.choice(text_choices))
-        c["text"] = text
-        t = time.time()
-        c["time"] = t
-        lib.slave.queued_chore = c
-        for activity in c.setdefault("activities", []):
-            lib.slave.activities.setdefault(activity, []).append(t)
-        lib.message.show(text)
 
     chores = {}
     for d in [DATADIR] + EXTDIRS:
@@ -81,7 +82,7 @@ def chore():
 
                 if not repeat:
                     if not requires or eval(requires):
-                        assign_chore(chores[i], i, text_choices)
+                        _assign_chore(chores[i], i, text_choices)
                         break
                 else:
                     backup_chores[i] = chores[i]
@@ -94,8 +95,52 @@ def chore():
             requires = backup_chores[i].setdefault("requires")
             text_choices = backup_chores[i].setdefault("text", [])
             if text_choices and (not requires or eval(requires)):
-                assign_chore(backup_chores[i], i, text_choices)
-            
+                _assign_chore(backup_chores[i], i, text_choices)
+                break
+            del backup_chores[i]
+        else:
+            lib.message.show(load_text("no_chores"))
+
+
+def night_chore():
+    """
+    Assign a random night chore to the slave.  Night chores are the same
+    as regular chores techically, but are separated so whether the slave
+    is asleep can be taken into account.
+    """
+    lib.slave.forget()
+
+    chores = {}
+    for d in [DATADIR] + EXTDIRS:
+        fname = os.path.join(d, "night_chores.json")
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                nchores = json.load(f)
+            for i in nchores:
+                chores[i] = nchores[i]
+
+    allow_all = (random.randrange(100) < CHORE_ALLOW_CHANCE)
+
+    while chores:
+        keys = list(chores.keys())
+        i = random.choice(keys)
+        requires = chores[i].setdefault("requires")
+        text_choices = chores[i].setdefault("text", [])
+
+        if text_choices:
+            allowed = True
+            if not allow_all:
+                for activity in chores[i].setdefault("activities", []):
+                    if not lib.request.get_allowed(activity):
+                        allowed = False
+                        break
+
+            if allowed and (not requires or eval(requires)):
+                _assign_chore(chores[i], i, text_choices)
+                break
+
+        del chores[i]
+    else:
         lib.message.show(load_text("no_chores"))
 
 
