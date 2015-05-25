@@ -40,10 +40,11 @@ def get_time_limit(activity):
 
 def get_allowed(activity):
     """Return whether or not the activity is allowed."""
+    activity_d = ACTIVITIES_DICT.get(activity, {})
     lib.slave.forget()
 
     if (lib.slave.bedtime is None or
-            "night_possible" in ACTIVITIES_DICT[activity].get("flags", [])):
+            "night_possible" in activity_d.get("flags", [])):
         last_time = None
         for a in lib.slave.activities.setdefault(activity, []):
             if last_time is None or a > last_time:

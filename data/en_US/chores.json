@@ -82,7 +82,7 @@
     "dildo_deep_throat": {
         "requires": "lib.slave.get_fact('dildo_deepthroat')",
         "text": [
-            "Deep-throat a dildo or penis-shaped object for <python>random.randint(1, 3) * 5</python> minutes."
+            "Deep-throat a dildo or penis-shaped object for <python>random.randint(2, 7)</python> minutes."
         ]
     },
     "edging": {
