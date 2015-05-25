@@ -9,7 +9,7 @@
             "masturbation"
         ],
         "text": [
-            "Set your alarm to four hours from now. When it goes off, edge <python>random.randint(2, 7)</python> times, then go back to sleep. No cumming."
+            "Set your alarm to three hours from now. When it goes off, edge <python>random.randint(2, 7)</python> times, then go back to sleep. No cumming."
         ]
     },
     "midnight_porn": {
@@ -17,7 +17,7 @@
             "porn"
         ],
         "text": [
-            "Set your alarm to four hours from now. When it goes off, watch a porn video which is at least <python>random.randint(1, 4) * 5</python> minutes long. Then go back to sleep. You are not allowed to masturbate."
+            "Set your alarm to three hours from now. When it goes off, watch a porn video which is at least <python>random.randint(1, 4) * 5</python> minutes long. Then go back to sleep. You are not allowed to masturbate."
         ]
     }
 }
