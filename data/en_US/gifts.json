@@ -1,17 +1,25 @@
 {
     "cake_ass": {
-        "text": "I'm going to let you eat cake for free today, on one condition: you must first smear it on your asshole, then scoop it out with your hands and eat it.<python>' If any of it falls on the floor, you must lick the floor clean.' if lib.slave.get_fact('clean_floor') else ''</python>"
+        "text": [
+            "I'm going to let you eat cake for free today, on one condition: you must first smear it on your asshole, then scoop it out with your hands and eat it.<python>' If any of it falls on the floor, you must lick the floor clean.' if lib.slave.get_fact('clean_floor') else ''</python>"
+        ]
     },
     "cake_trampled": {
         "requires": "lib.slave.get_fact('clean_floor')",
-        "text": "I'm going to let you eat cake for free today, on one condition: you must mash it up on the floor with your bare foot, then eat it off the floor like a dog. Lick your foot clean if you are flexible enough, or scrape it off with your hands and then eat it if you are not."
+        "text": [
+            "I'm going to let you eat cake for free today, on one condition: you must mash it up on the floor with your bare foot, then eat it off the floor like a dog. Lick your foot clean if you are flexible enough, or scrape it off with your hands and then eat it if you are not."
+        ]
     },
     "eat_cum": {
         "requires": "lib.slave.sex == MALE",
-        "text": "I'm going to let you masturbate and cum for free today, on one condition: you must eat your cum."
+        "text": [
+            "I'm going to let you masturbate and cum for free today, on one condition: you must eat your cum."
+        ]
     },
     "pornstar": {
         "requires": "lib.slave.get_fact('video')",
-        "text": "You can masturbate and cum for free today, on one condition: you must record a video of you doing it and upload the video to a porn site within the next week. You may edit the video to hide your identity."
+        "text": [
+            "You can masturbate and cum for free today, on one condition: you must record a video of you doing it and upload the video to a porn site within the next week. You may edit the video to hide your identity."
+        ]
     }
 }
