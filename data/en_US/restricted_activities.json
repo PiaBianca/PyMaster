@@ -84,7 +84,8 @@
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.1,
             "flags": [
-                "can_beg"
+                "can_beg",
+                "night_possible"
             ]
         }
     ],

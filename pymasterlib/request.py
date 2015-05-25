@@ -41,25 +41,28 @@ def get_time_limit(activity):
 def get_allowed(activity):
     """Return whether or not the activity is allowed."""
     lib.slave.forget()
-    last_time = None
-    for a in lib.slave.activities.setdefault(activity, []):
-        if last_time is None or a > last_time:
-            last_time = a
 
-    interval = GRANT_INTERVAL.get(activity, 0)
-    nchores = len(lib.slave.chores) - len(lib.slave.abandoned_chores)
-    interval *= CHORE_BONUS.get(activity, 1) ** max(nchores, 0)
-    for i in lib.slave.misdeeds:
-        for misdeed in lib.slave.misdeeds[i]:
-            penalty = MISDEED_PENALTY.get(i, 1)
-            if not misdeed["punished"]:
-                interval *= penalty
-            else:
-                interval *= min(penalty, MISDEED_PUNISHED_PENALTY)
+    if (lib.slave.bedtime is None or
+            "night_possible" in ACTIVITIES_DICT[activity].get("flags", [])):
+        last_time = None
+        for a in lib.slave.activities.setdefault(activity, []):
+            if last_time is None or a > last_time:
+                last_time = a
 
-    if (len(lib.slave.activities[activity]) < LIMIT.get(activity, 9999) and
-            (last_time is None or time.time() >= last_time + interval)):
-        return True
+        interval = GRANT_INTERVAL.get(activity, 0)
+        nchores = len(lib.slave.chores) - len(lib.slave.abandoned_chores)
+        interval *= CHORE_BONUS.get(activity, 1) ** max(nchores, 0)
+        for i in lib.slave.misdeeds:
+            for misdeed in lib.slave.misdeeds[i]:
+                penalty = MISDEED_PENALTY.get(i, 1)
+                if not misdeed["punished"]:
+                    interval *= penalty
+                else:
+                    interval *= min(penalty, MISDEED_PUNISHED_PENALTY)
+
+        if (len(lib.slave.activities[activity]) < LIMIT.get(activity, 9999) and
+                (last_time is None or time.time() >= last_time + interval)):
+            return True
 
     return False
 
@@ -179,8 +182,11 @@ def what():
     elif choice == len(c) - 3:
         lib.scripts.evening_routine()
     elif choice == len(c) - 2:
-        if lib.slave.queued_chore is None:
-            lib.message.show(load_text("chore_assign"))
-            lib.assign.chore()
+        if lib.slave.bedtime is None:
+            if lib.slave.queued_chore is None:
+                lib.message.show(load_text("chore_assign"))
+                lib.assign.chore()
+            else:
+                lib.message.show(load_text("chore_already_assigned"))
         else:
-            lib.message.show(load_text("chore_already_assigned"))
+            lib.message.show(load_text("chore_night_no"))
