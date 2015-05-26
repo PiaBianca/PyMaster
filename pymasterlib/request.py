@@ -173,7 +173,6 @@ def what():
                     m = load_text("{}_accept_no_{}".format(ID, other_ID))
                     allow(ID, activity, m)
             else:
-                lib.slave.rejected.append(time.time())
                 deny(ID, activity)
         else:
             if request(ID):

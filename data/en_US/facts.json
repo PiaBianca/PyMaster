@@ -43,7 +43,7 @@
         "forget": "30 * ONE_DAY"
     },
     "dildo_deepthroat": {
-        "firstcheck": "lib.message.get_bool('Do you have a dildo or penis-shaped object that you can safely deep-throat?')",
+        "firstcheck": "lib.message.get_bool('Do you have a dildo that you can safely deep-throat?')",
         "forget": "7 * ONE_DAY"
     },
     "dildo_suck": {
