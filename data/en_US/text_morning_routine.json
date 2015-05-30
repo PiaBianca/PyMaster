@@ -1,4 +1,25 @@
 {
+    "ask_feeling_better": [
+        "Are you feeling well again today?",
+        "Have you recovered from your illness yet?",
+        "How are you feeling today? Is your illness gone?",
+        "Are you feeling well today?",
+        "Is my slave feeling well today?",
+        "Is my slave feeling well again today?",
+        "How is my slave doing? Have you recovered yet?"
+    ],
+    "better_no_response": [
+        "Oh, well. I hope you get better soon.",
+        "That's too bad.",
+        "I hope you get better soon, my toy. I can't wait to play with you again!",
+        "Alright. Get well soon."
+    ],
+    "better_yes_response": [
+        "I'm glad to hear that!",
+        "Excellent!",
+        "Wonderful news!",
+        "Good to hear!"
+    ],
     "chore_ask_completed": [
         "<python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> your task<python>random.choice(['', ' last night'])</python>?",
         "I assigned you a task last night. <python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> it?"

@@ -82,6 +82,11 @@
         "No. What do I look like to you, a fucking owl?",
         "I'd be very pleased by this offer if you weren't making it in the middle of the night when I'm trying to sleep."
     ],
+    "chore_sick_no": [
+        "I appreciate the gesture, but I want you to get better as soon as possible. So no, thank you.",
+        "It's good that you want to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>, but what's important right now is for you to get better. You can ask for some extra chores then.",
+        "No, thank you. Get some rest. You will go back to doing tasks for me when you recover from your illness."
+    ],
     "common_accept": [
         "<python>lib.message.load_text('extra', 'ok')</python>.",
         "Permission granted.",
@@ -112,12 +117,24 @@
         "You can drink water if you're thirsty.",
         "Drink some water instead."
     ],
+    "drink_alternative_sick": [
+        "If you need something for your throat, try some plain hot water.",
+        "If your throat is bothering you, try heating up some water and drinking it plain.",
+        "If your throat is bothering you, I suggest some plain hot water.",
+        "Have you ever tried plain hot water? That might help."
+    ],
     "drink_deny": [
         "<python>lib.message.load_text('request', 'common_deny')</python> <python>lib.message.load_text('request', 'drink_alternative')</python>",
         "<python>lib.message.load_text('request', 'common_deny')</python> I don't think you need beverages. <python>lib.message.load_text('request', 'drink_alternative')</python>",
         "I don't think you need beverages. <python>lib.message.load_text('request', 'drink_alternative')</python>",
         "Whatever drink you were thinking of having, you certainly don't need it. <python>lib.message.load_text('request', 'drink_alternative')</python>",
         "You will make do without unhealthy drinks for now. <python>lib.message.load_text('request', 'drink_alternative')</python>"
+    ],
+    "drink_sick": [
+        "Unless your docter told you to, no. <python>lib.message.load_text('request', 'drink_alternative_sick')</python>",
+        "No, unless you were told to by your doctor. <python>lib.message.load_text('request', 'drink_alternative_sick')</python>",
+        "You might think whatever you're thinking of will make you feel better, but it probably won't. So unless your doctor says otherwise, no, you may not drink it. <python>lib.message.load_text('request', 'drink_alternative_sick')</python>",
+        "You probably don't need that. If your doctor told you to, go ahead. Otherwise, no. <python>lib.message.load_text('request', 'drink_alternative_sick')</python>"
     ],
     "fun_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
@@ -149,6 +166,12 @@
         "No, you may not have junk food. <python>lib.message.load_text('request', 'junk_food_alternative')</python>",
         "No, I won't let you eat junk food right now. <python>lib.message.load_text('request', 'junk_food_alternative')</python>"
     ],
+    "junk_food_sick": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "You're sick. You can't have junk food while you're sick.",
+        "No, you will not have junk food while you are sick.",
+        "I want you to get better. Junk food isn't going to help you do that."
+    ],
     "masturbation_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
         "Very well, my horny slut."
@@ -157,6 +180,11 @@
         "<python>lib.message.load_text('request', 'common_deny')</python>",
         "No, you may not masturbate at this time.",
         "Not right now, my horny slut."
+    ],
+    "masturbation_sick": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "You're sick. You need rest, not orgasms.",
+        "No, not while you're sick."
     ],
     "porn_accept_no_masturbation": [
         "<python>lib.message.load_text('extra', 'ok')</python>. I will let you look at your porn. Don't forget: no masturbating.",
@@ -184,6 +212,12 @@
         "I won't allow that.",
         "That's too bad, my horny slut. I won't allow it."
     ],
+    "porn_sick": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "You're sick. No porn for you.",
+        "No, I won't allow you to look at porn while you're sick.",
+        "There's no reason for you to look at porn while you're sick."
+    ],
     "shower_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
         "<python>lib.message.load_text('extra', 'ok')</python>, you can wash up now.",
@@ -196,6 +230,9 @@
         "You will stay dirty for now.",
         "My slave will stay dirty for now.",
         "Maybe later. For now, you will stay dirty."
+    ],
+    "shower_sick": [
+        "<python>lib.message.load_text('request', 'shower_accept')</python> Let me know when you're done."
     ],
     "time_limit": [
         " You have {}.",
@@ -221,6 +258,9 @@
         "I won't allow you to use the toilet right now.",
         "You will not use the toilet at this time.",
         "You will just have to wait."
+    ],
+    "toilet_sick": [
+        "<python>lib.message.load_text('request', 'toilet_accept')</python> Let me know when you're done."
     ],
     "too_long": [
         "You took too long!",

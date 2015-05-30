@@ -42,6 +42,11 @@ def main():
 
     lib.settings.load()
 
+    if RESET_FACTS:
+        lib.slave.facts = {}
+        lib.settings.save()
+        return
+
     # This try block is only after the settings are loaded because
     # otherwise, an exception raised before then would cause all of the
     # settings to be overridden with the defaults, which we don't want.

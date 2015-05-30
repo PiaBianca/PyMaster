@@ -43,6 +43,7 @@ class slave:
     birthday = STARTUP_DAY[1:]
     oath = None
 
+    sick = False
     bedtime = None
     request_denied = {}
     queued_chore = None

@@ -41,10 +41,16 @@ def get_time_limit(activity):
 def get_allowed(activity):
     """Return whether or not the activity is allowed."""
     activity_d = ACTIVITIES_DICT.get(activity, {})
+    flags = activity_d.get("flags", [])
     lib.slave.forget()
 
-    if (lib.slave.bedtime is None or
-            "night_possible" in activity_d.get("flags", [])):
+    if lib.slave.sick:
+        if "sick_accept" in flags:
+            return True
+        elif "sick_deny" in flags:
+            return False
+
+    if lib.slave.bedtime is None or "night_possible" in flags:
         last_time = None
         for a in lib.slave.activities.setdefault(activity, []):
             if last_time is None or a > last_time:
@@ -101,43 +107,54 @@ def allow_timed(activity, m=None):
 
 
 def allow(ID, activity, msg, other_ID=None):
-    other = ACTIVITIES_DICT.get(other_ID, {})
-    script = activity.get("script") or other.get("script")
-    if script:
-        lib.message.show_timed(msg, 5)
-        eval(script)()
-    elif "time_limit" in activity:
-        allow_timed(ID, msg)
+    flags = activity.get("flags", [])
+    if lib.slave.sick and "sick_accept" in flags:
+        lib.message.show(msg, lib.message.load_text("phrases", "thank_you"))
     else:
-        a = lib.message.load_text("phrases", "thank_you")
-        lib.message.show(msg, a)
+        other = ACTIVITIES_DICT.get(other_ID, {})
+        script = activity.get("script") or other.get("script")
+        if script:
+            lib.message.show_timed(msg, 5)
+            eval(script)()
+        elif "time_limit" in activity:
+            allow_timed(ID, msg)
+        else:
+            a = lib.message.load_text("phrases", "thank_you")
+            lib.message.show(msg, a)
 
 
 def deny(ID, activity):
     flags = activity.get("flags", [])
-    m = load_text("{}_deny".format(ID))
-    if "can_beg" in flags:
-        a = [lib.message.load_text("phrases", "assent"),
-             load_text("beg_{}".format(ID))]
-        if lib.message.get_choice(m, a, 0):
-            if request("__beg"):
-                if random.randrange(100) < BEG_GAME_CHANCE:
-                    m = load_text("beg_{}_accept_game".format(ID))
-                    a = lib.message.load_text("phrases", "assent")
-                    lib.message.show(m, a)
-                    lib.scripts.wait_game("taunt_{}".format(ID))
-                    m = load_text("beg_{}_game_win".format(ID))
-                    allow(ID, activity, m)
-                else:
-                    m = load_text("beg_{}_accept".format(ID))
-                    allow(ID, activity, m)
-            else:
-                m = load_text("beg_{}_deny".format(ID))
-                a = lib.message.load_text("phrases", "assent")
-                lib.message.show(m, a)
-    else:
+    if lib.slave.sick and "sick_deny" in flags:
+        m = load_text("{}_sick".format(ID))
+        if not m:
+            m = load_text("{}_deny".format(ID))
         a = lib.message.load_text("phrases", "assent")
         lib.message.show(m, a)
+    else:
+        m = load_text("{}_deny".format(ID))
+        if "can_beg" in flags:
+            a = [lib.message.load_text("phrases", "assent"),
+                 load_text("beg_{}".format(ID))]
+            if lib.message.get_choice(m, a, 0):
+                if request("__beg"):
+                    if random.randrange(100) < BEG_GAME_CHANCE:
+                        m = load_text("beg_{}_accept_game".format(ID))
+                        a = lib.message.load_text("phrases", "assent")
+                        lib.message.show(m, a)
+                        lib.scripts.wait_game("taunt_{}".format(ID))
+                        m = load_text("beg_{}_game_win".format(ID))
+                        allow(ID, activity, m)
+                    else:
+                        m = load_text("beg_{}_accept".format(ID))
+                        allow(ID, activity, m)
+                else:
+                    m = load_text("beg_{}_deny".format(ID))
+                    a = lib.message.load_text("phrases", "assent")
+                    lib.message.show(m, a)
+        else:
+            a = lib.message.load_text("phrases", "assent")
+            lib.message.show(m, a)
 
 
 def what():
@@ -184,10 +201,13 @@ def what():
         lib.scripts.evening_routine()
     elif choice == len(c) - 2:
         if lib.slave.bedtime is None:
-            if lib.slave.queued_chore is None:
-                lib.message.show(load_text("chore_assign"))
-                lib.assign.chore()
+            if not lib.slave.sick:
+                if lib.slave.queued_chore is None:
+                    lib.message.show(load_text("chore_assign"))
+                    lib.assign.chore()
+                else:
+                    lib.message.show(load_text("chore_already_assigned"))
             else:
-                lib.message.show(load_text("chore_already_assigned"))
+                lib.message.show(load_text("chore_sick_no"))
         else:
             lib.message.show(load_text("chore_night_no"))

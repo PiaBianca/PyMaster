@@ -139,10 +139,18 @@ def morning_routine():
         lib.slave.abandoned_chores.append(lib.slave.queued_chore)
         lib.slave.queued_chore = None
 
-    e_time = random.randint(45, 2 * ONE_MINUTE + 30)
-    lib.message.show_timed(load_text("exercise"), e_time)
-    lib.message.beep()
-    lib.message.show(load_text("exercise_end"))
+    if lib.slave.sick:
+        if lib.message.get_bool(load_text("ask_feeling_better")):
+            lib.message.show(load_text("better_yes_response"))
+            lib.slave.sick = False
+        else:
+            lib.message.show(load_text("better_no_response"))
+
+    if not lib.slave.sick:
+        e_time = random.randint(45, 2 * ONE_MINUTE + 30)
+        lib.message.show_timed(load_text("exercise"), e_time)
+        lib.message.beep()
+        lib.message.show(load_text("exercise_end"))
 
     if lib.slave.oath:
         oath = lib.slave.oath
@@ -182,13 +190,13 @@ def morning_routine():
         lib.message.show(m, lib.message.load_text("phrases", "assent"))
         lib.assign.punishment("oath_fail")
 
-    if random.random() < 0.25:
+    if not lib.slave.sick and random.random() < 0.25:
         lib.message.show(load_text("have_chore"))
         lib.assign.chore()
 
     lib.slave.bedtime = None
 
-    if STARTUP_DAY[1:] == lib.slave.birthday:
+    if not lib.slave.sick and STARTUP_DAY[1:] == lib.slave.birthday:
         m = load_text("gift_birthday")
         lib.message.show(m)
         gift()
@@ -221,7 +229,8 @@ def evening_routine():
         m = load_text("tasks_finish")
         lib.message.show(m, lib.message.load_text("phrases", "finished"))
 
-    if lib.message.get_bool(load_text("ask_night_chore")):
+    if (not lib.slave.sick and
+            lib.message.get_bool(load_text("ask_night_chore"))):
         lib.assign.night_chore()
 
     lib.message.show(load_text("goodnight"))

@@ -28,8 +28,12 @@ def load_text(ID):
 def what():
     m = load_text("ask_what")
     c = [load_text("choice_completed_chore"),
-         load_text("choice_completed_punishment"), load_text("choice_naughty"),
-         load_text("choice_nothing")]
+         load_text("choice_completed_punishment"), load_text("choice_naughty")]
+    if lib.slave.sick:
+        c.append(load_text("choice_not_sick"))
+    else:
+        c.append(load_text("choice_sick"))
+    c.append(load_text("choice_nothing"))
     choice = lib.message.get_choice(m, c, len(c) - 1)
 
     if choice == 0:
@@ -38,6 +42,8 @@ def what():
         completed_punishment()
     elif choice == 2:
         broke_rule()
+    elif choice == 3:
+        sick()
 
 
 def completed_chore():
@@ -114,3 +120,12 @@ def broke_rule():
     elif choice % len(ACTIVITIES) < len(MISDEEDS):
         ID, misdeed = MISDEEDS[choice % len(ACTIVITIES)]
         did_misdeed(ID)
+
+
+def sick():
+    lib.slave.sick = not lib.slave.sick
+    if lib.slave.sick:
+        lib.slave.queued_chore = None
+        lib.message.show(load_text("response_sick"))
+    else:
+        lib.message.show(load_text("response_not_sick"))

@@ -19,6 +19,12 @@
     "choice_naughty": [
         "I broke a rule."
     ],
+    "choice_sick": [
+        "I'm sick."
+    ],
+    "choice_not_sick": [
+        "I'm not sick anymore."
+    ],
     "choice_nothing": [
         "Nothing.",
         "Nevermind."
@@ -138,5 +144,16 @@
         "You fucking piece of shit! Lying to me!",
         "You fucking lied to me?! Nothing is worse than lying to your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>!",
         "Filthy bitch! I am not going to let this slide!"
+    ],
+    "response_sick": [
+        "Thank you for letting me know. Get well soon.",
+        "Oh, you poor thing. I hope you get better soon.",
+        "That's too bad. I hope you get well soon, <python>lib.slave.name</python>."
+    ],
+    "response_not_sick": [
+        "I'm glad to hear that!",
+        "Excellent!",
+        "Wonderful news!",
+        "Good to hear!"
     ]
 }

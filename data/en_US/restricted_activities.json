@@ -12,6 +12,7 @@
             "penalty": 1.25,
             "script": "lib.scripts.masturbate",
             "flags": [
+                "sick_deny",
                 "start_deny"
             ]
         }
@@ -29,6 +30,7 @@
             "penalty": 1.2,
             "other_activity": "masturbation",
             "flags": [
+                "sick_deny",
                 "start_deny"
             ]
         }
@@ -43,7 +45,10 @@
             "time_limit": "20 * ONE_MINUTE",
             "time_limit_min": "5 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
-            "penalty": 1.05
+            "penalty": 1.05,
+            "flags": [
+                "sick_accept"
+            ]
         }
     ],
     [
@@ -56,7 +61,10 @@
             "time_limit": "20 * ONE_MINUTE",
             "time_limit_min": "15 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
-            "penalty": 1.08
+            "penalty": 1.08,
+            "flags": [
+                "sick_deny"
+            ]
         }
     ],
     [
@@ -69,7 +77,10 @@
             "time_limit": "20 * ONE_MINUTE",
             "time_limit_min": "15 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
-            "penalty": 1.08
+            "penalty": 1.08,
+            "flags": [
+                "sick_deny"
+            ]
         }
     ],
     [
@@ -85,7 +96,8 @@
             "penalty": 1.1,
             "flags": [
                 "can_beg",
-                "night_possible"
+                "night_possible",
+                "sick_accept"
             ]
         }
     ],

@@ -19,7 +19,6 @@
     "goodnight": [
         "You can go to bed now. Good night.",
         "Good night.",
-        "<python>lib.message.load_text('extra', 'ok')</python>, go to bed now.",
         "Good night, <python>lib.slave.name</python>.",
         "You can go to bed now, <python>lib.slave.name</python>."
     ],

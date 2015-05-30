@@ -26,7 +26,7 @@ def save():
     master_settings = {"name": lib.master.name, "sex": lib.master.sex}
     slave_settings = {"name": lib.slave.name, "sex": lib.slave.sex,
                       "birthday": lib.slave.birthday, "oath": lib.slave.oath,
-                      "bedtime": lib.slave.bedtime,
+                      "sick": lib.slave.sick, "bedtime": lib.slave.bedtime,
                       "queued_chore": lib.slave.queued_chore,
                       "chores": lib.slave.chores,
                       "abandoned_chores": lib.slave.abandoned_chores,
@@ -59,11 +59,11 @@ def load():
     lib.slave.sex = s_slave.get("sex")
     lib.slave.birthday = tuple(s_slave.get("birthday", (1, 1)))
     lib.slave.oath = s_slave.get("oath")
+    lib.slave.sick = s_slave.get("sick", False)
     lib.slave.bedtime = s_slave.get("bedtime")
     lib.slave.queued_chore = s_slave.get("queued_chore")
     lib.slave.chores = s_slave.get("chores", [])
     lib.slave.abandoned_chores = s_slave.get("abandoned_chores", [])
     lib.slave.activities = s_slave.get("activities", {})
     lib.slave.misdeeds = s_slave.get("misdeeds", {})
-    if not RESET_FACTS:
-        lib.slave.facts = s_slave.get("facts", {})
+    lib.slave.facts = s_slave.get("facts", {})
