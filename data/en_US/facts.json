@@ -36,7 +36,7 @@
     },
     "collar": {
         "firstcheck": "lib.message.get_bool('Do you have a collar?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "30 * ONE_DAY"
     },
     "dildo_ass": {
         "firstcheck": "lib.message.get_bool('Do you have a dildo that you can safely fuck yourself with in the ass? (It needs to have something at the end stopping it from going in all the way.)')",
@@ -44,7 +44,7 @@
     },
     "dildo_deepthroat": {
         "firstcheck": "lib.message.get_bool('Do you have a dildo that you can safely deep-throat?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "30 * ONE_DAY"
     },
     "dildo_suck": {
         "firstcheck": "lib.message.get_bool('Do you have a dildo or penis-shaped object that you can safely suck?')",
@@ -80,6 +80,10 @@
     "nippleclamps": {
         "firstcheck": "lib.message.get_int('How many nipple clamps and clothespins do you have combined?')",
         "forget": "30 * ONE_DAY"
+    },
+    "outdoor_privacy": {
+        "firstcheck": "lib.message.get_bool('Is there a place outside where you would be able to get some privacy (e.g. a place in your yard hidden from view, or a nature trail without many people on it)?",
+        "forget": "365 * ONE_DAY"
     },
     "photo": {
         "firstcheck": "lib.message.get_bool('Do you have something that can take pictures?')",

@@ -210,7 +210,7 @@
         "activities": [
             "masturbation"
         ],
-        "requires": "lib.slave.get_fact('temperature') >= 10",
+        "requires": "lib.slave.get_fact('temperature') >= 10 and lib.slave.get_fact('outdoor_privacy')",
         "text": [
             "Find a private place outside. Take off all of your clothes, and masturbate for at least <python>random.randint(1, 3) * 5</python> minutes. You are not allowed to cum."
         ]
@@ -219,7 +219,7 @@
         "activities": [
             "masturbation"
         ],
-        "requires": "lib.slave.get_fact('temperature') >= 10",
+        "requires": "lib.slave.get_fact('temperature') >= 10 and lib.slave.get_fact('outdoor_privacy')",
         "text": [
             "Masturbate to orgasm somewhere outside."
         ]
@@ -236,6 +236,7 @@
         "activities": [
             "toilet"
         ],
+        "requires": "lib.slave.get_fact('outdoor_privacy')",
         "text": [
             "Take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>."
         ]
@@ -244,7 +245,7 @@
         "activities": [
             "toilet"
         ],
-        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('snow')",
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('outdoor_privacy') and lib.slave.get_fact('snow')",
         "text": [
             "Use your piss to draw a heart in the snow, and then the letter \"<python>lib.master.name[0]</python>\" (for \"<python>lib.master.name</python>\") in the middle. You're not allowed to cover it up."
         ]
