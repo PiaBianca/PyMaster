@@ -297,6 +297,19 @@
             "Masturbate to orgasm on a public toilet."
         ]
     },
+    "sissy_only": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Wear only women's clothes for an hour straight. (If you don't have any women's clothes, you'll just have to wear nothing for that time.)"
+        ]
+    },
+    "sissy_shopping": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Go to a store with a women's clothes section. Browse for at least <python>random.randint(1, 4) * 5</python> minutes. If you can afford it, buy an article of women's clothing.",
+            "Go to a store with a women's clothes section. Try on at least <python>random.randint(3, 7)</python> outfits. If you can afford it, buy one of the outfits you tried on."
+        ]
+    },
     "sissy_walk": {
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('sissy')",
         "text": [
