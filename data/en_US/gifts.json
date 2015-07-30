@@ -26,5 +26,11 @@
         "text": [
             "You can masturbate and cum once for free today, on one condition: you must record a video of you doing it and upload the video to a porn site within the next week. You may edit the video to hide your identity."
         ]
+    },
+    "soil_underwear": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "I'm going to let you masturbate and cum once for free today, on one condition: you must cum in the underwear you are currently wearing."
+        ]
     }
 }

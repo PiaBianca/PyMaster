@@ -150,7 +150,7 @@
             "toilet"
         ],
         "text": [
-            "Soak your underwear with piss, then gag yourself with that underwear and leave it in your mouth for <python>random.randint(1, 3) * 5</python> minutes. You are not allowed to wring it out until it's in your mouth."
+            "Soak the underwear you are currently wearing with piss, then gag yourself with that underwear and leave it in your mouth for <python>random.randint(1, 3) * 5</python> minutes. You are not allowed to wring it out until it's in your mouth."
         ]
     },
     "piss_transport": {
@@ -191,6 +191,14 @@
         "text": [
             "Smack each of your nipples <python>random.randint(4, 6) * 5</python> times. If you stop or lose count, start over.",
             "Smack each of your nipples with a wooden spoon <python>random.randint(3, 5) * 5</python> times. If you stop or lose count, start over."
+        ]
+    },
+    "soiled_underwear": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Put on your dirtiest pair of underwear and piss through it. Do not wash it. This will be the underwear you will wear until I let you change it next.
         ]
     },
     "spanking_light": {

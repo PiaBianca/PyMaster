@@ -52,6 +52,19 @@
         }
     ],
     [
+        "change_underwear",
+        {
+            "forget_time": "28 * ONE_DAY",
+            "interval": "14 * ONE_DAY",
+            "interval_good": "2 * ONE_DAY",
+            "limit": 45,
+            "penalty": 1.08,
+            "flags": [
+                "start_deny"
+            ]
+        }
+    ],
+    [
         "junk_food",
         {
             "forget_time": "28 * ONE_DAY",

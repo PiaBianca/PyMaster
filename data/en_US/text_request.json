@@ -40,6 +40,9 @@
     "choice_shower": [
         "Permission to take a bath or shower."
     ],
+    "choice_change_underwear": [
+        "Permission to wash or change my underwear."
+    ],
     "choice_junk_food": [
         "Permission to eat junk food."
     ],
@@ -103,6 +106,18 @@
         "Not right now, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>.",
         "No, you may not.",
         "Permission denied."
+    ],
+    "change_underwear_accept": [
+        "<python>lib.message.load_text('request', 'common_accept')</python>",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you can put on clean underwear now.",
+        "<python>lib.message.load_text('extra', 'ok')</python>. You may put on some clean underwear.",
+        "<python>lib.message.load_text('extra', 'ok')</python>, you have my permission to put on clean underwear."
+    ],
+    "change_underwear_deny": [
+        "<python>lib.message.load_text('request', 'common_deny')</python>",
+        "Your underwear will stay dirty for now.",
+        "My slave will continue to wear dirty underwear for now.",
+        "Maybe later. For now, your underwear will stay dirty."
     ],
     "drink_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",

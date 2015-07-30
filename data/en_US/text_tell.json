@@ -38,6 +38,9 @@
     "choice_naughty_shower": [
         "Took a bath or shower without permission."
     ],
+    "choice_naughty_change_underwear": [
+        "Changed or washed my underwear without permission."
+    ],
     "choice_naughty_junk_food": [
         "Ate junk food without permission."
     ],
@@ -110,6 +113,11 @@
     "response_naughty_shower": [
         "Washing up is a privilege for you, not a right!",
         "Whether you get to be clean is for me to decide, not you!",
+        "Have you forgotten, slave? I control your life!"
+    ],
+    "response_naughty_change_underwear": [
+        "Clean underwear is a privilege for you, not a right!",
+        "Whether you get to wear clean underwear is for me to decide, not you!",
         "Have you forgotten, slave? I control your life!"
     ],
     "response_naughty_junk_food": [
