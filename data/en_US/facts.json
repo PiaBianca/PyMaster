@@ -4,6 +4,10 @@
         "forget": "365 * ONE_DAY"
         
     },
+    "bondage_tape": {
+        "firstcheck": "lib.message.get_bool('Do you have bondage tape (i.e. tape that you can safely use ANYWHERE on your body, including on your eyes and hair)?')",
+        "forget": "30 * ONE_DAY"
+    },
     "buckets": {
         "firstcheck": "lib.message.get_int('How many buckets do you have available?')",
         "forget": "ONE_DAY"

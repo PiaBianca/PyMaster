@@ -1,4 +1,10 @@
 {
+    "blind_and_immobile": {
+        "requires": "lib.slave.get_fact('bondage_tape')",
+        "text": [
+            "Sleep with bondage tape binding your legs and covering your eyes. Do not remove any of the tape until you get up for the morning."
+        ]
+    },
     "buttplug": {
         "requires": "lib.slave.get_fact('buttplug')",
         "text": [
@@ -8,6 +14,11 @@
     "closet": {
         "text": [
             "Sleep in a small closet tonight."
+        ]
+    },
+    "collar": {
+        "text": [
+            "Sleep with nothing but your collar on tonight."
         ]
     },
     "discomfort": {
