@@ -58,5 +58,24 @@
         "Now get the fuck back in bed.",
         "Now go to sleep.",
         "Now go the fuck back to sleep."
+    ],
+    "assign_shower": [
+        "You have my permission to take a bath or shower now<python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>.",
+        "It's time for my slave to wash up. Go take a bath or shower.",
+        "It's time for you to take a bath or shower, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>.",
+        "I think it's about time you had a bath or shower. Go clean yourself up."
+    ],
+    "assign_change_underwear": [
+        "Time for you to change your underwear, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>.",
+        "You have permission to change your underwear now.",
+        "You can change your underwear now<python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>.",
+        "That underwear of yours is getting filthy. Put a new pair on, or wash what you're wearing."
+    ],
+    "assign_toilet": [
+        "You have permission to use the toilet now.",
+        "How's your bladder, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>? You can use the toilet now.",
+        "Go use the toilet<python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>.",
+        "It's time for you to get a bathroom break. You have permission to use the toilet.",
+        "Now's your chance to use the toilet."
     ]
 }

@@ -47,7 +47,9 @@
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.05,
             "flags": [
-                "sick_accept"
+                "auto",
+                "sick_accept",
+                "start_deny"
             ]
         }
     ],
@@ -60,6 +62,7 @@
             "limit": 45,
             "penalty": 1.08,
             "flags": [
+                "auto",
                 "start_deny"
             ]
         }
@@ -100,17 +103,19 @@
         "toilet",
         {
             "forget_time": "ONE_DAY",
-            "interval": "4 * ONE_HOUR",
-            "interval_good": "30 * ONE_MINUTE",
+            "interval": "6 * ONE_HOUR",
+            "interval_good": "2 * ONE_HOUR",
             "limit": 16,
             "time_limit": "15 * ONE_MINUTE",
             "time_limit_min": "5 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.1,
             "flags": [
+                "auto",
                 "can_beg",
                 "night_possible",
-                "sick_accept"
+                "sick_accept",
+                "start_deny"
             ]
         }
     ],

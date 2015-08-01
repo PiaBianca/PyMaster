@@ -20,6 +20,7 @@ __version__ = "0.10"
 
 import sys
 import os
+import random
 
 import pymasterlib as lib
 from pymasterlib.constants import *
@@ -81,6 +82,16 @@ def main():
                 lib.message.show(load_text("overslept"))
                 lib.scripts.morning_routine()
 
+        def auto_grant():
+            for i, activity in sorted(ACTIVITIES, key=lambda _: random.random()):
+                flags = activity.get("flags", [])
+                if "auto" in flags and not lib.slave.sick:
+                    if lib.request.request(i):
+                        lib.request.allow(i, activity,
+                                          load_text("assign_{}".format(i)))
+                        break
+
+        auto_grant()
         choices = [load_text("choice_ask"), load_text("choice_request"),
                    load_text("choice_tell"), load_text("choice_nothing")]
         choice = lib.message.get_choice(load_text("ask_what"), choices,
@@ -92,6 +103,7 @@ def main():
             [lib.ask.what, lib.request.what, lib.tell.what,
              lambda: None][choice]()
             lib.settings.save()
+            auto_grant()
             choice = lib.message.get_choice(load_text("ask_what_else"),
                                             choices, len(choices) - 1)
     finally:
