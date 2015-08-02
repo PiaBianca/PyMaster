@@ -226,10 +226,11 @@
     },
     "piss_mop": {
         "activities": [
-            "toilet"
+            "toilet",
+            "change_underwear"
         ],
         "text": [
-            "Clean one of the floors with your piss, scrubbing with the underwear you are currently wearing. Then, while wearing that underwear, clean the floor normally."
+            "Clean one of the floors with your piss, scrubbing with the underwear you are currently wearing. Then, while wearing that underwear, clean the floor normally. You can then change or wash your underwear."
         ]
     },
     "piss_outdoor": {
