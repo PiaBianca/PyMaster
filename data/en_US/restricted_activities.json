@@ -12,8 +12,7 @@
             "penalty": 1.25,
             "script": "lib.scripts.masturbate",
             "flags": [
-                "sick_deny",
-                "start_deny"
+                "sick_deny"
             ]
         }
     ],
@@ -30,8 +29,7 @@
             "penalty": 1.2,
             "other_activity": "masturbation",
             "flags": [
-                "sick_deny",
-                "start_deny"
+                "sick_deny"
             ]
         }
     ],
@@ -48,8 +46,7 @@
             "penalty": 1.05,
             "flags": [
                 "auto",
-                "sick_accept",
-                "start_deny"
+                "sick_accept"
             ]
         }
     ],
@@ -62,8 +59,7 @@
             "limit": 45,
             "penalty": 1.08,
             "flags": [
-                "auto",
-                "start_deny"
+                "auto"
             ]
         }
     ],
@@ -114,8 +110,7 @@
                 "auto",
                 "can_beg",
                 "night_possible",
-                "sick_accept",
-                "start_deny"
+                "sick_accept"
             ]
         }
     ],

@@ -113,12 +113,10 @@ def intro():
     lib.message.show(load_text("first_chore"))
     lib.assign.chore()
 
-    # Start with a record claiming to have done these activities, so
+    # Start with a record claiming to have done the activities, so
     # that they aren't granted immediately.
     for i, activity in ACTIVITIES:
-        flags = activity.get("flags", [])
-        if ("start_deny" in flags and
-                not lib.slave.activities.setdefault(i, [])):
+        if not lib.slave.activities.setdefault(i, []):
             lib.slave.add_activity(i)
 
 
