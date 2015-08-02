@@ -57,8 +57,6 @@ def chore():
 
     backup_chores = {}
 
-    allow_all = (random.randrange(100) < CHORE_ALLOW_CHANCE)
-
     while chores:
         keys = list(chores.keys())
         i = random.choice(keys)
@@ -67,11 +65,13 @@ def chore():
 
         if text_choices:
             allowed = True
-            if not allow_all:
-                for activity in chores[i].setdefault("activities", []):
-                    if not lib.request.get_allowed(activity):
-                        allowed = False
-                        break
+            for activity in chores[i].setdefault("activities", []):
+                allow_chance = ACTIVITIES_DICT.get(activity, {}).get(
+                    "chore_allow_chance", 0)
+                if (not lib.request.get_allowed(activity) and
+                        random.random() >= allow_chance):
+                    allowed = False
+                    break
 
             if allowed:
                 repeat = False
@@ -119,8 +119,6 @@ def night_chore():
             for i in nchores:
                 chores[i] = nchores[i]
 
-    allow_all = (random.randrange(100) < CHORE_ALLOW_CHANCE)
-
     while chores:
         keys = list(chores.keys())
         i = random.choice(keys)
@@ -129,11 +127,13 @@ def night_chore():
 
         if text_choices:
             allowed = True
-            if not allow_all:
-                for activity in chores[i].setdefault("activities", []):
-                    if not lib.request.get_allowed(activity):
-                        allowed = False
-                        break
+            for activity in chores[i].setdefault("activities", []):
+                allow_chance = ACTIVITIES_DICT.get(activity, {}).get(
+                    "chore_allow_chance", 0)
+                if (not lib.request.get_allowed(activity) and
+                        random.random() >= allow_chance):
+                    allowed = False
+                    break
 
             if allowed and (not requires or eval(requires)):
                 _assign_chore(chores[i], i, text_choices)

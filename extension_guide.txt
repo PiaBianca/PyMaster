@@ -160,6 +160,10 @@ or misdeed. Restricted activities have the following properties:
   offenses should have a penalty of about 1.25, very bad offenses should
   have a penalty of about 1.5, and a penalty of 2.0 should be reserved
   for the worst offenses (e.g. lying).
+- "chore_allow_chance" (optional): Indicates the chance (out of 1) that
+  a chore or punishment involving the restricted activity will be
+  assigned even if the restricted activity would normally not be
+  permitted at the time.
 - "other_activity" (optional): Indicates the ID of another restricted
   activity which can be done with this one.
 - "time_limit" (optional): Indicates the median amount of time the
