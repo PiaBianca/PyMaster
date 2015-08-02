@@ -1,0 +1,314 @@
+This file has been dedicated to the public domain via CC0. See
+<https://creativecommons.org/publicdomain/zero/1.0/> for more
+information.
+------------------------------------------------------------------------
+
+PyMaster is shipped in a configuration that is designed to be generally
+sufficient for everyone. Unfortunately, this may mean that it is less
+than optimal for your particular interests. To compensate, PyMaster
+supports extensions which can be used to modify the experience.
+
+This guide will teach you how to make extensions, and how to use them.
+
+INTRODUCTION
+
+PyMaster extensions are, generally speaking, directories (folders) whose
+contents are added to PyMaster's normal data. A directory is used as an
+extension by passing its name to PyMaster via the -e or --ext-dirs
+command-line option. For example, if you have a directory whose exact
+path is "~/hardcore" which is meant to be an extension, you can use it
+by running PyMaster this way:
+
+    python3 pymaster.py -e "~/hardcore"
+
+It is possible to indicate multiple extensions, as well. In this case,
+the extensions will be added in order. For example, if you have another
+extension directory with the exact path "~/bossy" which you want to use
+in addition to "~/hardcore", you might run PyMaster this way:
+
+    python3 pymaster.py -e "~/hardcore" "~/bossy"
+
+Extensions specified first are also applied first, and extensions that
+are applied later will take precedence as a result. For example, if a
+resource with the same name is defined by both of the above example
+extensions, the one defined by "~/bossy" will take precedence.
+
+Note that it is necessary to specify what extensions you are using every
+time you run PyMaster. You can use a shortcut to run PyMaster with your
+set of extensions without having to manually indicate the -e option
+every time.
+
+The extension directory consists of a number of files. Each file is
+entirely optional. We will go into each of the files now.
+
+PYMASTER TEXT
+
+All text printed by PyMaster is stored in several JSON files with names
+in the format: "text_{section}.json", where "{section}" is replaced by
+the name of the section of text that the file contains. Each file is a
+standard JSON formatted file containing an object which correlates each
+text ID in the respective section with a list of possible ways the text
+can be represented. For example, if we had a file called "text_foo.json"
+containing the following:
+
+    {
+        "spam": [
+            "I am spam",
+            "Spam I am"
+        ],
+        "egg": [
+            "Egg"
+        ]
+    }
+
+We would be creating a section called "foo", which contains two texts:
+"spam", and "egg". "spam" has two possible representations: "I am spam",
+or "Spam I am", while "egg" can only be represented as "Egg".
+
+Within text representations, it is possible to include Python code
+within <python> tags. Such Python code is executed in the context of
+the pymasterlib.parse module, and the return value becomes the text. The
+pymasterlib.parse module currently has the following standard library
+modules available to it:
+
+    sys
+    os
+    math
+    datetime
+    time
+    random
+
+Additionally, the pymasterlib module is available under the name "lib",
+and the constants in pymasterlib.constants are also all available.
+
+The following is a real example of the <python> tag being used in
+PyMaster's default data:
+
+    "Would you like to do something extra to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python> tonight?"
+
+In this example, the resulting text becomes "Would you like to do
+something extra to please your mistress?" if the current master is
+female, and "Would you like to do something extra to please your
+master?" otherwise. In this way, the text is able to adapt to multiple
+possible circumstances.
+
+Some special text IDs also have data inserted into them by PyMaster.
+This is done with Python's str.format method, which means the data is
+inserted wherever two curly braces ("{}") exist in the respective text
+representation.
+
+You can see what the standard sections and text IDs are by looking in
+PyMaster's data directory. This will also show you what text represents
+each ID by default and which IDs require additional data to be inserted
+by PyMaster.
+
+RULES FILE
+
+The rules, as indicated by the master or mistress, are specified in the
+file with the name "rules.json". This is a standard JSON file containing
+an array of strings; each string is a different rule. The <python> tag
+is supported within the rule strings.
+
+OATH
+
+The slave's "oath of servitude" is specified in the file with the name
+"oath.txt". This is a plain text file indicating the exact text in the
+oath. The <python> tag is supported here. Note that the oath of
+servitude is generated only once, when you first create a master or
+mistress, so changes to oath.txt will not affect an existing master or
+mistress.
+
+NAMES
+
+The files, "names_male.txt" and "names_female.txt", indicate the
+possible names that can be given to masters and mistresses,
+respectively. Each line in these text files indicates a possible name.
+Blank lines are ignored. The <python> tag is NOT supported here.
+
+RESTRICTED ACTIVITIES AND MISDEEDS
+
+The files "restricted_activities.json" and "misdeeds.json" indicate
+restricted activities and possible misdeeds, respectively. Both of these
+files are standard JSON files containing an array of arrays. Each of the
+inner arrays contains two values: the ID of the restricted activity or
+misdeed, and an object indicating properties for the restricted activity
+or misdeed. Restricted activities have the following properties:
+
+- "forget_time": Indicates the time it takes the master to forget about
+  the slave doing the activity as a string of Python code. Effectively,
+  this is the maximum amount of time the slave may have to wait before
+  doing the activity again. The time is in seconds, but it's generally
+  easiest to use the constants: ONE_MINUTE, ONE_HOUR, and ONE_DAY (for
+  example, "30 * ONE_DAY" would be 30 days). If this is unspecified, the
+  fact stays in the master's memory forever.
+- "interval": Indicates the default amount of time it takes before the
+  master grants permission to do the activity again, as a string of
+  Python code. This is adjusted based on how well the slave has been
+  behaving.
+- "interval_good": Indicates the amount of time it takes before the
+  master grants a perfectly behaving slave permission to do the activity
+  again, as a string of Python code.
+- "limit": Indicates the maximum number of times the slave can be
+  permitted to do the activity within the master's memory. For example,
+  if this is 50 and "forget_time" is 30 days, the slave will never be
+  given permission to do the activity more than 50 times in a 30 day
+  period.
+- "penalty": Indicates the penalty for doing the activity without
+  permission. This number is applied as a factor to "interval" on all
+  restricted activities until an assigned punishment has been carried
+  out. Generally, minor offenses should have a penalty of 1.05, major
+  offenses should have a penalty of about 1.25, very bad offenses should
+  have a penalty of about 1.5, and a penalty of 2.0 should be reserved
+  for the worst offenses (e.g. lying).
+- "other_activity" (optional): Indicates the ID of another restricted
+  activity which can be done with this one.
+- "time_limit" (optional): Indicates the median amount of time the
+  slave has to do the activity when given permission as a string of
+  Python code. The exact time is chosen randomly. If this is
+  unspecified, the slave can take as long as he or she wants to do the
+  activity.
+- "time_limit_min" (optional): Indicates the minimum amount of time the
+  slave has to do the activity when given permission as a string of
+  Python code.
+- "time_limit_max" (optional): Indicates the maximum amount of time the
+  slave has to do the activity when given permission as a string of
+  Python code.
+- "flags" (optional): Indicates a list of flags which indicate special
+  properties of the activity. Currently, the following flags are
+  supported:
+  - "auto": Causes the master to automatically give the slave permission
+    to do the activity when enough time passes.
+  - "can_beg": Allows the slave to beg the master for permission.
+  - "night_possible": Indicates that the master may grant permission to
+    do the activity in the middle of the night. Any activity without
+    this flag will never be permitted at this time.
+  - "sick_accept": Causes the activity to always be permitted when the
+    slave is sick.
+  - "sick_deny": Causes the activity to never be permitted when the
+    slave is sick.
+
+Misdeeds currently only have the "penalty" property, but they are
+specified in the same way as restricted activities so that they can be
+expanded if need be.
+
+Both restricted activities and misdeeds add some text to the "tell"
+section, used by PyMaster to let the slave admit to wrongdoing. Assuming
+the restricted activity or misdeed in question has an ID of "foo", the
+added text IDs will be:
+
+- "choice_naughty_foo": Text from the slave indicating what was done
+  wrong (after the slave has admitted to breaking a rule).
+- "response_naughty_foo": What the master says in response to the news
+  of the misdeed.
+
+Notice that, since the same form is used whether it's a restricted
+activity or misdeed, having a misdeed with the same ID as a restricted
+activity will cause problems.
+
+A restricted activity with an ID of "foo" will add the following text
+IDs to the "request" section:
+
+- "choice_foo": Text from the slave indicating what he or she wants
+  permission to do.
+- "foo_accept": Text from the master saying that permission to do the
+  activity is granted.
+- "foo_deny": Text from the master saying that permission to do the
+  activity is denied.
+
+If the restricted activity with an ID of "foo" has "other_activity" set
+to "bar", the following additional text IDs will be added to the
+"request" section:
+
+- "foo_ask_bar": Text from the master asking if the slave wants to do
+  "bar" as well.
+- "foo_accept_no_masturbation": Text from the master saying that
+  permission to do "foo" without doing "bar" is granted.
+- "foo_accept_with_masturbation": Text from the master saying that
+  permission to do both "foo" and "bar" at the same time is granted.
+- "foo_deny_bar": Text from the master saying that permission to do
+  "bar" is denied.
+
+If the restricted activity with an ID of "foo" has the "auto" flag, the
+following text IDs will be added to the "main" section:
+
+- "assign_foo": Text from the master telling the slave that he or she
+  has permission to do the activity.
+
+If the restricted activity with an ID of "foo" has the "can_beg" flag,
+the following text IDs will be added to the "request" section:
+
+- "beg_foo": Text of the slave begging the master for permission.
+- "beg_foo_accept": Text of the master saying that permission to do the
+  activity is granted after it was begged for.
+- "beg_foo_accept_game": Text of the master saying that permission to do
+  the activity will be granted after the slave plays a game.
+- "beg_foo_game_win": Text of the master saying that the slave has won
+  the game and can do the activity now.
+- "beg_foo_deny": Text of the master denying permission to do the
+  activity despite the slave begging for it.
+
+And the following IDs will be added to the "game" section:
+
+- "taunt_foo": Text of the master taunting the slave after the game has
+  been going on for a long time.
+
+If the restricted activity with an ID of "foo" has either the
+"sick_accept" or "sick_deny" flag, the following text IDs will be added
+to the "request" section:
+
+- "foo_sick": Text of the master unconditionally either granting or
+  denying permission to do the activity because the slave is sick.
+
+FACTS
+
+"facts.json" indicates possible facts about the slave that the master
+can learn. These are primarily used to check whether the slave has
+certain toys or abilities. The file is a standard JSON file containing
+an object. Each key indicates the identifier of the fact, and each value
+is an object containing the following keys:
+
+- "firstcheck": Indicates the Python code that should be called to learn
+  the fact the first time. Generally, this should be a call to one of
+  the functions in lib.message which accept user input. However, any
+  code that can be used in <python> tags can be used here as well.
+- "forget" (optional): Indicates the time the fact is remembered as a
+  string of Python code. The time is in seconds, but it's generally
+  easiest to use the constants: ONE_MINUTE, ONE_HOUR, and ONE_DAY (for
+  example, "30 * ONE_DAY" would be 30 days). If this is unspecified, the
+  fact stays in the master's memory forever.
+
+CHORES
+
+Chores (the internal, legacy name for what are now called "tasks") are
+specified in the file with the name "chores.json". This is a standard
+JSON file containing an object. Each key indicates the ID of the chore,
+and each value is an object with the following keys:
+
+- "text": An array of possible text representations of the chore being
+  assigned. You can use the <python> tag here.
+- "activities" (optional): An array of strings indicating restricted
+  activities that are a part of doing the chore.
+- "requires" (optional): A string indicating a Python conditional which
+  must be true for the chore to be assigned. Any code which is valid in
+  <python> tags is also valid here. Generally, it is most useful to
+  check facts here using the lib.slave.get_fact method, or to check the
+  value of lib.slave.sex (whether it's MALE or FEMALE).
+
+Night chores are specified the same way as regular chores, but in
+night_chores.json.
+
+GIFTS
+
+Gifts are specified in the file with the name "gifts.json". It follows
+the same format as "chores.json".
+
+PUNISHMENTS
+
+Punishments are specified in the file with the name "punishments.json".
+It follows the same format as "chores.json".
+
+For punishments to be assigned, you must list their IDs in the file,
+"punishments_list.json". This is a standard JSON file containing an
+object with keys being the IDs of restricted activities and misdeeds,
+and values being lists of possible punishment IDs for doing that misdeed
+or doing that restricted activity without permission.

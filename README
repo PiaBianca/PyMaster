@@ -54,5 +54,7 @@ nothing.
 
 Everything else will be explained by your master or mistress. Enjoy!
 
+If you want to customize PyMaster, see extension_guide.txt.
+
 Run PyMaster with the "-h" or "--help" argument for information about
 PyMaster's command options.
