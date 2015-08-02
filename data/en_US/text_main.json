@@ -73,9 +73,11 @@
     ],
     "assign_toilet": [
         "You have permission to use the toilet now.",
-        "How's your bladder, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>? You can use the toilet now.",
+        "How's your bladder, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>? Well, time to give it a break. You can use the toilet now.",
         "Go use the toilet<python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>.",
         "It's time for you to get a bathroom break. You have permission to use the toilet.",
-        "Now's your chance to use the toilet."
+        "I'm giving you a chance to use the toilet now.",
+        "I think you've earned a bathroom break. Go use the toilet.",
+        "Time to give my slave's bladder a break, I think. Use the toilet now."
     ]
 }
