@@ -169,7 +169,6 @@ def punishment(misdeed):
                 else:
                     punishments_list[i] = upunishments_list[i]
 
-    allow_all = (random.randrange(100) < PUNISHMENT_ALLOW_CHANCE)
     punishment_choices = punishments_list.setdefault(misdeed, [])
 
     while punishment_choices:
@@ -179,11 +178,13 @@ def punishment(misdeed):
             requires = punishments[i].setdefault("requires")
             if not requires or eval(requires):
                 allowed = True
-                if not allow_all:
-                    for activity in punishments[i].setdefault("activities", []):
-                        if not lib.request.get_allowed(activity):
-                            allowed = False
-                            break
+                for activity in punishments[i].setdefault("activities", []):
+                    allow_chance = ACTIVITIES_DICT.get(activity, {}).get(
+                        "chore_allow_chance", 0)
+                    if (not lib.request.get_allowed(activity) and
+                            random.random() >= allow_chance):
+                        allowed = False
+                        break
 
                 text_choices = punishments[i].setdefault("text", [])
 
