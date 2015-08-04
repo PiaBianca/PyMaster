@@ -26,12 +26,16 @@ from pymasterlib.constants import *
 
 
 def show_rules():
-    rules_list = []
-    for d in [DATADIR] + EXTDIRS:
+    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
         fname = os.path.join(d, "rules.json")
-        if os.path.isfile(fname):
+        try:
             with open(fname, 'r') as f:
-                rules_list.extend(json.load(f))
+                rules_list = json.load(f)
+                break
+        except OSError:
+            continue
+    else:
+        rules_list = []
 
     for i in range(len(rules_list)):
         m = "{}. {}".format(i + 1, rules_list[i])
@@ -51,8 +55,16 @@ def intro():
     else:
         fname = "names_male.txt"
 
-    with open(os.path.join(DATADIR, fname), 'r') as f:
-        names_list = f.read().splitlines()
+    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+        try:
+            with open(os.path.join(d, fname), 'r') as f:
+                names_list = f.read().splitlines()
+                break
+        except OSError:
+            continue
+    else:
+        names_list = []
+
     name = None
     while not name:
         if names_list:
@@ -104,8 +116,17 @@ def intro():
     lib.message.show(load_text("oath_sign"),
                      lib.message.load_text("phrases", "assent"))
 
-    with open(os.path.join(DATADIR, "oath.txt"), 'r') as f:
-        oath = f.read()
+    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+        fname = os.path.join(d, "oath.txt")
+        try:
+            with open(fname, 'r') as f:
+                oath = f.read()
+                break
+        except OSError:
+            continue
+    else:
+        raise
+
     oath = lib.parse.python_tag(oath)
     lib.slave.oath = oath
     lib.message.show(oath, lib.message.load_text("phrases", "finished"))
@@ -115,7 +136,7 @@ def intro():
 
     # Start with a record claiming to have done the activities, so
     # that they aren't granted immediately.
-    for i, activity in ACTIVITIES:
+    for i, activity in lib.activities:
         if not lib.slave.activities.setdefault(i, []):
             lib.slave.add_activity(i)
 
@@ -153,8 +174,17 @@ def morning_routine():
     if lib.slave.oath:
         oath = lib.slave.oath
     else:
-        with open(os.path.join(DATADIR, "oath.txt"), 'r') as f:
-            oath = f.read()
+        for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+            fname = os.path.join(d, "oath.txt")
+            try:
+                with open(fname, 'r') as f:
+                    oath = f.read()
+                    break
+            except OSError:
+                continue
+        else:
+            raise
+
         oath = lib.parse.python_tag(oath)
         lib.slave.oath = oath
 
@@ -279,7 +309,16 @@ def masturbate():
                         if lib.message.get_interruption(m, wait, a) is None:
                             lib.message.beep()
                             m = load_text("orgasm_signal")
-                            limit = lib.request.get_time_limit("__orgasm")
+
+                            limit = ORGASM_TIME_LIMIT
+                            time_deviate = random.uniform(-1, 1)
+                            if time_deviate > 1:
+                                limit += ((ORGASM_TIME_LIMIT_MAX - limit) *
+                                          time_deviate)
+                            elif time_deviate < 1:
+                                limit += ((limit - ORGASM_TIME_LIMIT_MIN) *
+                                          time_deviate)
+
                             a = [lib.message.load_text("phrases", "finished")]
                             if lib.message.get_interruption(m, limit, a) is None:
                                 lib.message.beep()
@@ -474,13 +513,15 @@ def gift_other():
     m = lib.message.load_text("morning_routine", "gift_special_permission")
 
     gifts = {}
-    for d in [DATADIR] + EXTDIRS:
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "gifts.json")
-        if os.path.isfile(fname):
+        try:
             with open(fname, 'r') as f:
                 ngifts = json.load(f)
             for i in ngifts:
                 gifts[i] = ngifts[i]
+        except OSError:
+            continue
 
     while gifts:
         keys = list(gifts.keys())

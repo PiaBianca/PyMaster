@@ -134,5 +134,16 @@
             "time_limit_max": "2 * ONE_HOUR",
             "penalty": 1.2
         }
+    ],
+    [
+        "__beg",
+        {
+            "forget_time": "7 * ONE_DAY",
+            "interval": "1",
+            "interval_good": "1",
+            "limit": 2,
+            "chore_allow_chance": 1,
+            "penalty": 1
+        }
     ]
 ]

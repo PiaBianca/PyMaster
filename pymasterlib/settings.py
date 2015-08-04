@@ -15,6 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import sys
 import json
 
 import pymasterlib as lib
@@ -22,7 +23,8 @@ from pymasterlib.constants import *
 
 
 def save():
-    program_settings = {"previous_run": lib.previous_run}
+    program_settings = {"previous_run": lib.previous_run,
+                        "data_dirs": lib.data_dirs}
     master_settings = {"name": lib.master.name, "sex": lib.master.sex}
     slave_settings = {"name": lib.slave.name, "sex": lib.slave.sex,
                       "birthday": lib.slave.birthday, "oath": lib.slave.oath,
@@ -49,6 +51,7 @@ def load():
 
     s_program = settings.get("program", {})
     lib.previous_run = s_program.get("previous_run")
+    lib.data_dirs = s_program.get("data_dirs", [])
 
     s_master = settings.get("master", {})
     lib.master.name = s_master.get("name", "PyMaster")
@@ -67,3 +70,76 @@ def load():
     lib.slave.activities = s_slave.get("activities", {})
     lib.slave.misdeeds = s_slave.get("misdeeds", {})
     lib.slave.facts = s_slave.get("facts", {})
+
+    if DATADIRS:
+        lib.data_dirs = DATADIRS
+    elif not lib.data_dirs:
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(sys.argv[0]),
+                                                "data"))
+        dl = os.listdir(base_dir)
+        dirs = []
+        for d in dl:
+            if os.path.isdir(os.path.join(base_dir, d)):
+                dirs.append(d)
+
+        if len(dirs) > 1:
+            m = "Language selection"
+            i = lib.message.get_choice(m, dirs)
+            lib.data_dirs = [os.path.abspath(os.path.join(base_dir,
+                                                          dirs.pop(i)))]
+        elif dirs:
+            lib.data_dirs = [os.path.abspath(os.path.join(base_dir,
+                                                          dirs.pop(0)))]
+        else:
+            m = "Error: Could not find the PyMaster data directories. Please specify the directory manually with the -d option."
+            lib.message.show(m)
+            sys.exit()
+
+        # Fall back to English
+        for d in dirs:
+            if d.startswith("en"):
+                lib.data_dirs.append(os.path.join(base_dir, d))
+
+    lib.data_dir = lib.data_dirs[0]
+
+    # TODO: Recommend a default set of extensions
+    lib.ext_dirs = EXTDIRS
+
+    # Restricted activities
+    # This is a list of pairs instead of a dictionary because their
+    # order matters; the user needs to be shown the activities in
+    # exactly the same order every time, and this order should be
+    # controlled by the JSON file (as opposed to e.g. alphabetical
+    # sorting) so that it can be an order that makes logical sense.
+    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+        fname = os.path.join(d, "restricted_activities.json")
+        try:
+            with open(fname, 'r') as f:
+                lib.activities = json.load(f)
+                break
+        except OSError:
+            continue
+    else:
+        lib.activities = []
+
+    lib.activities_dict = {}
+    for i, activity in lib.activities:
+        lib.activities_dict[i] = activity
+
+    # Misdeeds
+    # See the above explanation for why this is a list of pairs,
+    # rather than a dictionary.
+    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+        fname = os.path.join(d, "misdeeds.json")
+        try:
+            with open(fname, 'r') as f:
+                lib.misdeeds = json.load(f)
+                break
+        except OSError:
+            continue
+    else:
+        lib.misdeeds = []
+
+    lib.misdeeds_dict = {}
+    for i, misdeed in lib.misdeeds:
+        lib.misdeeds_dict[i] = misdeed

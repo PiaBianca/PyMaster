@@ -47,13 +47,15 @@ def chore():
     lib.slave.forget()
 
     chores = {}
-    for d in [DATADIR] + EXTDIRS:
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "chores.json")
-        if os.path.isfile(fname):
+        try:
             with open(fname, 'r') as f:
                 nchores = json.load(f)
             for i in nchores:
                 chores[i] = nchores[i]
+        except OSError:
+            continue
 
     backup_chores = {}
 
@@ -66,7 +68,7 @@ def chore():
         if text_choices:
             allowed = True
             for activity in chores[i].setdefault("activities", []):
-                allow_chance = ACTIVITIES_DICT.get(activity, {}).get(
+                allow_chance = lib.activities_dict.get(activity, {}).get(
                     "chore_allow_chance", 0)
                 if (not lib.request.get_allowed(activity) and
                         random.random() >= allow_chance):
@@ -111,13 +113,15 @@ def night_chore():
     lib.slave.forget()
 
     chores = {}
-    for d in [DATADIR] + EXTDIRS:
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "night_chores.json")
-        if os.path.isfile(fname):
+        try:
             with open(fname, 'r') as f:
                 nchores = json.load(f)
             for i in nchores:
                 chores[i] = nchores[i]
+        except OSError:
+            continue
 
     while chores:
         keys = list(chores.keys())
@@ -128,7 +132,7 @@ def night_chore():
         if text_choices:
             allowed = True
             for activity in chores[i].setdefault("activities", []):
-                allow_chance = ACTIVITIES_DICT.get(activity, {}).get(
+                allow_chance = lib.activities_dict.get(activity, {}).get(
                     "chore_allow_chance", 0)
                 if (not lib.request.get_allowed(activity) and
                         random.random() >= allow_chance):
@@ -149,16 +153,18 @@ def punishment(misdeed):
     lib.slave.forget()
 
     punishments = {}
-    for d in [DATADIR] + EXTDIRS:
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "punishments.json")
-        if os.path.isfile(fname):
+        try:
             with open(fname, 'r') as f:
                 upunishments = json.load(f)
             for i in upunishments:
                 punishments[i] = upunishments[i]
+        except OSError:
+            continue
 
     punishments_list = {}
-    for d in [DATADIR] + EXTDIRS:
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "punishments_list.json")
         if os.path.isfile(fname):
             with open(fname, 'r') as f:
@@ -179,7 +185,7 @@ def punishment(misdeed):
             if not requires or eval(requires):
                 allowed = True
                 for activity in punishments[i].setdefault("activities", []):
-                    allow_chance = ACTIVITIES_DICT.get(activity, {}).get(
+                    allow_chance = lib.activities_dict.get(activity, {}).get(
                         "chore_allow_chance", 0)
                     if (not lib.request.get_allowed(activity) and
                             random.random() >= allow_chance):

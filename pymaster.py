@@ -83,7 +83,8 @@ def main():
                 lib.scripts.morning_routine()
 
         def auto_grant():
-            for i, activity in sorted(ACTIVITIES, key=lambda _: random.random()):
+            for i, activity in sorted(lib.activities,
+                                      key=lambda _: random.random()):
                 flags = activity.get("flags", [])
                 if "auto" in flags and not lib.slave.sick:
                     if lib.request.request(i):

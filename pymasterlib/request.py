@@ -27,20 +27,25 @@ def load_text(ID):
 
 
 def get_time_limit(activity):
-    time_limit = TIME_LIMIT[activity]
-    time_deviate = random.uniform(-1, 1)
-    if time_deviate > 1:
-        time_limit += ((TIME_LIMIT_MAX[activity] - TIME_LIMIT[activity]) *
-                       time_deviate)
-    elif time_deviate < 1:
-        time_limit += ((TIME_LIMIT[activity] - TIME_LIMIT_MIN[activity]) *
-                       time_deviate)
+    """Return the time limit of the activity if it exists, None otherwise."""
+    activity_d = lib.activities_dict.get(activity, {})
+    time_limit = eval(activity_d.get("time_limit"))
+
+    if time_limit is not None:
+        time_deviate = random.uniform(-1, 1)
+        max_ = eval(activity_d.get("time_limit_max", repr(time_limit)))
+        min_ = eval(activity_d.get("time_limit_min", repr(time_limit)))
+        if time_deviate > 1:
+            time_limit += (max_ - time_limit) * time_deviate
+        elif time_deviate < 1:
+            time_limit += (time_limit - min_) * time_deviate
+
     return time_limit
 
 
 def get_allowed(activity):
     """Return whether or not the activity is allowed."""
-    activity_d = ACTIVITIES_DICT.get(activity, {})
+    activity_d = lib.activities_dict.get(activity, {})
     flags = activity_d.get("flags", [])
     lib.slave.forget()
 
@@ -56,18 +61,22 @@ def get_allowed(activity):
             if last_time is None or a > last_time:
                 last_time = a
 
-        interval = GRANT_INTERVAL.get(activity, 0)
+        interval = eval(activity_d.get("interval", "0"))
+        interval_good = eval(activity_d.get("interval_good", repr(interval)))
         nchores = len(lib.slave.chores) - len(lib.slave.abandoned_chores)
-        interval *= CHORE_BONUS.get(activity, 1) ** max(nchores, 0)
+        chore_bonus = 1 / ((interval / interval_good) ** (1 / CHORES_TARGET))
+        interval *= chore_bonus ** max(nchores, 0)
+        limit = activity_d.get("limit")
         for i in lib.slave.misdeeds:
             for misdeed in lib.slave.misdeeds[i]:
-                penalty = MISDEED_PENALTY.get(i, 1)
-                if not misdeed["punished"]:
-                    interval *= penalty
+                if i in lib.misdeeds_dict:
+                    penalty = lib.misdeeds_dict[i].get("penalty", 1)
                 else:
-                    interval *= min(penalty, MISDEED_PUNISHED_PENALTY)
+                    penalty = lib.activities_dict.get(i, {}).get("penalty", 1)
 
-        if (len(lib.slave.activities[activity]) < LIMIT.get(activity, 9999) and
+                interval *= penalty
+
+        if ((limit is None or len(lib.slave.activities[activity]) < limit) and
                 (last_time is None or time.time() >= last_time + interval)):
             return True
 
@@ -111,7 +120,7 @@ def allow(ID, activity, msg, other_ID=None):
     if lib.slave.sick and "sick_accept" in flags:
         lib.message.show(msg, lib.message.load_text("phrases", "thank_you"))
     else:
-        other = ACTIVITIES_DICT.get(other_ID, {})
+        other = lib.activities_dict.get(other_ID, {})
         script = activity.get("script") or other.get("script")
         if script:
             lib.message.show_timed(msg, 5)
@@ -160,25 +169,26 @@ def deny(ID, activity):
 def what():
     m = load_text("ask_what")
     c = []
-    for i, activity in ACTIVITIES:
-        c.append(load_text("choice_{}".format(i)))
+    for i, activity in lib.activities:
+        if i not in SPECIAL_ACTIVITIES:
+            c.append(load_text("choice_{}".format(i)))
+        else:
+            break
     c.append(load_text("special_choice_bed"))
     c.append(load_text("special_choice_new_chore"))
     c.append(load_text("special_choice_nothing"))
     choice = lib.message.get_choice(m, c, len(c) - 1)
 
-    if choice < len(ACTIVITIES):
-        ID, activity = ACTIVITIES[choice]
+    if choice < len(c) - 3:
+        ID, activity = lib.activities[choice]
         other_ID = activity.get("other_activity")
-        script = activity.get("script")
         flags = activity.get("flags", [])
         if other_ID:
-            other_activity = ACTIVITIES_DICT[other_ID]
+            other_activity = lib.activities_dict[other_ID]
             if get_allowed(ID):
                 m = load_text("{}_ask_{}".format(ID, other_ID))
                 if lib.message.get_bool(m):
                     if request(other_ID):
-                        script = script or other_activity.get("script")
                         lib.slave.add_activity(ID)
                         m = load_text("{}_accept_with_{}".format(ID, other_ID))
                         allow(ID, activity, m, other_ID)

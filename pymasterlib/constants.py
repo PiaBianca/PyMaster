@@ -21,7 +21,7 @@ import time
 import argparse
 import json
 
-__all__ = ["DATADIR", "SAVEDIR", "EXTDIRS", "RESET", "RESET_FACTS",
+__all__ = ["DATADIRS", "SAVEDIR", "EXTDIRS", "RESET", "RESET_FACTS",
 
            "STARTUP_DATETIME", "STARTUP_DAY", "STARTUP_TIME",
 
@@ -29,34 +29,24 @@ __all__ = ["DATADIR", "SAVEDIR", "EXTDIRS", "RESET", "RESET_FACTS",
 
            "MALE", "FEMALE",
 
-           "ACTIVITIES", "ACTIVITIES_DICT",
-
-           "MISDEEDS", "MISDEEDS_DICT",
-
-           "TIME_LIMIT", "TIME_LIMIT_MIN", "TIME_LIMIT_MAX",
-
            "ORGASM_ASK_DELAY_MIN", "ORGASM_ASK_DELAY_MAX", "ORGASM_CHANCE",
            "ORGASM_WAIT_CHANCE", "ORGASM_WAIT", "ORGASM_WAIT_MIN",
-           "ORGASM_WAIT_MAX",
+           "ORGASM_WAIT_MAX", "ORGASM_TIME_LIMIT", "ORGASM_TIME_LIMIT_MIN",
+           "ORGASM_TIME_LIMIT_MAX",
 
            "CHORES_TARGET",
 
            "FORGET_TIME", "FORGET_TIME_TARGET", "FORGET_TIME_ADJUST",
-           "FORGET_TIME_NEGATIVE_ADJUST", "ACTIVITY_FORGET_TIME",
+           "FORGET_TIME_NEGATIVE_ADJUST",
 
-           "GRANT_INTERVAL",
-
-           "CHORE_BONUS",
-
-           "MISDEED_PENALTY", "MISDEED_PUNISHED_PENALTY",
-
-           "LIMIT",
+           "SPECIAL_ACTIVITIES", "MISDEED_PUNISHED_PENALTY",
 
            "BEG_GAME_CHANCE", "AGONY_THRESHOLD"]
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-d", "--data-dir",
-                    help="The data directory to use (default ./data/en_US)")
+parser.add_argument(
+    "-d", "--data-dirs", nargs="*",
+    help="The data directories to use (directories after the first one are only used for text which is not found in the first directory, in order of preference)")
 parser.add_argument(
     "-s", "--save-dir",
     help="The save directory to use (default ~/.config/.pymaster)")
@@ -73,11 +63,10 @@ parser.add_argument(
     action="store_true")
 args = parser.parse_args()
 
-if args.data_dir:
-    DATADIR = args.data_dir
+if args.data_dirs:
+    DATADIRS = args.data_dir
 else:
-    DATADIR = os.path.join(os.path.dirname(sys.argv[0]), "data", "en_US")
-DATADIR = os.path.abspath(DATADIR)
+    DATADIRS = []
 
 if args.save_dir:
     SAVEDIR = args.save_dir
@@ -107,37 +96,6 @@ ONE_DAY = 24 * ONE_HOUR
 MALE = "m"
 FEMALE = "f"
 
-# Activities
-# This is a list of pairs instead of a dictionary because their order
-# matters; the user needs to be shown the activities in exactly the same
-# order every time, and this order should be controlled by the JSON
-# file (as opposed to e.g. alphabetical sorting) so that it can be an
-# order that makes logical sense.
-ACTIVITIES = []
-for d in [DATADIR] + EXTDIRS:
-    fname = os.path.join(d, "restricted_activities.json")
-    if os.path.isfile(fname):
-        with open(fname, "r") as f:
-            ACTIVITIES.extend(json.load(f))
-
-ACTIVITIES_DICT = {}
-for i, activity in ACTIVITIES:
-    ACTIVITIES_DICT[i] = activity
-
-# Misdeeds
-# See the above explanation for why this is a list of pairs, rather than
-# a dictionary.
-MISDEEDS = []
-for d in [DATADIR] + EXTDIRS:
-    fname = os.path.join(d, "misdeeds.json")
-    if os.path.isfile(fname):
-        with open(fname, "r") as f:
-            MISDEEDS.extend(json.load(f))
-
-MISDEEDS_DICT = {}
-for i, misdeed in MISDEEDS:
-    MISDEEDS_DICT[i] = misdeed
-
 # The target for the best-case number of chores; if the slave has done
 # this many chores, they are forgotten at an interval of
 # FORGET_TIME_TARGET, and if there are no misdeeds on  record,
@@ -159,52 +117,10 @@ FORGET_TIME = 28 * ONE_DAY
 FORGET_TIME_ADJUST = (FORGET_TIME - FORGET_TIME_TARGET) / (CHORES_TARGET ** 3)
 FORGET_TIME_NEGATIVE_ADJUST = (-FORGET_TIME_TARGET /
                                ((CHORES_TARGET - (CHORES_MAX + 1)) ** 3))
-ACTIVITY_FORGET_TIME = {"__beg": 7 * ONE_DAY}
 
-# Required wait for permission (adjusted by chores and misdeeds)
-GRANT_INTERVAL = {"__beg": 1}
-GRANT_INTERVAL_GOOD = {"__beg": 1}
-
-# Limits
-LIMIT = {"__beg": 2}
-
-# Time limits
-TIME_LIMIT = {"__orgasm": 60}
-TIME_LIMIT_MIN = {"__orgasm": 45}
-TIME_LIMIT_MAX = {"__orgasm": 90}
-
-# Penalties
-MISDEED_PENALTY = {"too_early": 1.03,
-                   "too_late": 1.03,
-                   "oath_fail": 1.1}
+# Special activities and misdeeds
+SPECIAL_ACTIVITIES = ["__beg", "oath_fail", "too_early", "too_late"]
 MISDEED_PUNISHED_PENALTY = 1.005
-
-# Add restricted activities
-for i, activity in ACTIVITIES:
-    ACTIVITY_FORGET_TIME[i] = eval(activity.get("forget_time", "1"))
-    if "interval" in activity:
-        GRANT_INTERVAL[i] = eval(activity["interval"])
-    if "interval_good" in activity:
-        GRANT_INTERVAL_GOOD[i] = eval(activity["interval_good"])
-    if "limit" in activity:
-        LIMIT[i] = activity["limit"]
-    if "time_limit" in activity:
-        TIME_LIMIT[i] = eval(activity["time_limit"])
-        TIME_LIMIT_MIN[i] = eval(activity.get("time_limit_min",
-                                              activity["time_limit"]))
-        TIME_LIMIT_MAX[i] = eval(activity.get("time_limit_max",
-                                              activity["time_limit"]))
-    MISDEED_PENALTY[i] = activity.get("penalty", 1)
-
-# Add misdeeds
-for i, misdeed in MISDEEDS:
-    MISDEED_PENALTY[i] = misdeed.get("penalty", 1)
-
-# Interval adjustments
-CHORE_BONUS = {}
-for i in GRANT_INTERVAL:
-    CHORE_BONUS[i] = 1 / ((GRANT_INTERVAL[i] / GRANT_INTERVAL_GOOD[i]) **
-                          (1 / CHORES_TARGET))
 
 # Orgasm stuff
 ORGASM_ASK_DELAY_MIN = 30
@@ -214,6 +130,9 @@ ORGASM_WAIT_CHANCE = 60
 ORGASM_WAIT = ONE_MINUTE
 ORGASM_WAIT_MIN = 30
 ORGASM_WAIT_MAX = ONE_MINUTE * 2
+ORGASM_TIME_LIMIT = 60
+ORGASM_TIME_LIMIT_MIN = 45
+ORGASM_TIME_LIMIT_MAX = 90
 
 # Games
 BEG_GAME_CHANCE = 95

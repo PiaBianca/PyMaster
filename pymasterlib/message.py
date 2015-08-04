@@ -100,7 +100,7 @@ def load_text(section, ID):
     Return a choice of text with the requested ID in the requested
     section.  If it does not exist, return ID instead.
     """
-    dirnames = EXTDIRS[::-1] + [DATADIR]
+    dirnames = lib.ext_dirs[::-1] + lib.data_dirs
     for dirname in dirnames:
         fname = os.path.join(dirname, "text_{}.json".format(section))
         if os.path.isfile(fname):

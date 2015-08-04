@@ -28,6 +28,14 @@ __all__ = ["ask", "assign", "message", "parse", "punish", "scripts", settings,
            "tell"]
 
 previous_run = None
+data_dirs = []
+
+data_dir = ""
+ext_dirs = []
+activities = []
+activities_dict = {}
+misdeeds = []
+misdeeds_dict = {}
 
 
 class master:
@@ -87,7 +95,7 @@ class slave:
 
         invalid = []
         for i in cls.misdeeds:
-            if i not in MISDEED_PENALTY:
+            if i not in activities_dict and i not in misdeeds_dict:
                 print("Warning: Deleting invalid misdeed \"{}\"".format(i))
                 invalid.append(i)
                 continue
@@ -115,7 +123,7 @@ class slave:
         invalid = []
         for i in cls.activities:
             try:
-                forget_time = ACTIVITY_FORGET_TIME[i]
+                forget_time = eval(activities_dict[i]["forget_time"])
             except KeyError:
                 print("Warning: Deleting invalid activity \"{}\"".format(i))
                 invalid.append(i)
@@ -154,7 +162,7 @@ class slave:
         cls.forget()
 
         facts = {}
-        for d in [DATADIR] + EXTDIRS:
+        for d in [data_dir] + ext_dirs:
             fname = os.path.join(d, "facts.json")
             if os.path.isfile(fname):
                 with open(fname, 'r') as f:

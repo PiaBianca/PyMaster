@@ -106,19 +106,27 @@ def did_misdeed(ID):
 
 def broke_rule():
     m = load_text("ask_what_naughty")
-    c = []
-    for i, activity in ACTIVITIES:
-        c.append(load_text("choice_naughty_{}".format(i)))
-    for i, misdeed in MISDEEDS:
-        c.append(load_text("choice_naughty_{}".format(i)))
+    c1 = []
+    c2 = []
+    for i, activity in lib.activities:
+        if i not in SPECIAL_ACTIVITIES:
+            c1.append(load_text("choice_naughty_{}".format(i)))
+        else:
+            break
+    for i, misdeed in lib.misdeeds:
+        if i not in SPECIAL_ACTIVITIES:
+            c2.append(load_text("choice_naughty_{}".format(i)))
+        else:
+            break
+    c = c1 + c2
     c.append(load_text("choice_special_naughty_nothing"))
     choice = lib.message.get_choice(m, c, len(c) - 1)
 
-    if choice < len(ACTIVITIES):
-        ID, activity = ACTIVITIES[choice]
+    if choice < len(c1):
+        ID, activity = lib.activities[choice]
         did_without_permission(ID)
-    elif choice % len(ACTIVITIES) < len(MISDEEDS):
-        ID, misdeed = MISDEEDS[choice % len(ACTIVITIES)]
+    elif choice % len(c1) < len(c2):
+        ID, misdeed = lib.misdeeds[choice % len(c1)]
         did_misdeed(ID)
 
 
