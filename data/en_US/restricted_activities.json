@@ -39,8 +39,8 @@
         "shower",
         {
             "forget_time": "7 * ONE_DAY",
-            "interval": "ONE_DAY",
-            "interval_good": "8 * ONE_HOUR",
+            "interval": "2 * ONE_DAY",
+            "interval_good": "20 * ONE_HOUR",
             "limit": 21,
             "chore_allow_chance": 0.5,
             "time_limit": "20 * ONE_MINUTE",
