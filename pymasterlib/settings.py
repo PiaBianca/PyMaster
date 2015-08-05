@@ -84,7 +84,15 @@ def load():
 
         if len(dirs) > 1:
             m = "Language selection"
-            i = lib.message.get_choice(m, dirs)
+            langnames = []
+            for d in dirs:
+                try:
+                    with open(os.path.join(base_dir, d, "data_name"), 'r') as f:
+                        langnames.append(f.read().strip())
+                except OSError:
+                    langnames.append(d)
+
+            i = lib.message.get_choice(m, langnames)
             lib.data_dirs = [os.path.abspath(os.path.join(base_dir,
                                                           dirs.pop(i)))]
         elif dirs:
