@@ -1,0 +1,26 @@
+{
+    "assent": [
+        "Yes, <python>lib.message.load_text('extra', 'master_address')</python>."
+    ],
+    "finished": [
+        "Finished, <python>lib.message.load_text('extra', 'master_address')</python>."
+    ],
+    "thank_you": [
+        "Thank you, <python>lib.message.load_text('extra', 'master_address')</python>."
+    ],
+    "time_1_hour": [
+        "1 hour"
+    ],
+    "time_1_minute": [
+        "1 minute"
+    ],
+    "time_hours": [
+        "{} hours"
+    ],
+    "time_minutes": [
+        "{} minutes"
+    ],
+    "time_hours_and_minutes": [
+        "{hours} and {minutes}"
+    ]
+}

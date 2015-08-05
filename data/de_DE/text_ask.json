@@ -1,0 +1,38 @@
+{
+    "ask_what": [
+        "What's your question?",
+        "Okay, ask.",
+        "What is it?",
+        "Go on."
+    ],
+    "choice_rules": [
+        "What are the rules, again?"
+    ],
+    "choice_chore": [
+        "What is my current task?"
+    ],
+    "choice_punishments": [
+        "What are my current punishments?"
+    ],
+    "choice_nothing": [
+        "Nothing.",
+        "Nevermind."
+    ],
+    "no_chore": [
+        "You don't have a task right now.",
+        "You don't have any task right now.",
+        "You don't have any tasks to do.",
+        "You don't need to complete any tasks at the moment."
+    ],
+    "no_punishments": [
+        "You don't have any punishments to do.",
+        "You don't have any punishments to carry out.",
+        "You don't have any assigned punishments right now."
+    ],
+    "punishments": [
+        "You currently have {} punishments you need to do:",
+        "You have {}:",
+        "You need to complete {} punishments:",
+        "You need to carry out {} punishments:"
+    ]
+}

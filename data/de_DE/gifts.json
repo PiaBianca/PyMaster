@@ -1,0 +1,36 @@
+{
+    "cake_ass": {
+        "text": [
+            "Ich erlaube dir heute ein Stück Kuchen unter einer Bedingung: Du musst es zuerst in deine Arschritze schmieren und dann mit den Händen herauskratzen und essen.<python>' Wenn irgendetwas auf den Boden fällt, lecke ihn sauber.' if lib.slave.get_fact('clean_floor') else ''</python>"
+        ]
+    },
+    "cake_trampled": {
+        "requires": "lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Ich erlaube dir heute ein Stück Kuchen unter einer Bedingung: Du musst es mit deinen nackten Füßen auf dem Boden zertreten und es dann vom Boden essen wie ein Hund. Wenn du kannst, lecke danach deine Füße sauber. Wenn nicht, kratze es mit deinen Händen ab und iss es dann."
+        ]
+    },
+    "eat_cum": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Ich erlaube dir heute Masturbation und einen Orgasmus unter einer Bedingung: Du musst dein Sperma schlucken."
+        ]
+    },
+    "games_competitive": {
+        "text": [
+            "Du darfst heute nach belieben kompetitive Computerspiele spielen, musst aber willentlich verlieren, ohne dass dies jemandem auffällt. Versuche so oft wie möglich zu verlieren."
+        ]
+    },
+    "pornstar": {
+        "requires": "lib.slave.get_fact('video')",
+        "text": [
+            "Ich erlaube dir heute Masturbation und einen Orgasmus unter einer Bedingung: Du musst ein Video davon aufzeichnen und dieses innerhalb einer Woche auf einer Pornoseite hochladen. Du darfst im Video deine Identität verschleiern."
+        ]
+    },
+    "soil_underwear": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Ich erlaube dir heute Masturbation und einen Orgasmus unter einer Bedingung: Du musst in die Unterwäsche kommen, die du gerade trägst."
+        ]
+    }
+}

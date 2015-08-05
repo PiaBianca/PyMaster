@@ -1,0 +1,130 @@
+[
+    [
+        "masturbation",
+        {
+            "forget_time": "28 * ONE_DAY",
+            "interval": "7 * ONE_DAY",
+            "interval_good": "10 * ONE_HOUR",
+            "limit": 45,
+            "time_limit": "15 * ONE_MINUTE",
+            "time_limit_min": "5 * ONE_MINUTE",
+            "time_limit_max": "ONE_HOUR",
+            "penalty": 1.25,
+            "script": "lib.scripts.masturbate",
+            "flags": [
+                "sick_deny"
+            ]
+        }
+    ],
+    [
+        "porn",
+        {
+            "forget_time": "28 * ONE_DAY",
+            "interval": "14 * ONE_DAY",
+            "interval_good": "16 * ONE_HOUR",
+            "limit": 28,
+            "time_limit": "30 * ONE_MINUTE",
+            "time_limit_min": "10 * ONE_MINUTE",
+            "time_limit_max": "2 * ONE_HOUR",
+            "penalty": 1.2,
+            "other_activity": "masturbation",
+            "flags": [
+                "sick_deny"
+            ]
+        }
+    ],
+    [
+        "shower",
+        {
+            "forget_time": "7 * ONE_DAY",
+            "interval": "ONE_DAY",
+            "interval_good": "8 * ONE_HOUR",
+            "limit": 21,
+            "time_limit": "20 * ONE_MINUTE",
+            "time_limit_min": "5 * ONE_MINUTE",
+            "time_limit_max": "30 * ONE_MINUTE",
+            "penalty": 1.05,
+            "flags": [
+                "auto",
+                "sick_accept"
+            ]
+        }
+    ],
+    [
+        "change_underwear",
+        {
+            "forget_time": "28 * ONE_DAY",
+            "interval": "14 * ONE_DAY",
+            "interval_good": "2 * ONE_DAY",
+            "limit": 45,
+            "penalty": 1.08,
+            "flags": [
+                "auto"
+            ]
+        }
+    ],
+    [
+        "junk_food",
+        {
+            "forget_time": "28 * ONE_DAY",
+            "interval": "7 * ONE_DAY",
+            "interval_good": "2 * ONE_DAY",
+            "limit": 45,
+            "time_limit": "20 * ONE_MINUTE",
+            "time_limit_min": "15 * ONE_MINUTE",
+            "time_limit_max": "30 * ONE_MINUTE",
+            "penalty": 1.08,
+            "flags": [
+                "sick_deny"
+            ]
+        }
+    ],
+    [
+        "drink",
+        {
+            "forget_time": "28 * ONE_DAY",
+            "interval": "7 * ONE_DAY",
+            "interval_good": "2 * ONE_DAY",
+            "limit": 45,
+            "time_limit": "20 * ONE_MINUTE",
+            "time_limit_min": "15 * ONE_MINUTE",
+            "time_limit_max": "30 * ONE_MINUTE",
+            "penalty": 1.08,
+            "flags": [
+                "sick_deny"
+            ]
+        }
+    ],
+    [
+        "toilet",
+        {
+            "forget_time": "ONE_DAY",
+            "interval": "6 * ONE_HOUR",
+            "interval_good": "2 * ONE_HOUR",
+            "limit": 16,
+            "time_limit": "15 * ONE_MINUTE",
+            "time_limit_min": "5 * ONE_MINUTE",
+            "time_limit_max": "30 * ONE_MINUTE",
+            "penalty": 1.1,
+            "flags": [
+                "auto",
+                "can_beg",
+                "night_possible",
+                "sick_accept"
+            ]
+        }
+    ],
+    [
+        "fun",
+        {
+            "forget_time": "7 * ONE_DAY",
+            "interval": "ONE_DAY",
+            "interval_good": "2 * ONE_HOUR",
+            "limit": 56,
+            "time_limit": "30 * ONE_MINUTE",
+            "time_limit_min": "10 * ONE_MINUTE",
+            "time_limit_max": "2 * ONE_HOUR",
+            "penalty": 1.2
+        }
+    ]
+]

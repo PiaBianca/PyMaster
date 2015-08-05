@@ -1,0 +1,1 @@
+I, <python>lib.slave.name</python>, am a mere object owned by my beloved <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>, <python>lib.master.name</python>.  A worthless slave like me doesn't deserve freedom.  I only exist to serve the wishes of my <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>.

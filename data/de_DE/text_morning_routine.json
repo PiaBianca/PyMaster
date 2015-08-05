@@ -1,0 +1,94 @@
+{
+    "ask_feeling_better": [
+        "Are you feeling well again today?",
+        "Have you recovered from your illness yet?",
+        "How are you feeling today? Is your illness gone?",
+        "Are you feeling well today?",
+        "Is my slave feeling well today?",
+        "Is my slave feeling well again today?",
+        "How is my slave doing? Have you recovered yet?"
+    ],
+    "better_no_response": [
+        "Oh, well. I hope you get better soon.",
+        "That's too bad.",
+        "I hope you get better soon, my toy. I can't wait to play with you again!",
+        "Alright. Get well soon."
+    ],
+    "better_yes_response": [
+        "I'm glad to hear that!",
+        "Excellent!",
+        "Wonderful news!",
+        "Good to hear!"
+    ],
+    "chore_ask_completed": [
+        "<python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> your task<python>random.choice(['', ' last night'])</python>?",
+        "I assigned you a task last night. <python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> it?"
+    ],
+    "exercise": [
+        "Time to wake you up! Do some exercises until I tell you to stop.",
+        "Since I don't want you to be asleep while you recite your oath, you will do some exercises now. I'll tell you when to stop.",
+        "Time to get you out of that daze of yours. Do some exercises. I'll tell you when to stop.",
+        "You will do some exercises now, <python>lib.slave.name</python>. Keep at it until I tell you to stop."
+    ],
+    "exercise_end": [
+        "Alright, you can stop now.",
+        "That's enough. I'm sure you're wide awake now.",
+        "That will do.",
+        "You can stop now."
+    ],
+    "gift_birthday": [
+        "I see it's your birthday, slave. I have a present for you.",
+        "I have a present for you, <python>'birthday boy' if lib.slave.sex == MALE else 'birthday girl' if lib.slave sex == FEMALE else lib.slave.name</python>.",
+        "It's your birthday today. I have a special surprise for you.",
+        "I have a special birthday surprise for my slave!",
+        "Oh, it's your birthday, isn't it? I guess it's time for your present."
+    ],
+    "gift_none": [
+        "Huh, I can't think of any more ideas for what to give you. I guess you won't be getting a gift this year."
+    ],
+    "have_chore": [
+        "I have a task for you.",
+        "I have a task I want you to complete today.",
+        "I have a task for you, <python>lib.slave.name</python>."
+    ],
+    "oath": [
+        "You will recite your oath of servitude to me now.",
+        "Alright, slave, it's time for you to recite your oath of servitude to me.",
+        "As a reminder of your place, I want you to recite your oath of servitude to me."
+    ],
+    "oath_cheater": [
+        "Slow down, slave! I can't tell if you really did type that fast or if you cheated, but either way, that was too fast. Do it over again.",
+        "I highly doubt my worthless slave can really type at a rate of over 120 words per minute, but even if you can, you need to slow down while reciting your oath of servitude to me. Start over.",
+        "Even if you really are one of those people who can type incredibly fast, this is not the place for it. Do it again, more slowly this time."
+    ],
+    "oath_fail": [
+        "Pathetic slave. It seems you don't have your oath of servitude written down properly. Write it down this time.",
+        "I am very disappointed in you. Here is the oath again. Write it down so you can recite it properly tomorrow.",
+        "I'm giving it to you again. You had better write it down this time."
+    ],
+    "oath_fail_punishment": [
+        "I am assigning a punishment for your failure to recite your oath.",
+        "Now, you must be punished for your neglect.",
+        "Now for your punishment."
+    ],
+    "oath_success": [
+        "That's right, slave.",
+        "That's right. Don't forget your place.",
+        "That's a good <python>'boy' if lib.slave.sex == MALE else 'girl' if lib.slave.sex == FEMALE else 'slave'</python>.",
+        "It pleases me to know that my slave knows <python>'her' if lib.slave.sex == FEMALE else 'his'</python> place.",
+        "Good.",
+        "That's right. Know your place, slave.",
+        "That's right. All worthless slaves should know their place.",
+        "Yes, don't you forget that you are my worthless slave.",
+        "Perfect."
+    ],
+    "oath_wrong": [
+        "No, that's wrong.",
+        "That's wrong.",
+        "No, that's not right.",
+        "That's not right.",
+        "No, that's not it.",
+        "That's not it.",
+        "That isn't your oath of servitude."
+    ]
+}

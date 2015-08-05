@@ -1,0 +1,77 @@
+{
+    "blind_and_immobile": {
+        "requires": "lib.slave.get_fact('bondage_tape')",
+        "text": [
+            "Fessele deine Beine und bedecke deine Augen mit Bondage Tape zum Schlafen. Entferne kein Tape bevor du am nächsten Morgen aufstehst."
+        ]
+    },
+    "buttplug": {
+        "requires": "lib.slave.get_fact('buttplug')",
+        "text": [
+            "Stecke einen Butt Plug in deinen Arsch und nimm ihn erst morgen früh wieder heraus."
+        ]
+    },
+    "closet": {
+        "text": [
+            "Schlafe diese Nacht in einem engen Schrank."
+        ]
+    },
+    "collar": {
+        "text": [
+            "Trage diese Nacht beim Schlafen nichts außer einem Halsband."
+        ]
+    },
+    "discomfort": {
+        "text": [
+            "Schlafe diese Nacht ohne Decke und Kissen."
+        ]
+    },
+    "exposed": {
+        "text": [
+            "Schlafe diese Nacht nackt und ohne Decke und Kissen."
+        ]
+    },
+    "floor": {
+        "text": [
+            "Schlafe diese Nacht auf dem Boden."
+        ]
+    },
+    "handcuffs": {
+        "requires": "lib.slave.get_fact('handcuffs')",
+        "text": [
+            "Fessele deine Hände mit Handschellen hinter dem Rücken. Nimm sie nicht vor morgen früh ab."
+        ]
+    },
+    "midnight_edging": {
+        "activities": [
+            "masturbation"
+        ],
+        "text": [
+            "Stelle deinen Wecker auf 3 Stunden später. Wenn er klingelt, mache <python>random.randint(2, 7)</python> Edges, dann lege dich wieder hin. Kein Orgasmus."
+        ]
+    },
+    "midnight_piss": {
+        "text": [
+            "Drinke ein Glas Wasser vor dem Schlafengehen. Stelle deinen Wecker auf 3 Stunden später. Wenn er klingelt, gehe nach draußen und pinkele dort<python>', indem du deine Hose runterziehst und dich wie ein Mädchen hinhockst' if lib.slave.sex == MALE else ''</python>. Benutze bis dahin nicht die Toilette."
+        ]
+    },
+    "midnight_porn": {
+        "activities": [
+            "porn"
+        ],
+        "text": [
+            "Stelle deinen Wecker auf 3 Stunden später. Wenn er klingelt, schau Dir einen Pornofilm an, der mindestens <python>random.randint(1, 4) * 5</python> Minuten lang ist. Danach gehe wieder schlafen. Du darfst nicht masturbieren."
+        ]
+    },
+    "sissy": {
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('sissy_nightie')",
+        "text": [
+            "Ziehe ein feminines Nachthemd an, wenn Du schlafen gehst."
+        ]
+    },
+    "underwear_mask": {
+        "text": [
+            "Bleib heute zum Schlafen nackt, ziehe aber die benutzte Unterwäsche über deinen Kopf. Der Schritt kommt auf die Nase."
+        ]
+    }
+}

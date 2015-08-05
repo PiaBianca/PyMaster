@@ -1,0 +1,167 @@
+{
+    "ask_what": [
+        "Was gibt es?",
+        "Lass hören.",
+        "Erzähl es mir.",
+        "Was möchtest du mir erzählen?",
+        "Leg los."
+    ],
+    "ask_what_naughty": [
+        "Was hast du getan?",
+        "Beichte mir."
+    ],
+    "choice_completed_chore": [
+        "Ich habe den Task ausgeführt."
+    ],
+    "choice_completed_punishment": [
+        "Ich habe die Bestrafung ausgeführt."
+    ],
+    "choice_naughty": [
+        "Ich habe eine Regel gebrochen."
+    ],
+    "choice_sick": [
+        "Ich bin krank."
+    ],
+    "choice_not_sick": [
+        "Ich bin nicht mehr krank."
+    ],
+    "choice_nothing": [
+        "Nichts.",
+        "Ach nichts."
+    ],
+    "choice_naughty_masturbation": [
+        "Ich habe ohne Erlaubnis masturbiert und/oder bin gekommen."
+    ],
+    "choice_naughty_porn": [
+        "Ich habe ohne Erlaubnis Pornos geschaut."
+    ],
+    "choice_naughty_shower": [
+        "Ich habe ohne Erlaubnis gebadet oder geduscht."
+    ],
+    "choice_naughty_change_underwear": [
+        "Ich habe ohne Erlaubnis meine Unterwäsche gewechselt oder gewaschen."
+    ],
+    "choice_naughty_junk_food": [
+        "Ich habe ohne Erlaubnis im ungesunde Fertignahrung gegessen."
+    ],
+    "choice_naughty_drink": [
+        "Ich habe ohne Erlaubnis etwas anderes als Wasser getrunken."
+    ],
+    "choice_naughty_toilet": [
+        "Ich habe ohne Erlaubnis die Toilette benutzt."
+    ],
+    "choice_naughty_fun": [
+        "Ich hatte ohne Erlaubnis Spaß."
+    ],
+    "choice_naughty_bed": [
+        "Ich bin ohne Erlaubnis schlafen gegangen."
+    ],
+    "choice_naughty_lie": [
+        "Ich habe dich angelogen."
+    ],
+    "choice_special_naughty_nothing": [
+        "Nichts."
+    ],
+    "chore_check": [
+        "Nur um das klarzustellen, du hast den Task ausgeführt?",
+        "Nur um sicher zu gehen, dies ist der Task, den du ausgeführt hast?",
+        "Diesen?",
+        "Ist dies der richtige?",
+        "Du hast diesen Task ausgeführt?"
+    ],
+    "chore_done": [
+        "Du bist ein<python>'e gute Sklavin' if lib.slave.sex == FEMALE else ' guter Sklave'</python>.",
+        "Ich bin zufrieden, <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>.",
+        "Was für eine tolle Schlampe du bist.",
+        "Sehr gut.",
+        "Fühlt es sich nicht großartig an, mich zufrieden zu stellen?"
+    ],
+    "no_chore": [
+        "Von was redest du? Du hast doch im Moment gar keinen offenen Task.",
+        "Welcher Task? Ich habe dir keinen gegeben.",
+        "Willst du mich reinlegen <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>? Das funktioniert nicht. Wenn ich dir einen Task gegeben hätte, würde ich mich daran erinnern.",
+        "Stelle meine Gedult nicht auf die Probe. Du hast keinen Task."
+    ],
+    "no_punishment": [
+        "Von was redest du? Du hast doch im Moment gar keine offene Bestrafung.",
+        "Welche Bestrafung? Du musst im Moment doch garkeine Bestrafung ausführen.",
+        "Bestrafung? Wovon redest du? Du hast im Moment keine Bestrafung.",
+        "Ich kann mich nicht daran erinnern, dir in letzter Zeit eine Bestrafung auferlegt zu haben."
+    ],
+    "punishment_check": [
+        "Nur um das klarzustellen, du hast die Bestrafung ausgeführt?",
+        "Nur um sicher zu gehen, dies ist die Bestrafung, die du ausgeführt hast?",
+        "Diese?",
+        "Ist dies die richtige?",
+        "Du hast diese Bestrafung ausgeführt?"
+    ],
+    "punishment_done": [
+        "Gut. Ich hoffe, du hast deine Lektion gelernt.",
+        "Gut. Benimm dich das nächste Mal anständig!"
+    ],
+    "response_naughty_masturbation": [
+        "Ich werde das nicht dulden <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>. Das ist MEIN Eigentum, mit dem du da spielst!",
+        "Dein Mangel an Disziplin ist grauenhaft!",
+        "Ich entscheide, wann du Vergnügen empfinden darfst, nicht du!",
+        "Du dreckige Hure! Dies werde ich nicht dulden!"
+    ],
+    "response_naughty_porn": [
+        "Dreckige Schlampe!",
+        "Du Perversling! Für wen hälst du dich eigentlich?",
+        "Du solltest es eigentlich besser wissen als Pornos ohne mein Einverständnis zu sehen!"
+    ],
+    "response_naughty_shower": [
+        "Körperpflege ist für dich ein Privileg, kein Recht!",
+        "Ob du dich sauber machst ist meine Entscheidung, nicht deine!",
+        "Hast du vergessen, <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>? Ich kontrolliere dein Leben!"
+    ],
+    "response_naughty_change_underwear": [
+        "Saubere Unterwäsche ist für dich ein Privileg, kein Recht!",
+        "Ob du saubere Unterwäsche trägst ist meine Entscheidung, nicht deine!",
+        "Hast du vergessen, <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>? Ich kontrolliere dein Leben!"
+    ],
+    "response_naughty_junk_food": [
+        "Verfressenes Schwein! Keine Fertignahrung ohne meine Erlaubnis!",
+        "Du musst lernen, dich zu kontrollieren.",
+        "Ich entscheide, ob du diesem Müll nachgibst, nicht du!",
+        "Ich werde nicht tatenlos zusehen, wie du Müll futterst wie ein Schwein!"
+    ],
+    "response_naughty_drink": [
+        "Drinkst du etwa Mist, den du nicht brauchst?",
+        "Sklaven brauchen keine besonderen Getränke!",
+        "Bei eine<python>'r wertlosen Sklavin' if lib.slave.sex == FEMALE else 'm wertlosen Sklaven'</python> sind besondere Getränke ein Privileg, kein Recht! For a worthless slave like you, drinks are a privilege, not a right!",
+        "Wie kannst du es wagen, besondere Getränke ohne meine Erlaubnis zu trinken?"
+    ],
+    "response_naughty_toilet": [
+        "Ich entscheide, ob du die Toilette benutzen darfst, nicht du!",
+        "Hast du etwa überhaupt keine Disziplin?",
+        "Hast du vergessen, dass du mein<python>'e Sklavin' if lib.slave.sex == FEMALE else ' Sklave'</python> bist? Ich entscheide, wann du die Toilette besuchst."
+    ],
+    "response_naughty_fun": [
+        "Faule Schlampe! Ich entscheide, wann du Spaß haben darfst.",
+        "Ich entscheide, wann du deine Zeit verschwendest, nicht du!",
+        "Ich mag keine Faulhait, <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>."
+    ],
+    "response_naughty_bed": [
+        "Wer glaubst du zu sein, <python>'Sklavin' if lib.slave.sex == FEMALE else 'Sklave'</python>?",
+        "Ich beherrsche dein Leben! Auch deinen Schlaf.",
+        "Weichst du mir etwa aus? Das ist inakzeptabel."
+    ],
+    "response_naughty_lie": [
+        "Dein<python>'e Herrin' if lib.master.sex == FEMALE else 'en Meister'</python> anzulügen ist nicht zu entschuldigen!",
+        "Du dreckiges Stück Scheiße! Mich anzulügen!",
+        "Scheiße, du hast mich belogen?! Nichts ist schlimmer, als dein<python>'e Herrin' if lib.master.sex == FEMALE else 'en Meister'</python> anzulügen!",
+        "Dreckige Schlampe! Ich lasse das nicht durchgehen!"
+    ],
+    "response_sick": [
+        "Danke für den Hinweis. Gute Besserung.",
+        "Oh, du armes Ding. Ich hoffe, dir geht es schnell besser.",
+        "Das ist schade. Ich hoffe, du erholst dich bald, <python>lib.slave.name</python>."
+    ],
+    "response_not_sick": [
+        "Ich freue mich!",
+        "Großartig!",
+        "Tolle Neuigkeiten!",
+        "Das höre ich gerne!"
+    ]
+}

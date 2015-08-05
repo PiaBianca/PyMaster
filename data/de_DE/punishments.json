@@ -1,0 +1,280 @@
+{
+    "accident_fake": {
+        "text": [
+            "Use water to make it look like you peed your pants, then take a walk outside for <python>random.randint(1, 3) * 15</python> minutes."
+        ]
+    },
+    "accident_real": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Piss in your pants, then take a walk outside for <python>random.randint(1, 3) * 15</python> minutes."
+        ]
+    },
+    "banana_ass": {
+        "text": [
+            "Take two ripe bananas, peel them, and break them into small pieces. Shove all the banana pieces up your ass. Do not remove the banana pieces or request to use the toilet for the next <python>random.randint(2, 6) * 5</python> minutes after that."
+        ]
+    },
+    "buckets": {
+        "requires": "lib.slave.get_fact('buckets') >= 2",
+        "text": [
+            "Fill two buckets with water. Stand in the corner while holding them for <python>random.randint(1, 3) * 5</python> minutes."
+        ]
+    },
+    "buckets_long": {
+        "requires": "lib.slave.get_fact('buckets') >= 2",
+        "text": [
+            "Fill two buckets with water. Stand in the corner while holding them for <python>random.randint(3, 6) * 5</python> minutes."
+        ]
+    },
+    "buckets_short": {
+        "requires": "lib.slave.get_fact('buckets') >= 2",
+        "text": [
+            "Fill two buckets with water. Stand in the corner while holding them for <python>random.randint(3, 6)</python> minutes."
+        ]
+    },
+    "bumpy_bra": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Wear a bra filled with distracting and uncomfortable objects, like dry rice or noodles, for <python>random.randint(2, 5) * 10</python> minutes."
+        ]
+    },
+    "chew_the_cud": {
+        "requires": "lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Fill your mouth with food and chew it for 45 seconds. Spit it out on the floor. Look at it for 5 seconds, spread it out, and then lick it all back up and swallow it."
+        ]
+    },
+    "cold_shower": {
+        "activities": [
+            "shower"
+        ],
+        "text": [
+            "Take a cold <python>random.randint(5, 10)</python>-minute shower. You must be entirely in the shower for the duration, and I want you to clean every inch of your body. You are not allowed to dry yourself afterwards."
+        ]
+    },
+    "golden_shower": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "<python>'Piss on your face.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your face.'</python> Stay there for <python>random.randint(2, 5) * 10</python> minutes. You may not wash up afterwards."
+        ]
+    },
+    "grits": {
+        "requires": "lib.slave.get_fact('grits')",
+        "text": [
+            "With your knees exposed, kneel on a pile of dry grits or rice. Stay still for <python>random.randint(2, 4) * 5</python> minutes."
+        ]
+    },
+    "grits_long": {
+        "requires": "lib.slave.get_fact('grits')",
+        "text": [
+            "With your knees exposed, kneel on a pile of dry grits or rice. Stay still for <python>random.randint(4, 6) * 5</python> minutes."
+        ]
+    },
+    "grits_short": {
+        "requires": "lib.slave.get_fact('grits')",
+        "text": [
+            "With your knees exposed, kneel on a pile of dry grits or rice. Stay still for <python>random.randint(3, 6)</python> minutes."
+        ]
+    },
+    "hold_bladder": {
+        "activities": [
+            "masturbation"
+        ],
+        "text": [
+            "When you desperately need to pee, masturbate to orgasm<python>' and eat your cum' if lib.slave.sex == MALE else ''</python>. If any piss leaks out, you must drink <python>'that, too' if lib.slave.sex == MALE else 'it'</python>."
+        ]
+    },
+    "ice_ass": {
+        "text": [
+            "Let two ice cubes melt a little bit (so that they are wet and have no sharp edges) and insert them into your ass. Leave them there until they completely melt."
+        ]
+    },
+    "ice_pussy": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Let two ice cubes melt a little bit (so that they are wet and have no sharp edges) and insert them into your pussy. Leave them there until they completely melt."
+        ]
+    },
+    "lick_table": {
+        "text": [
+            "Lick the entire surface of your table. If it isn't clean now, you will clean it with your tongue!"
+        ]
+    },
+    "lick_toilet": {
+        "text": [
+            "Lick every inch of your toilet seat. I want it sparkling."
+        ]
+    },
+    "lick_toilet_public": {
+        "text": [
+            "Lick every inch of a public toilet seat<python>' or urinal' if lib.slave.sex == MALE else ''</python> that has piss on it. I want it sparkling."
+        ]
+    },
+    "masturbite": {
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('autofellatio')",
+        "text": [
+            "Bite your dick <python>random.randint(1, 3) * 5</python> times. <python>random.choice(['And I mean real bites, not some kind of fake sissy bites.', \"Don't you dare go easy on yourself!\", 'And do it like you mean it!'])</python>"
+        ]
+    },
+    "new_idea": {
+        "text": [
+            "Come up with a new idea for an appropriate punishment. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(DATADIR, 'punishments.json')</python>\". Carry out the punishment, and then send your idea and your experience with it to FreedomOfRestriction@openmailbox.org."
+        ]
+    },
+    "pegged_pussy": {
+        "requires": "lib.slave.sex == FEMALE and lib.slave.get_fact('clothespins') >= 8",
+        "text": [
+            "Put as many clothespins as you can on your pussy. Leave them there for <python>random.randint(2, 6) * 5</python> minutes."
+        ]
+    },
+    "pinch_nipples": {
+        "text": [
+            "Pinch each of your nipples as hard as you can <python>random.randint(4, 6) * 5</python> times."
+        ]
+    },
+    "piss_drink": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Piss in a container. You must drink it all back up."
+        ]
+    },
+    "piss_gag": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Soak the underwear you are currently wearing with piss, then gag yourself with that underwear and leave it in your mouth for <python>random.randint(1, 3) * 5</python> minutes. You are not allowed to wring it out until it's in your mouth."
+        ]
+    },
+    "piss_transport": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Piss in a container that's at least 1 liter (e.g. a watter bottle) until it's full. Leave this bottle in your bedroom while you use your mouth to take the piss somewhere outside until the bottle is empty. I don't care if you swallow some of it."
+        ]
+    },
+    "pull_hair": {
+        "requires": "lib.slave.get_fact('hair_long')",
+        "text": [
+            "Grab your hair and yank it hard.",
+            "Take a handful of your hair. Yank it hard.",
+            "Pull your hair very hard."
+        ]
+    },
+    "slap_face": {
+        "text": [
+            "Slap your face <python>random.randint(2, 4) * 5</python> times on each cheek. If you stop or lose count, start over."
+        ]
+    },
+    "slap_penis": {
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Slap your glans <python>random.randint(4, 6) * 10</python> times. If you stop or lose count, start over."
+        ]
+    },
+    "slap_pussy": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Slap your pussy <python>random.randint(4, 6) * 10</python> times. If you stop or lose count, start over.",
+            "Slap your pussy with a hairbrush <python>random.randint(3, 5) * 10</python> times. If you stop or lose count, start over."
+        ]
+    },
+    "slap_tits": {
+        "text": [
+            "Smack each of your nipples <python>random.randint(4, 6) * 5</python> times. If you stop or lose count, start over.",
+            "Smack each of your nipples with a wooden spoon <python>random.randint(3, 5) * 5</python> times. If you stop or lose count, start over."
+        ]
+    },
+    "soiled_underwear": {
+        "activities": [
+            "toilet"
+        ],
+        "text": [
+            "Put on your dirtiest pair of underwear and piss through it. Do not wash it. This will be the underwear you will wear until I let you change it next.
+        ]
+    },
+    "spanking_light": {
+        "text": [
+            "Give yourself a spanking: <python>random.randint(1, 3) * 5</python> swats on each cheek."
+        ]
+    },
+    "spanking_medium": {
+        "text": [
+            "Give yourself a good spanking: <python>random.randint(4, 6) * 5</python> swats on each cheek. If you stop or lose count, start over."
+        ]
+    },
+    "spanking_hard": {
+        "text": [
+            "Give yourself a hard spanking: <python>random.randint(4, 6) * 10</python> swats on each cheek. If you stop or lose count, start over.",
+            "Give yourself a hard spanking with a wooden spoon: <python>random.randint(4, 6) * 10</python> swats on each cheek. If you stop or lose count, start over."
+        ]
+    },
+    "spice": {
+        "text": [
+            "Eat something spicy enough to make your mouth feel like it's on fire, then do not eat or drink anything else until the feeling goes away on its own."
+        ]
+    },
+    "spit_face": {
+        "text": [
+            "Lie down on the floor and spit so that it lands on your face <python>random.randint(3, 5)</python> times. Stay there like that for <python>random.randint(6, 12)</python> minutes. You are not allowed to touch your face during this time."
+        ]
+    },
+    "spit_lick_floor": {
+        "requires": "lib.slave.get_fact('clean_floor')",
+        "text": [
+            "Spit on the floor. Then lick it back up and swallow it."
+        ]
+    },
+    "timeout": {
+        "text": [
+            "Strip down and stand still in the corner for <python>random.randint(1, 3) * 5</python> minutes.",
+            "Strip down and sit still in the corner for <python>random.randint(1, 3) * 5</python> minutes."
+        ]
+    },
+    "trapped_dick": {
+        "activities": [
+            "porn"
+        ],
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Securely tape your flaccid penis to your stomach with duct tape. Cover up the tip so that your dick is trapped. Then watch a porn video that's at least <python>random.randint(2, 4) * 5</python> minutes long. If any of the tape comes off, you have to start over again."
+        ]
+    },
+    "wax_clit": {
+        "requires": "lib.slave.sex == FEMALE and lib.slave.get_fact('waxplay')",
+        "text": [
+            "Drip <python>random.randint(2, 5) * 5</python> drops of candle wax on your clit."
+        ]
+    },
+    "wax_dick": {
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('waxplay')",
+        "text": [
+            "Drip <python>random.randint(2, 5) * 5</python> drops of candle wax on your dick."
+        ]
+    },
+    "wax_nipples": {
+        "requires": "lib.slave.get_fact('waxplay')",
+        "text": [
+            "Drip <python>random.randint(2, 5) * 5</python> drops of candle wax on each of your nipples."
+        ]
+    },
+    "wedgie": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "Give yourself <python>random.randint(3, 6) * 5</python> hard wedgies."
+        ]
+    },
+    "write_repeat": {
+        "text": [
+            "Write \"<python>random.choice([\"I will start listening to my beloved {} like a good {}\".format('mistress' if lib.master.sex == FEMALE else 'master', 'boy' if lib.slave.sex == MALE else 'girl' if lib.slave.sex == FEMALE else 'slave'), \"I will never disobey my beloved {} {} ever again\".format('mistress' if lib.master.sex == FEMALE else 'master', lib.master.name), \"I will stop being a bad slave\", \"I will stop being such a disobedient bitch\"])</python>\" on a piece of paper <python>random.randint(4, 6) * 10</python> times."
+        ]
+    }
+}
