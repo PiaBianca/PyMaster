@@ -46,7 +46,7 @@ def load():
     try:
         with open(os.path.join(SAVEDIR, "settings.json"), 'r') as f:
             settings = json.load(f)
-    except (IOError, ValueError):
+    except (OSError, ValueError):
         settings = {}
 
     s_program = settings.get("program", {})
