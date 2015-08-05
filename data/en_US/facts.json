@@ -78,7 +78,7 @@
         "forget": "30 * ONE_DAY"
     },
     "language": {
-        "firstcheck": "lib.message.get_bool('Are you able to write in a secondary language?')",
+        "firstcheck": "lib.message.get_bool('Are you able to write in language which is not commonly spoken where you live?')",
         "forget": "365 * ONE_DAY"
     },
     "nippleclamps": {

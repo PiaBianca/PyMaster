@@ -40,7 +40,7 @@
     "body_art_foreign": {
         "requires": "lib.slave.get_fact('language')",
         "text": [
-            "Write \"<python>random.choice(['Slave', 'Property of {}'.format(lib.master.name)])</python>\" in a language that is not your primary language <python>random.choice(['on one of your arms', 'on one of your thighs', 'on one of your feet', 'on your {}'.format('boobs' if lib.slave.sex == FEMALE else 'chest'), 'above your {}'.format('dick' if lib.slave.sex == MALE else 'pussy' if lib.slave.sex == FEMALE else 'genitals'), 'on one of your shoulders', 'on one of your hands', 'somewhere on your body'])</python> with a permanent marker."
+            "Write \"<python>random.choice(['Slave', 'Property of {}'.format(lib.master.name)])</python>\" in a language that is not commonly spoken where you live <python>random.choice(['on one of your arms', 'on one of your thighs', 'on one of your feet', 'on your {}'.format('boobs' if lib.slave.sex == FEMALE else 'chest'), 'above your {}'.format('dick' if lib.slave.sex == MALE else 'pussy' if lib.slave.sex == FEMALE else 'genitals'), 'on one of your shoulders', 'on one of your hands', 'somewhere on your body'])</python> with a permanent marker."
         ]
     },
     "collar": {
@@ -363,8 +363,8 @@
     "write_foreign": {
         "requires": "lib.slave.get_fact('language')",
         "text": [
-            "Hand-write a love letter to me in a language that is not your primary language. Abandon the story in a public place.",
-            "Hand-write a story about me dominating someone in a language that is not your primary language. Abandon the story in a public place."
+            "Hand-write a love letter to me in a language that is not commonly spoken where you live. Abandon the story in a public place.",
+            "Hand-write a story about me dominating someone in a language that is not commonly spoken where you live. Abandon the story in a public place."
         ]
     }
 }
