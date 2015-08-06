@@ -10,5 +10,23 @@
         {
             "penalty": 2.0
         }
+    ],
+    [
+        "oath_fail",
+        {
+            "penalty": 1.1
+        }
+    ],
+    [
+        "too_early",
+        {
+            "penalty": 1.03
+        }
+    ],
+    [
+        "too_late",
+        {
+            "penalty": 1.03
+        }
     ]
 ]

@@ -40,7 +40,7 @@
     "body_art_foreign": {
         "requires": "lib.slave.get_fact('language')",
         "text": [
-            "Schreibe mit einem Permanent-Marker \"<python>random.choice(['{}'.format('Sklavin' if lib.slave.sex == FEMALE else 'Sklave'), 'Besitz von {}'.format(lib.master.name)])</python>\" in einer anderen Sprache als deiner Muttersprache <python>random.choice(['auf einen deiner Arme', 'auf einen deiner Oberschenkel', 'auf einen deiner Füße', 'auf deine {}'.format('Titten' if lib.slave.sex == FEMALE else 'Brust'), 'über deine{}'.format('n Schwanz' if lib.slave.sex == MALE else ' Fotze' if lib.slave.sex == FEMALE else ' Genitalien'), 'auf eine deiner Schultern', 'auf eine deiner Hände', 'irgendwo auf deinen Körper'])</python>."
+            "Schreibe mit einem Permanent-Marker \"<python>random.choice(['{}'.format('Sklavin' if lib.slave.sex == FEMALE else 'Sklave'), 'Besitz von {}'.format(lib.master.name)])</python>\" in einer Sprache, die an deinem Wohnort selten beherrscht wird, <python>random.choice(['auf einen deiner Arme', 'auf einen deiner Oberschenkel', 'auf einen deiner Füße', 'auf deine {}'.format('Titten' if lib.slave.sex == FEMALE else 'Brust'), 'über deine{}'.format('n Schwanz' if lib.slave.sex == MALE else ' Fotze' if lib.slave.sex == FEMALE else ' Genitalien'), 'auf eine deiner Schultern', 'auf eine deiner Hände', 'irgendwo auf deinen Körper'])</python>."
         ]
     },
     "collar": {
@@ -226,7 +226,8 @@
     },
     "piss_mop": {
         "activities": [
-            "toilet"
+            "toilet",
+            "change_underwear"
         ],
         "text": [
             "Putze ein Zimmer in deiner Wohnung mit Pisse und der Unterwäsche, die du gerade trägst. Danach ziehe die Unterwäsche wieder an und putze das Zimmer normal."
@@ -362,8 +363,8 @@
     "write_foreign": {
         "requires": "lib.slave.get_fact('language')",
         "text": [
-            "Verfasse einen handgeschriebenen Liebesbrief an mich. Benutze dabei nicht deine Muttersprache. Lege den Brief an einem öffentlichen Ort ab.",
-            "Verfasse eine handgeschriebene Geschichte darüber, wie ich jemanden dominiere. Benutze dabei nicht deine Muttersprache. Lege den Brief an einem öffentlichen Ort ab."
+            "Verfasse einen handgeschriebenen Liebesbrief an mich. Benutze dabei eine Sprache, die an deinem Wohnort selten beherrscht wird. Lege den Brief an einem öffentlichen Ort ab.",
+            "Verfasse eine handgeschriebene Geschichte darüber, wie ich jemanden dominiere. Benutze dabei eine Sprache, die an deinem Wohnort selten beherrscht wird. Lege den Brief an einem öffentlichen Ort ab."
         ]
     }
 }

@@ -17,6 +17,7 @@
         ]
     },
     "collar": {
+        "requires": "lib.slave.get_fact('collar')",
         "text": [
             "Trage diese Nacht beim Schlafen nichts außer einem Halsband."
         ]
@@ -67,11 +68,6 @@
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('sissy_nightie')",
         "text": [
             "Ziehe ein feminines Nachthemd an, wenn Du schlafen gehst."
-        ]
-    },
-    "underwear_mask": {
-        "text": [
-            "Bleib heute zum Schlafen nackt, ziehe aber die benutzte Unterwäsche über deinen Kopf. Der Schritt kommt auf die Nase."
         ]
     }
 }

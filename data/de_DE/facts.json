@@ -78,7 +78,7 @@
         "forget": "30 * ONE_DAY"
     },
     "language": {
-        "firstcheck": "lib.message.get_bool('Kannst du in einer anderen Sprache schreiben?')",
+        "firstcheck": "lib.message.get_bool('Kannst du in Sprache schreiben, die an deinem Wohnort selten beherrscht wird?')",
         "forget": "365 * ONE_DAY"
     },
     "nippleclamps": {
@@ -86,7 +86,7 @@
         "forget": "30 * ONE_DAY"
     },
     "outdoor_privacy": {
-        "firstcheck": "lib.message.get_bool('Gibt es bei dir einen Platz in der Natur, wo du allein sein kannst (z.B. ein blicksicherer Platz im Garten oder ein Pfad im Wald mit wenigen Besuchern)?",
+        "firstcheck": "lib.message.get_bool('Gibt es bei dir einen Platz in der Natur, wo du allein sein kannst (z.B. ein blicksicherer Platz im Garten oder ein Pfad im Wald mit wenigen Besuchern)?')",
         "forget": "365 * ONE_DAY"
     },
     "photo": {
