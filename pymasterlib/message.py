@@ -169,7 +169,7 @@ def get_interruption(message, wait, answers=None):
     print(_insert_newlines(message))
     print(infotext)
     try:
-        time.sleep(wait)
+        time.sleep(max(wait, 0))
     except KeyboardInterrupt:
         print("\r", end="")
         if answers:
