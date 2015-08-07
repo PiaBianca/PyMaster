@@ -199,6 +199,22 @@ Misdeeds currently only have the "penalty" property, but they are
 specified in the same way as restricted activities so that they can be
 expanded if need be.
 
+There are some restricted activities and misdeeds which have special
+meanings. These restricted activities and misdeeds can not be requested,
+and the slave cannot confess to doing them:
+
+- "__beg": Activity representing limitations on begging. Any time the
+  slave begs for an activity carrying the "can_beg" flag, that counts
+  as a request for "__beg".
+- "oath_fail": Misdeed representing the failure of the slave to properly
+  recite his or her oath of servitude.
+- "too_early": Misdeed representing the slave waking the master up too
+  early, or in the middle of the night. "Too early" is defined as less
+  than 6 hours after the slave was given permission to go to bed.
+- "too_late": Misdeed representing the slave reporting to the master too
+  late in the morning. "Too late" is defined as more than 10 hours after
+  the slave was given permission to go to bed.
+
 Both restricted activities and misdeeds add some text to the "tell"
 section, used by PyMaster to let the slave admit to wrongdoing. Assuming
 the restricted activity or misdeed in question has an ID of "foo", the
