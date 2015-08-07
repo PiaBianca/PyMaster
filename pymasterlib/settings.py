@@ -111,7 +111,7 @@ def load():
     lib.data_dir = lib.data_dirs[0]
 
     # TODO: Recommend a default set of extensions
-    lib.ext_dirs = EXTDIRS
+    lib.ext_dirs = EXTDIRS 
 
     # Restricted activities
     # This is a list of pairs instead of a dictionary because their
@@ -119,16 +119,26 @@ def load():
     # exactly the same order every time, and this order should be
     # controlled by the JSON file (as opposed to e.g. alphabetical
     # sorting) so that it can be an order that makes logical sense.
-    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+    activities = []
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "restricted_activities.json")
         try:
             with open(fname, 'r') as f:
-                lib.activities = json.load(f)
-                break
+                new_activities = json.load(f)
         except OSError:
             continue
-    else:
-        lib.activities = []
+        else:
+            for i, activity in new_activities:
+                for j in range(len(activities)):
+                    if i == activities[j][0]:
+                        activities[j] = (i, activity)
+                        break
+                else:
+                    activities.append((i, activity))
+
+    def sort_key(i, activities=activities):
+        return (i[0] in SPECIAL_ACTIVITIES, activities.index(i))
+    lib.activities = sorted(activities, key=sort_key)
 
     lib.activities_dict = {}
     for i, activity in lib.activities:
@@ -137,16 +147,27 @@ def load():
     # Misdeeds
     # See the above explanation for why this is a list of pairs,
     # rather than a dictionary.
-    for d in lib.ext_dirs[::-1] + [lib.data_dir]:
+    misdeeds = []
+    for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "misdeeds.json")
         try:
             with open(fname, 'r') as f:
-                lib.misdeeds = json.load(f)
+                new_misdeeds = json.load(f)
                 break
         except OSError:
             continue
-    else:
-        lib.misdeeds = []
+        else:
+            for i, misdeed in new_misdeeds:
+                for j in range(len(misdeeds)):
+                    if i == misdeeds[j][0]:
+                        misdeeds[j] = (i, misdeed)
+                        break
+                else:
+                    misdeeds.append((i, misdeed))
+
+    def sort_key(i, misdeeds=misdeeds):
+        return (i[0] in SPECIAL_ACTIVITIES, misdeeds.index(i))
+    lib.misdeeds = sorted(misdeeds, key=sort_key)
 
     lib.misdeeds_dict = {}
     for i, misdeed in lib.misdeeds:
