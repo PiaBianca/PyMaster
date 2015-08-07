@@ -29,18 +29,21 @@ def load_text(ID):
 def get_time_limit(activity):
     """Return the time limit of the activity if it exists, None otherwise."""
     activity_d = lib.activities_dict.get(activity, {})
-    time_limit = eval(activity_d.get("time_limit"))
+    if "time_limit" in activity_d:
+        time_limit = eval(activity_d["time_limit"])
 
-    if time_limit is not None:
-        time_deviate = random.uniform(-1, 1)
-        max_ = eval(activity_d.get("time_limit_max", repr(time_limit)))
-        min_ = eval(activity_d.get("time_limit_min", repr(time_limit)))
-        if time_deviate > 1:
-            time_limit += (max_ - time_limit) * time_deviate
-        elif time_deviate < 1:
-            time_limit += (time_limit - min_) * time_deviate
+        if time_limit is not None:
+            time_deviate = random.uniform(-1, 1)
+            max_ = eval(activity_d.get("time_limit_max", repr(time_limit)))
+            min_ = eval(activity_d.get("time_limit_min", repr(time_limit)))
+            if time_deviate > 1:
+                time_limit += (max_ - time_limit) * time_deviate
+            elif time_deviate < 1:
+                time_limit += (time_limit - min_) * time_deviate
 
-    return time_limit
+        return time_limit
+    else:
+        return None
 
 
 def get_allowed(activity):

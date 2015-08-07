@@ -331,11 +331,21 @@ def masturbate():
                             break
                     else:
                         m = load_text("orgasm_now")
-                        limit = lib.request.get_time_limit("__orgasm")
+
+                        limit = ORGASM_TIME_LIMIT
+                        deviate = random.uniform(-1, 1)
+                        if deviate > 1:
+                            limit += ((ORGASM_TIME_LIMIT_MAX -
+                                       ORGASM_TIME_LIMIT) * deviate)
+                        elif deviate < 1:
+                            limit += ((ORGASM_TIME_LIMIT -
+                                       ORGASM_TIME_LIMIT_MIN) * deviate)
+
                         a = [lib.message.load_text("phrases", "finished")]
                         if lib.message.get_interruption(m, limit, a) is None:
                             lib.message.beep()
                             message = load_text("orgasm_too_long")
+
                 else:
                     message = load_text("orgasm_deny")
                     orgasm_denied = time.time() + random.randint(
