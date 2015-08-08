@@ -78,7 +78,8 @@ def chore():
             if allowed:
                 repeat = False
                 for done_chore in lib.slave.chores:
-                    if done_chore.get("id") == i:
+                    did = done_chore.get("id")
+                    if did == i or did in chores[i].get("similar", []):
                         repeat = True
                         break
 

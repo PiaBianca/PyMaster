@@ -146,6 +146,11 @@
     },
     "maid": {
         "requires": "lib.slave.get_fact('maid')",
+        "similar": [
+            "maid_clamped",
+            "maid_other",
+            "maid_plugged"
+        ],
         "text": [
             "Put on a maid outfit and clean a room in your house.",
             "Do the dishes while wearing a maid outfit."
@@ -153,6 +158,11 @@
     },
     "maid_clamped": {
         "requires": "lib.slave.get_fact('nippleclamps') >= 2",
+        "similar": [
+            "maid",
+            "maid_other",
+            "maid_plugged"
+        ],
         "text": [
             "Clean a room in your house with a nipple clamp or clothespin on each of your nipples.",
             "Clean a room in your house while wearing nothing but a nipple clamp or clothespin on each of your nipples.",
@@ -161,6 +171,11 @@
         ]
     },
     "maid_other": {
+        "similar": [
+            "maid",
+            "maid_clamped",
+            "maid_plugged"
+        ],
         "text": [
             "Clean a room in your house while gagged. Use a sock or underwear if you don't have a proper gag.",
             "Clean a room in your house while wearing nothing but a gag. Use a sock or underwear if you don't have a proper gag.",
@@ -172,6 +187,11 @@
     },
     "maid_plugged": {
         "requires": "lib.slave.get_fact('buttplug')",
+        "similar": [
+            "maid",
+            "maid_clamped",
+            "maid_other"
+        ],
         "text": [
             "Clean a room in your house with a buttplug in your ass.",
             "Clean a room in your house while wearing nothing but a buttplug.",

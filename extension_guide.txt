@@ -317,6 +317,11 @@ and each value is an object with the following keys:
   <python> tags is also valid here. Generally, it is most useful to
   check facts here using the lib.slave.get_fact method, or to check the
   value of lib.slave.sex (whether it's MALE or FEMALE).
+- "similar" (optional): An array of strings indicating chore IDs of
+  other chores which are similar to this one. PyMaster uses this
+  information to avoid repetition in assigning chores. Can be useful if
+  you define multiple chores which are mostly identical, but have
+  different requirements that may overlap.
 
 Night chores are specified the same way as regular chores, but in
 night_chores.json.
