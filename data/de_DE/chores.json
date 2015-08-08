@@ -69,17 +69,17 @@
     },
     "develop_pymaster_chore": {
         "text": [
-            "Denke dir einen neuen Task oder eine neue Bestrafung für PyMaster aus. Prüfe in \"<python>os.path.join(DATADIR, 'chores.json')</python>\" and \"<python>os.path.join(DATADIR, 'punishments.json')</python>\", dass deine Idee nicht schon vorhanden ist. Sende deine Idee (möglichst auf Englisch) an FreedomOfRestriction@openmailbox.org."
+            "Denke dir einen neuen Task oder eine neue Bestrafung für PyMaster aus. Prüfe in \"<python>os.path.join(lib.data_dir, 'chores.json')</python>\" and \"<python>os.path.join(lib.data_dir, 'punishments.json')</python>\", dass deine Idee nicht schon vorhanden ist. Sende deine Idee (möglichst auf Englisch) an FreedomOfRestriction@openmailbox.org."
         ]
     },
     "develop_pymaster_gift": {
         "text": [
-            "Denke dir ein neues Geburtstagsgeschenk für PyMaster aus. Prüfe in \"<python>os.path.join(DATADIR, 'gifts.json')</python>\", dass deine Idee nicht schon vorhanden ist. Sende deine Idee (möglichst auf Englisch) an FreedomOfRestriction@openmailbox.org."
+            "Denke dir ein neues Geburtstagsgeschenk für PyMaster aus. Prüfe in \"<python>os.path.join(lib.data_dir, 'gifts.json')</python>\", dass deine Idee nicht schon vorhanden ist. Sende deine Idee (möglichst auf Englisch) an FreedomOfRestriction@openmailbox.org."
         ]
     },
     "develop_pymaster_nightchore": {
         "text": [
-            "Denke dir einen neuen Nacht-Task für PyMaster aus. Prüfe in \"<python>os.path.join(DATADIR, 'night_chores.json')</python>\", dass deine Idee nicht schon vorhanden ist. Sende deine Idee (möglichst auf Englisch) an FreedomOfRestriction@openmailbox.org."
+            "Denke dir einen neuen Nacht-Task für PyMaster aus. Prüfe in \"<python>os.path.join(lib.data_dir, 'night_chores.json')</python>\", dass deine Idee nicht schon vorhanden ist. Sende deine Idee (möglichst auf Englisch) an FreedomOfRestriction@openmailbox.org."
         ]
     },
     "dildo_blowjob": {
