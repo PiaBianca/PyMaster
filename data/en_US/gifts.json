@@ -16,6 +16,11 @@
             "I'm going to let you masturbate and cum once for free today, on one condition: you must eat your cum."
         ]
     },
+    "edge_then_cum": {
+        "text": [
+            "I'm going to let you masturbate for free today. You can cum if and only if you first edge <python>random.randint(2, 5) * 5</python> times."
+        ]
+    },
     "games_competitive": {
         "text": [
             "You can play whatever competitive multiplayer games you want today, on one condition: you must play intentionally badly, but in a way that's subtle so the people you're playing with don't notice it's intentional. Try to lose as much as possible."
