@@ -85,13 +85,13 @@
     "dildo_blowjob": {
         "requires": "lib.slave.get_fact('dildo_suck')",
         "text": [
-            "Suck on a dildo or penis-shaped object for <python>random.randint(1, 3) * 5</python> minutes. Make sure you suck back and forth like a good slut."
+            "Suck on a dildo or penis-shaped object for <python>random.randint(1, 5) * 5</python> minutes. Make sure you suck back and forth like a good slut."
         ]
     },
     "dildo_deep_throat": {
         "requires": "lib.slave.get_fact('dildo_deepthroat')",
         "text": [
-            "Deep-throat a dildo for <python>random.randint(2, 7)</python> minutes."
+            "Deep-throat a dildo for <python>random.randint(1, 4) * 5</python> minutes."
         ]
     },
     "edging": {

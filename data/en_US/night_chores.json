@@ -43,6 +43,18 @@
             "Cuff your hands behind your back. Do not take them off until the morning."
         ]
     },
+    "midnight_dildo_blowjob": {
+        "requires": "lib.slave.get_fact('dildo_suck')",
+        "text": [
+            "Set your alarm to three hours from now. When it goes off, suck on a dildo or penis-shaped object for <python>random.randint(1, 5) * 5</python> minutes. Make sure you suck back and forth like a good slut."
+        ]
+    },
+    "midnight_dildo_deep_throat": {
+        "requires": "lib.slave.get_fact('dildo_deepthroat')",
+        "text": [
+            "Set your alarm to three hours from now. When it goes off, deep-throat a dildo for <python>random.randint(1, 4) * 5</python> minutes."
+        ]
+    },
     "midnight_edging": {
         "activities": [
             "masturbation"
