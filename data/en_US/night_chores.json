@@ -1,27 +1,68 @@
 {
-    "midnight_dildo_blowjob": {
+    "blind_and_immobile": {
+        "requires": "lib.slave.get_fact('bondage_tape')",
+        "text": [
+            "Sleep with bondage tape binding your legs and covering your eyes. Do not remove any of the tape until you get up for the morning."
+        ]
+    },
+    "buttplug": {
+        "requires": "lib.slave.get_fact('buttplug')",
+        "text": [
+            "Put a buttplug in your ass. Do not take it out until the morning."
+        ]
+    },
+    "closet": {
+        "text": [
+            "Sleep in a small closet tonight."
+        ]
+    },
+    "collar": {
+        "requires": "lib.slave.get_fact('collar')",
+        "text": [
+            "Sleep with nothing but your collar on tonight."
+        ]
+    },
+    "dildo_blowjob": {
         "requires": "lib.slave.get_fact('dildo_suck')",
         "text": [
-            "Set your alarm to three hours from now. When it goes off, suck on a dildo or penis-shaped object for <python>random.randint(1, 5) * 5</python> minutes. Make sure you suck back and forth like a good slut."
+            "Set your alarm to <python>random.randint(3, 5)</python> hours from now. When it goes off, suck on a dildo or penis-shaped object for <python>random.randint(1, 5) * 5</python> minutes. Make sure you suck back and forth like a good slut."
         ]
     },
-    "midnight_dildo_deep_throat": {
+    "dildo_deep_throat": {
         "requires": "lib.slave.get_fact('dildo_deepthroat')",
         "text": [
-            "Set your alarm to three hours from now. When it goes off, deep-throat a dildo for <python>random.randint(1, 4) * 5</python> minutes."
+            "Set your alarm to <python>random.randint(3, 5)</python> hours from now. When it goes off, deep-throat a dildo for <python>random.randint(1, 4) * 5</python> minutes."
         ]
     },
-    "midnight_edging": {
+    "edging": {
         "activities": [
             "masturbation"
         ],
         "text": [
-            "Set your alarm to three hours from now. When it goes off, edge <python>random.randint(2, 7)</python> times, then go back to sleep. No cumming."
+            "Set your alarm to <python>random.randint(3, 5)</python> hours from now. When it goes off, edge <python>random.randint(2, 7)</python> times, then go back to sleep. No cumming."
+        ]
+    },
+    "game": {
+        "activities": [
+            "fun"
+        ],
+        "text": [
+            "Set your alarm to <python>random.randint(3, 4)</python> hours from now. When it goes off, do a <python>random.randint(15, 20)</python>-lap race in SuperTuxKart on the <python>random.choice(['Bovine Barnyard', \"Oliver's Math Class\", 'Shifting Sands', 'Scotland', 'Subsea'])</python> track with <python>random.randint(1, 7)</python> AI karts. If you don't have SuperTuxKart, download it from http://supertuxkart.sf.net/.",
+            "Set your alarm to <python>random.randint(3, 4)</python> hours from now. When it goes off, play Yahtzee (or a clone of Yahtzee) until you complete the game with at least 180 points. If you fail the first time, try again. If you don't have Yahtzee, download Open Yahtzee from http://www.openyahtzee.org/."
+        ]
+    },
+    "handcuffs": {
+        "requires": "lib.slave.get_fact('handcuffs')",
+        "similar": [
+            "sockcuffs"
+        ],
+        "text": [
+            "Cuff your hands behind your back. Do not take them off until the morning."
         ]
     },
     "midnight_piss": {
         "text": [
-            "Drink a glass of water before going to bed. Set your alarm to three hours from now. When it goes off, take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>. Do not use the toilet between now and then."
+            "Drink a glass of water before going to bed. Set your alarm to <python>random.randint(3, 5)</python> hours from now. Do not use the toilet between now and then. When the alarm goes off, take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>."
         ]
     },
     "midnight_porn": {
@@ -29,65 +70,29 @@
             "porn"
         ],
         "text": [
-            "Set your alarm to three hours from now. When it goes off, watch a porn video which is at least <python>random.randint(1, 4) * 5</python> minutes long. Then go back to sleep. You are not allowed to masturbate."
+            "Set your alarm to <python>random.randint(3, 5)</python> hours from now. When it goes off, watch a porn video which is at least <python>random.randint(1, 4) * 5</python> minutes long. Then go back to sleep. You are not allowed to masturbate."
         ]
     },
-    "night_blind_and_immobile": {
-        "requires": "lib.slave.get_fact('bondage_tape')",
-        "text": [
-            "Sleep with bondage tape binding your legs and covering your eyes. Do not remove any of the tape until you get up for the morning."
-        ]
-    },
-    "night_buttplug": {
-        "requires": "lib.slave.get_fact('buttplug')",
-        "text": [
-            "Put a buttplug in your ass. Do not take it out until the morning."
-        ]
-    },
-    "night_closet": {
-        "text": [
-            "Sleep in a small closet tonight."
-        ]
-    },
-    "night_collar": {
-        "requires": "lib.slave.get_fact('collar')",
-        "text": [
-            "Sleep with nothing but your collar on tonight."
-        ]
-    },
-    "night_discomfort": {
-        "text": [
-            "Sleep without any blankets or pillows tonight."
-        ]
-    },
-    "night_exposed": {
-        "text": [
-            "Sleep with no clothes, sheets, or blankets tonight."
-        ]
-    },
-    "night_floor": {
+    "nobed": {
         "text": [
             "Sleep on the floor tonight."
         ]
     },
-    "night_handcuffs": {
-        "requires": "lib.slave.get_fact('handcuffs')",
-        "similar": [
-            "night_sockcuffs"
-        ],
+    "noblankets": {
         "text": [
-            "Cuff your hands behind your back. Do not take them off until the morning."
+            "Sleep without any blankets or pillows tonight.",
+            "Sleep with no clothes, sheets, or blankets tonight."
         ]
     },
-    "night_sissy": {
+    "sissy": {
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('sissy_nightie')",
         "text": [
             "Put on a girly nightgown and wear it to bed tonight."
         ]
     },
-    "night_sockcuffs": {
+    "sockcuffs": {
         "similar": [
-            "night_handcuffs"
+            "handcuffs"
         ],
         "text": [
             "Use a sock to hold your hands together behind your back. Keep your hands like that until the morning."

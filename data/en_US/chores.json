@@ -16,7 +16,7 @@
         ],
         "text": [
             "Wait until you have a strong urge to pee, then do a <python>random.randint(15, 20)</python>-lap race in SuperTuxKart on the <python>random.choice(['Bovine Barnyard', \"Oliver's Math Class\", 'Shifting Sands', 'Scotland', 'Subsea'])</python> track with <python>random.randint(1, 7)</python> AI karts. No bathroom breaks allowed until you finish the race. If you don't have SuperTuxKart, download it from http://supertuxkart.sf.net/.",
-            "Wait until you really need to pee, then play Yahtzee (or a clone of Yahtzee). Do not request permission to use the toilet until you complete the game with at least 180 points. If you fail the first time, try again until you get 180 points. If you don't have Yahtzee, download Open Yahtzee from http://www.openyahtzee.org/."
+            "Wait until you really need to pee, then play Yahtzee (or a clone of Yahtzee). Do not request permission to use the toilet until you complete the game with at least 180 points. If you fail the first time, try again. If you don't have Yahtzee, download Open Yahtzee from http://www.openyahtzee.org/."
         ]
     },
     "blowjob_orgasm": {
@@ -279,12 +279,20 @@
     },
     "pornstar": {
         "requires": "lib.slave.get_fact('photo')",
+        "similar": [
+            "pornstar_bondage",
+            "pornstar_video"
+        ],
         "text": [
             "Take <python>random.randint(2, 6)</python> pictures of yourself looking sexy and masturbating, but without ever actually masturbating. Use your imagination; I want different pictures, not minor variations of the same one."
         ]
     },
     "pornstar_bondage": {
         "requires": "lib.slave.get_fact('photo')",
+        "similar": [
+            "pornstar",
+            "pornstar_video"
+        ],
         "text": [
             "Take <python>random.randint(2, 6)</python> pictures of yourself in bondage. You don't have to actually be trapped in the bondage; just make it look like you are. Use your imagination; I want different pictures, not minor variations of the same one."
         ]
@@ -294,6 +302,10 @@
             "masturbation"
         ],
         "requires": "lib.slave.get_fact('video')",
+        "similar": [
+            "pornstar",
+            "pornstar_bondage"
+        ],
         "text": [
             "Make a sexy porn video of you masturbating and having an orgasm, at least <python>random.randint(1, 3) * 5</python> minutes long."
         ]
@@ -325,7 +337,7 @@
         "requires": "lib.slave.sex == MALE",
         "text": [
             "Go to a store that sells women's clothes. Browse for at least <python>random.randint(1, 4) * 5</python> minutes. If you can afford it, buy an article of women's clothing.",
-            "Go to a store that sells women's clothes. Try on at least <python>random.randint(3, 7)</python> outfits consisting entirely of women's clothes. If you can afford it, buy one of the outfits you tried on."
+            "Go to a store that sells women's clothes and has a changing room. Try on at least <python>random.randint(3, 7)</python> outfits consisting entirely of women's clothes. If you can afford it, buy one of the outfits you tried on."
         ]
     },
     "sissy_walk": {
