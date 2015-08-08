@@ -123,7 +123,7 @@
     },
     "new_idea": {
         "text": [
-            "Come up with a new idea for an appropriate punishment. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(DATADIR, 'punishments.json')</python>\". Carry out the punishment, and then send your idea and your experience with it to FreedomOfRestriction@openmailbox.org."
+            "Come up with a new idea for an appropriate punishment. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(lib.data_dir, 'punishments.json')</python>\". Carry out the punishment, and then send your idea and your experience with it to FreedomOfRestriction@openmailbox.org."
         ]
     },
     "pegged_pussy": {
