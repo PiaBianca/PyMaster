@@ -550,5 +550,5 @@ def gift_other():
 
 
 def gift():
-    gifts = [gift_surf, gift_other]
+    gifts = [gift_surf, gift_other, gift_other, gift_other, gift_other]
     random.choice(gifts)()
