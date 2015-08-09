@@ -72,11 +72,14 @@ def get_allowed(activity):
         limit = activity_d.get("limit")
         for i in lib.slave.misdeeds:
             for misdeed in lib.slave.misdeeds[i]:
-                if i in lib.misdeeds_dict:
+                if misdeed.get("punished", False):
+                    penalty = MISDEED_PUNISHED_PENALTY
+                elif i in lib.misdeeds_dict:
                     penalty = lib.misdeeds_dict[i].get("penalty", 1)
                 else:
                     penalty = lib.activities_dict.get(i, {}).get("penalty", 1)
 
+                print(i, penalty)
                 interval *= penalty
 
         if ((limit is None or len(lib.slave.activities[activity]) < limit) and
