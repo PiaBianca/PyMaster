@@ -42,6 +42,13 @@
             "Set your alarm to <python>random.randint(3, 5)</python> hours from now. When it goes off, edge <python>random.randint(2, 7)</python> times, then go back to sleep. No cumming."
         ]
     },
+    "exercise": {
+        "text": [
+            "Set your alarm to <python>random.randint(3, 4)</python> hours from now. When it goes off, do <python>random.randint(3, 5) * 100</python> jumping jacks (total, not necessarily all at once). Do not go back to sleep until you are finished.",
+            "Set your alarm to <python>random.randint(3, 4)</python> hours from now. When it goes off, do <python>random.randint(3, 5) * 10</python> push-ups (total, not necessarily all at once). Do not go back to sleep until you are finished.",
+            "Set your alarm to <python>random.randint(3, 4)</python> hours from now. When it goes off, do <python>random.randint(5, 8) * 10</python> sit-ups (total, not necessarily all at once). Do not go back to sleep until you are finished."
+        ]
+    },
     "game": {
         "activities": [
             "fun"

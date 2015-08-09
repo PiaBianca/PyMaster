@@ -5,9 +5,6 @@
         ]
     },
     "accident_real": {
-        "activities": [
-            "toilet"
-        ],
         "text": [
             "Piss in your pants, then take a walk outside for <python>random.randint(1, 3) * 15</python> minutes."
         ]
@@ -56,9 +53,6 @@
         ]
     },
     "golden_shower": {
-        "activities": [
-            "toilet"
-        ],
         "text": [
             "<python>'Piss on your face.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your face.'</python> Stay there for <python>random.randint(2, 5) * 10</python> minutes. You may not wash up afterwards."
         ]
@@ -138,25 +132,16 @@
         ]
     },
     "piss_drink": {
-        "activities": [
-            "toilet"
-        ],
         "text": [
             "Piss in a container. You must drink it all back up."
         ]
     },
     "piss_gag": {
-        "activities": [
-            "toilet"
-        ],
         "text": [
             "Soak the underwear you are currently wearing with piss, then gag yourself with that underwear and leave it in your mouth for <python>random.randint(1, 3) * 5</python> minutes. You are not allowed to wring it out until it's in your mouth."
         ]
     },
     "piss_transport": {
-        "activities": [
-            "toilet"
-        ],
         "text": [
             "Piss in a container that's at least 1 liter (e.g. a watter bottle) until it's full. Leave this bottle in your bedroom while you use your mouth to take the piss somewhere outside until the bottle is empty. I don't care if you swallow some of it."
         ]
@@ -194,9 +179,6 @@
         ]
     },
     "soiled_underwear": {
-        "activities": [
-            "toilet"
-        ],
         "text": [
             "Put on your dirtiest pair of underwear and piss through it. Do not wash it. This will be the underwear you will wear until I let you change it next."
         ]
