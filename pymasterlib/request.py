@@ -79,7 +79,6 @@ def get_allowed(activity):
                 else:
                     penalty = lib.activities_dict.get(i, {}).get("penalty", 1)
 
-                print(i, penalty)
                 interval *= penalty
 
         if ((limit is None or len(lib.slave.activities[activity]) < limit) and
