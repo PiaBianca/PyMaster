@@ -13,8 +13,8 @@
         "Get your ass back in bed, then."
     ],
     "chore_ask_completed": [
-        "<python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> your task<python>random.choice(['', ' today'])</python>?",
-        "I assigned you a task this morning. <python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> it?"
+        "<python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> your task?",
+        "I assigned you a task earlier. <python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> it?"
     ],
     "goodnight": [
         "You can go to bed now. Good night.",
