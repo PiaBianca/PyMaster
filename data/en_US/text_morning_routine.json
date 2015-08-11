@@ -38,7 +38,7 @@
     ],
     "gift_birthday": [
         "I see it's your birthday, slave. I have a present for you.",
-        "I have a present for you, <python>'birthday boy' if lib.slave.sex == MALE else 'birthday girl' if lib.slave sex == FEMALE else lib.slave.name</python>.",
+        "I have a present for you, <python>'birthday boy' if lib.slave.sex == MALE else 'birthday girl' if lib.slave.sex == FEMALE else lib.slave.name</python>.",
         "It's your birthday today. I have a special surprise for you.",
         "I have a special birthday surprise for my slave!",
         "Oh, it's your birthday, isn't it? I guess it's time for your present."
