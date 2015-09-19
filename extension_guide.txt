@@ -139,8 +139,7 @@ or misdeed. Restricted activities have the following properties:
   this is the maximum amount of time the slave may have to wait before
   doing the activity again. The time is in seconds, but it's generally
   easiest to use the constants: ONE_MINUTE, ONE_HOUR, and ONE_DAY (for
-  example, "30 * ONE_DAY" would be 30 days). If this is unspecified, the
-  fact stays in the master's memory forever.
+  example, "30 * ONE_DAY" would be 30 days).
 - "interval": Indicates the default amount of time it takes before the
   master grants permission to do the activity again, as a string of
   Python code. This is adjusted based on how well the slave has been
@@ -282,6 +281,34 @@ to the "request" section:
 
 - "foo_sick": Text of the master unconditionally either granting or
   denying permission to do the activity because the slave is sick.
+
+ROUTINES
+
+"routines.json" indicates routines.  Routines are much like restricted
+activities, but are required rather than restricted. They are assigned
+right after restricted activities containing the "auto" flag. The file
+is a standard JSON file containing an object. Each key indicates the
+identifier of the routine, and each value is an object containing the
+following keys:
+
+- "interval_min": Indicates the minimum interval at which the routine is
+  assigned as a string of Python code. The time is in seconds, but it's
+  generally easiest to use the constants: ONE_MINUTE, ONE_HOUR, and
+  ONE_DAY (for example, "4 * ONE_HOUR" would be 4 hours).
+- "interval_max": Indicates the maximum interval at which the routine is
+  assigned as a string of Python code.
+- "time_min": Indicates the minimum amount of time the slave can be
+  required to do the routine as a string of Python code.
+- "time_max": Indicates the maximum amount of time the slave can be
+  required to do the routine as a string of Python code.
+
+A routine with an ID of "foo" will add the following text IDs to the
+"assign" section:
+
+- "foo_assign": Text from the master ordering the slave to do the
+  routine.
+- "foo_end": Text from the master telling the slave that he or she can
+  stop doing the routine.
 
 FACTS
 
