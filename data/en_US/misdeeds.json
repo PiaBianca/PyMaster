@@ -6,6 +6,12 @@
         }
     ],
     [
+        "tardy",
+        {
+            "penalty": 1.1
+        }
+    ],
+    [
         "lie",
         {
             "penalty": 2.0
