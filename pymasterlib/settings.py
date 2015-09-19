@@ -172,3 +172,16 @@ def load():
     lib.misdeeds_dict = {}
     for i, misdeed in lib.misdeeds:
         lib.misdeeds_dict[i] = misdeed
+
+    # Routines
+    lib.routines_dict = {}
+    for d in [lib.data_dir] + lib.ext_dirs:
+        fname = os.path.join(d, "routines.json")
+        try:
+            with open(fname, 'r') as f:
+                new_routines = json.load(f)
+        except OSError:
+            continue
+        else:
+            for i in new_routines:
+                lib.routines_dict[i] = new_routines[i]

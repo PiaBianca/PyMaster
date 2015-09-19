@@ -149,6 +149,26 @@ def night_chore():
         lib.message.show(load_text("no_chores"))
 
 
+def routine(i):
+    """
+    Assign the indicated routine to the slave.  Routines are to be done
+    immediately when assigned, for a set amount of time.  They cannot be
+    skipped; attempting to do so by pressing Ctrl+C will only postpone
+    them.
+    """
+    r = lib.routines_dict.get(i, {})
+    flags = r.get("flags", [])
+    time_min = eval(r.get("time_min", "0"))
+    time_max = eval(r.get("time_max", "0"))
+    time_ = random.randint(time_min, time_max)
+    m = load_text("routine_{}".format(i))
+    lib.message.show_timed(m, time_)
+    lib.message.beep()
+    m = load_text("routine-end_{}".format(i))
+    lib.message.show(m)
+    lib.slave.add_routine(i)
+
+
 def punishment(misdeed):
     """Assign and return a random punishment for the misdeed indicated."""
     lib.slave.forget()

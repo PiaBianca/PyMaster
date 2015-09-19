@@ -34,6 +34,7 @@ data_dir = ""
 ext_dirs = []
 activities = []
 activities_dict = {}
+routines_dict = {}
 misdeeds = []
 misdeeds_dict = {}
 
@@ -58,6 +59,7 @@ class slave:
     chores = []
     abandoned_chores = []
     activities = {}
+    routines = {}
     misdeeds = {}
     facts = {}
 
@@ -150,6 +152,14 @@ class slave:
     @classmethod
     def add_activity(cls, activity):
         cls.activities.setdefault(activity, []).append(time.time())
+
+    @classmethod
+    def add_routine(cls, routine):
+        r = routines_dict.get(routine, {})
+        interval_min = eval(r.get("interval_min", "0"))
+        interval_max = eval(r.get("interval_max", "0"))
+        interval = random.randint(interval_min, interval_max)
+        cls.routines[routine] = time.time() + interval
 
     @classmethod
     def add_misdeed(cls, activity, punishment=None):

@@ -83,14 +83,22 @@ def main():
                 lib.scripts.morning_routine()
 
         def auto_grant():
-            for i, activity in sorted(lib.activities,
-                                      key=lambda _: random.random()):
-                flags = activity.get("flags", [])
-                if "auto" in flags and not lib.slave.sick:
-                    if lib.request.request(i):
-                        lib.request.allow(i, activity,
-                                          load_text("assign_{}".format(i)))
+            for i in sorted(lib.routines_dict.keys(),
+                            key=lambda _: random.random()):
+                if not lib.slave.sick:
+                    T = time.time()
+                    if T >= lib.slave.routines.setdefault(i, T):
+                        lib.assign.routine(i)
                         break
+            else:
+                for i, activity in sorted(lib.activities,
+                                          key=lambda _: random.random()):
+                    flags = activity.get("flags", [])
+                    if "auto" in flags and not lib.slave.sick:
+                        if lib.request.request(i):
+                            lib.request.allow(i, activity,
+                                              load_text("assign_{}".format(i)))
+                            break
 
         auto_grant()
         choices = [load_text("choice_ask"), load_text("choice_request"),
