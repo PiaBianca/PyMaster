@@ -159,7 +159,7 @@ def routine(i):
     r = lib.routines_dict.get(i, {})
     time_min = eval(r.get("time_min", "0"))
     time_max = eval(r.get("time_max", "0"))
-    time_ = random.randint(time_min, time_max)
+    time_ = random.uniform(time_min, time_max)
     script = r.get("script")
 
     if script:

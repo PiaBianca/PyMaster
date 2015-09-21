@@ -96,8 +96,11 @@ def main():
                             key=lambda _: random.random()):
                 if not lib.slave.sick:
                     T = time.time()
-                    if T >= lib.slave.routines.setdefault(i, T):
-                        lib.assign.routine(i)
+                    if i in lib.slave.routines:
+                        if T >= lib.slave.routines[i]:
+                            lib.assign.routine(i)
+                    else:
+                        lib.slave.add_routine(i)
 
         auto_grant()
         choices = [load_text("choice_ask"), load_text("choice_request"),

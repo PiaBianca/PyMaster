@@ -159,10 +159,10 @@ class slave:
         interval_min = eval(r.get("interval_min", "0"))
         interval_max = eval(r.get("interval_max", "0"))
         skip_chance = r.get("skip_chance", 0)
-        interval = random.randint(interval_min, interval_max)
+        interval = random.uniform(interval_min, interval_max)
         cls.routines[routine] = time.time() + interval
         while random.random() < skip_chance:
-            interval = random.randint(interval_min, interval_max)
+            interval = random.uniform(interval_min, interval_max)
             cls.routines[routine] += interval
 
     @classmethod

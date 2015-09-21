@@ -166,7 +166,7 @@ def morning_routine():
             lib.message.show(load_text("better_no_response"))
 
     if not lib.slave.sick:
-        e_time = random.randint(45, 2 * ONE_MINUTE + 30)
+        e_time = random.uniform(45, 2 * ONE_MINUTE + 30)
         lib.message.show_timed(load_text("exercise"), e_time)
         lib.message.beep()
         lib.message.show(load_text("exercise_end"))
@@ -331,7 +331,7 @@ def masturbate():
     def load_text(ID): return lib.message.load_text("masturbate", ID)
     asked_orgasm = False
     orgasmed = False
-    orgasm_denied = time.time() + random.randint(ORGASM_ASK_DELAY_MIN,
+    orgasm_denied = time.time() + random.uniform(ORGASM_ASK_DELAY_MIN,
                                                  ORGASM_ASK_DELAY_MAX)
     message = load_text("masturbate_start")
     answers = ["", "", ""]
@@ -408,7 +408,7 @@ def masturbate():
 
                 else:
                     message = load_text("orgasm_deny")
-                    orgasm_denied = time.time() + random.randint(
+                    orgasm_denied = time.time() + random.uniform(
                         ORGASM_ASK_DELAY_MIN, ORGASM_ASK_DELAY_MAX)
             else:
                 message = load_text("orgasm_deny")
@@ -557,7 +557,7 @@ def wait_game(taunt):
 def gift_surf():
     def load_text(ID): return lib.message.load_text("masturbate", ID)
 
-    orgasm_time = time.time() + random.randint(20 * ONE_MINUTE, 30 * ONE_MINUTE)
+    orgasm_time = time.time() + random.uniform(20 * ONE_MINUTE, 30 * ONE_MINUTE)
     m = load_text("gift_surf_start")
     a = [load_text("naughty_orgasm")]
     i = lib.message.get_interruption(m, orgasm_time, a)
