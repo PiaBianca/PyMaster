@@ -267,6 +267,56 @@ def evening_routine():
     sys.exit()
 
 
+def rhythm(category, rate_min=0.5, rate_max=2.5,
+           accel_choices=(-0.05, 0, 0.05), accel_change_time=10,
+           duration_min=(5 * ONE_MINUTE), duration_max=(30 * ONE_MINUTE)):
+    """
+    This function was conceived for controlled masturbation, but it
+    could theoretically be used for all sorts of things, like spanking
+    or exercise.
+
+    ``category`` is a string indicating the category of the rhythm, used
+    to find the proper text in text_rhythm.json.  ``rate_min`` and
+    ``rate_max`` are the maximum and minimum rates of the rhythm in
+    beats per second.  ``accel_choices`` is an iterable of the possible
+    acceleration amounts to choose from, in beats per second per second.
+    ``accel_change_time`` is the amount of time in between acceleration
+    changes in seconds.  ``duration_min`` and ``duration_max`` are the
+    minimum and maximum, respectively, possible durations of the rhythm
+    in seconds; the actual duration is chosen randomly between these
+    two.
+    """
+    def load_text(ID): return lib.message.load_text("rhythm", ID)
+
+    lib.message.show(load_text("{}_intro".format(category)))
+
+    m = load_text("{}_setup".format(category))
+    lib.message.show(m, lib.message.load_text("phrases", "finished"))
+
+    rate = rate_min
+    accel = 0
+    duration = random.uniform(duration_min, duration_max)
+    start_time = time.time()
+    segment_start_time = start_time
+    loop_start_time = start_time
+
+    while time.time() - start_time < duration:
+        if time.time() - segment_start_time >= accel_change_time:
+            accel = random.choice(accel_choices)
+            segment_start_time += accel_change_time
+
+        lib.message.beep()
+        delay = 1 / rate
+        time.sleep(delay)
+
+        loop_time = time.time() - loop_start_time
+        loop_start_time += loop_time
+        rate += loop_time * accel
+        rate = max(rate_min, min(rate, rate_max))
+
+    lib.message.show(load_text("{}_end".format(category)))
+
+
 def masturbate():
     def load_text(ID): return lib.message.load_text("masturbate", ID)
     asked_orgasm = False
