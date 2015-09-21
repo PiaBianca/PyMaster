@@ -165,10 +165,10 @@ def routine(i):
     if script:
         eval(script)()
     else:
-        m = load_text("{}_assign".format(i))
+        m = load_text("routine_{}_assign".format(i))
         lib.message.show_timed(m, time_)
         lib.message.beep()
-        m = load_text("{}_end".format(i))
+        m = load_text("routine_{}_end".format(i))
         lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
 
     lib.slave.add_routine(i)

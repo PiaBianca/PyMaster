@@ -306,15 +306,16 @@ following keys:
 - "script" (optional): If specified, indicates a Python function which
   should be called any time the routine is assigned. This should
   typically be something placed in lib.scripts, though it's also
-  possible to define a function here with the lambda keyword.
+  possible to define a function here with the lambda keyword.  Note that
+  specifying this causes "time_min" and "time_max" to be ignored.
 
 A routine with an ID of "foo" will add the following text IDs to the
 "assign" section:
 
-- "foo_assign": Text from the master ordering the slave to do the
-  routine.
-- "foo_end": Text from the master telling the slave that he or she can
-  stop doing the routine.
+- "routine_foo_assign": Text from the master ordering the slave to do
+  the routine.
+- "routine_foo_end": Text from the master telling the slave that he or
+  she can stop doing the routine.
 
 FACTS
 

@@ -267,9 +267,8 @@ def evening_routine():
     sys.exit()
 
 
-def rhythm(category, rate_min=0.5, rate_max=2.5,
-           accel_choices=(-0.05, 0, 0.05), accel_change_time=10,
-           duration_min=(5 * ONE_MINUTE), duration_max=(30 * ONE_MINUTE)):
+def rhythm(category, rate_min, rate_max, accel_choices,
+           accel_change_time, duration):
     """
     This function was conceived for controlled masturbation, but it
     could theoretically be used for all sorts of things, like spanking
@@ -295,7 +294,6 @@ def rhythm(category, rate_min=0.5, rate_max=2.5,
 
     rate = rate_min
     accel = 0
-    duration = random.uniform(duration_min, duration_max)
     start_time = time.time()
     segment_start_time = start_time
     loop_start_time = start_time
@@ -315,6 +313,18 @@ def rhythm(category, rate_min=0.5, rate_max=2.5,
         rate = max(rate_min, min(rate, rate_max))
 
     lib.message.show(load_text("{}_end".format(category)))
+
+
+def rhythm_vaginal_sex(category="sex_vaginal", duration=None):
+    if duration is None:
+        duration = random.uniform(5 * ONE_MINUTE, 30 * ONE_MINUTE)
+    rhythm(category, 0.5, 2.5, (-0.05, 0, 0.05), 10, duration)
+
+
+def rhythm_anal_sex(category="sex_anal", duration=None):
+    if duration is None:
+        duration = random.uniform(5 * ONE_MINUTE, 30 * ONE_MINUTE)
+    rhythm(category, 1 / 3, 1.5, (-0.025, 0, 0.025), 10, duration)
 
 
 def masturbate():
