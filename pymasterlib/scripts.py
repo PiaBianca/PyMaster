@@ -292,6 +292,9 @@ def rhythm(category, rate_min, rate_max, accel_choices,
     m = load_text("{}_setup".format(category))
     lib.message.show(m, lib.message.load_text("phrases", "finished"))
 
+    m = load_text("{}_start".format(category))
+    lib.message.show_timed(m, 5)
+
     rate = rate_min
     accel = 0
     start_time = time.time()
