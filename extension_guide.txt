@@ -301,6 +301,12 @@ following keys:
   required to do the routine as a string of Python code.
 - "time_max": Indicates the maximum amount of time the slave can be
   required to do the routine as a string of Python code.
+- "skip_chance" (optional): Indicates the chance of the routine being
+  skipped any time it would be assigned as a fraction of 1.
+- "script" (optional): If specified, indicates a Python function which
+  should be called any time the routine is assigned. This should
+  typically be something placed in lib.scripts, though it's also
+  possible to define a function here with the lambda keyword.
 
 A routine with an ID of "foo" will add the following text IDs to the
 "assign" section:

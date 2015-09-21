@@ -157,15 +157,20 @@ def routine(i):
     them.
     """
     r = lib.routines_dict.get(i, {})
-    flags = r.get("flags", [])
     time_min = eval(r.get("time_min", "0"))
     time_max = eval(r.get("time_max", "0"))
     time_ = random.randint(time_min, time_max)
-    m = load_text("{}_assign".format(i))
-    lib.message.show_timed(m, time_)
-    lib.message.beep()
-    m = load_text("{}_end".format(i))
-    lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+    script = r.get("script")
+
+    if script:
+        eval(script)()
+    else:
+        m = load_text("{}_assign".format(i))
+        lib.message.show_timed(m, time_)
+        lib.message.beep()
+        m = load_text("{}_end".format(i))
+        lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+
     lib.slave.add_routine(i)
 
 
