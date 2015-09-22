@@ -64,7 +64,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 if args.data_dirs:
-    DATADIRS = args.data_dir
+    DATADIRS = args.data_dirs
 else:
     DATADIRS = []
 
