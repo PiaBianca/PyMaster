@@ -157,13 +157,12 @@ def routine(i):
     them.
     """
     r = lib.routines_dict.get(i, {})
-    skip_chance = r.get("skip_chance", 0)
     time_min = eval(r.get("time_min", "0"))
     time_max = eval(r.get("time_max", "0"))
     time_ = random.uniform(time_min, time_max)
     script = r.get("script")
 
-    if random.random() >= skip_chance:
+    if i not in lib.slave.routine_skips:
         if script:
             eval(script)()
         else:
@@ -174,6 +173,7 @@ def routine(i):
             m = load_text("routine_{}_end".format(i))
             lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
     else:
+        lib.slave.routine_skips.discard(i)
         lib.slave.add_routine(i)
 
 

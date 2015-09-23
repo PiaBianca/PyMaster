@@ -60,6 +60,7 @@ class slave:
     abandoned_chores = []
     activities = {}
     routines = {}
+    routine_skips = set()
     misdeeds = {}
     facts = {}
 
@@ -159,7 +160,10 @@ class slave:
         interval_min = eval(r.get("interval_min", "0"))
         interval_max = eval(r.get("interval_max", "0"))
         interval = random.uniform(interval_min, interval_max)
+        skip_chance = r.get("skip_chance", 0)
         cls.routines[routine] = time.time() + interval
+        if random.random() < skip_chance:
+            cls.routine_skips.add(routine)
 
     @classmethod
     def add_misdeed(cls, activity, punishment=None):
