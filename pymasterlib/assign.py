@@ -169,11 +169,12 @@ def routine(i):
         else:
             m = load_text("routine_{}_assign".format(i))
             lib.message.show_timed(m, time_)
+            lib.slave.add_routine(i)
             lib.message.beep()
             m = load_text("routine_{}_end".format(i))
             lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
-
-    lib.slave.add_routine(i)
+    else:
+        lib.slave.add_routine(i)
 
 
 def punishment(misdeed):
