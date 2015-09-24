@@ -33,6 +33,8 @@ def save():
                       "chores": lib.slave.chores,
                       "abandoned_chores": lib.slave.abandoned_chores,
                       "activities": lib.slave.activities,
+                      "routines": lib.slave.routines,
+                      "routine_skips": list(lib.slave.routine_skips),
                       "misdeeds": lib.slave.misdeeds,
                       "facts": lib.slave.facts}
     settings = {"program": program_settings, "master": master_settings,
@@ -68,6 +70,8 @@ def load():
     lib.slave.chores = s_slave.get("chores", [])
     lib.slave.abandoned_chores = s_slave.get("abandoned_chores", [])
     lib.slave.activities = s_slave.get("activities", {})
+    lib.slave.routines = s_slave.get("routines", {})
+    lib.slave.routine_skips = set(s_slave.get("routine_skips", []))
     lib.slave.misdeeds = s_slave.get("misdeeds", {})
     lib.slave.facts = s_slave.get("facts", {})
 
