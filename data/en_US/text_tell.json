@@ -47,8 +47,8 @@
     "choice_naughty_drink": [
         "Drank something other than water without permission."
     ],
-    "choice_naughty_toilet": [
-        "Used the toilet without permission."
+    "choice_naughty_pee": [
+        "Peed without permission."
     ],
     "choice_naughty_fun": [
         "Entertained myself without permission."
@@ -135,10 +135,10 @@
         "For a worthless slave like you, drinks are a privilege, not a right!",
         "How dare you treat yourself to special drinks without my permission?"
     ],
-    "response_naughty_toilet": [
-        "I choose when you get to use the toilet, not you!",
+    "response_naughty_pee": [
+        "I choose when you get to pee, not you!",
         "Do you have no discipline at all?",
-        "Do you forget that you are my slave? I choose when you get to use the toilet."
+        "Do you forget that you are my slave? I control your bladder!"
     ],
     "response_naughty_fun": [
         "Lazy bitch! I decide when you get to entertain yourself.",
@@ -153,7 +153,7 @@
     "response_naughty_tardy": [
         "Avoiding me is unacceptable, slave.",
         "It is your responsibility to report to me! I shouldn't need to hunt you down myself.",
-        "I don't ask much. Just once every two hours. How difficult is that?",
+        "I don't ask much. Just once every hour. How difficult is that?",
         "I do not appreciate my slave hiding from me."
     ],
     "response_naughty_lie": [

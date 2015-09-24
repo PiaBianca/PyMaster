@@ -102,7 +102,7 @@
         }
     ],
     [
-        "toilet",
+        "pee",
         {
             "forget_time": "ONE_DAY",
             "interval": "6 * ONE_HOUR",

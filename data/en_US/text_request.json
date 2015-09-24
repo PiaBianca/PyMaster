@@ -4,32 +4,32 @@
         "What is your request?",
         "Go on."
     ],
-    "beg_toilet": [
+    "beg_pee": [
         "Please, <python>lib.message.load_text('extra', 'master_address')</python>, I really have to go!",
         "Please, <python>lib.message.load_text('extra', 'master_address')</python>, it's an emergency!"
     ],
-    "beg_toilet_accept": [
+    "beg_pee_accept": [
         "Very well. I am disappointed in your lack of discipline.",
-        "Fine, then, I'll make an exception this time."
+        "Fine, then, I'll make an exception this time.",
+        "Fine, but not in the toilet. You will have to pee somewhere else."
     ],
-    "beg_toilet_accept_game": [
+    "beg_pee_accept_game": [
         "Well, since it's an emergency, let's play a little game! You can go when you win.",
-        "You know what? Let's play a game. When you win, then you can use the toilet.",
-        "I'll make an exception, but on one condition: you must play a game first. If you win, you can use the toilet.",
-        "I am disappointed, in you, but I'll give you a deal: we will play a game. You can use the toilet when you win the game."
+        "You know what? Let's play a game. When you win, then you can pee.",
+        "I'll make an exception, but on one condition: you must play a game first. If you win, you can pee.",
+        "I am disappointed in you, but I'll give you a deal: we will play a game. You can pee when you win the game."
     ],
-    "beg_toilet_game_win": [
-        "Looks like you've won, so you can use the toilet now.",
-        "Alright, you've won the game. You may use the toilet now.",
-        "Aw, it's over already? Oh, well. I wanted to torture you some more, but since you've won the game, you can use the toilet now.",
-        "Wow, that was fun! But, since you've won the game, you can use the toilet now.",
-        "You're in luck, slave: you've won the game! Go ahead and use the toilet now."
+    "beg_pee_game_win": [
+        "Looks like you've won, so you can pee now.",
+        "Alright, you've won the game. You may pee now.",
+        "Aw, it's over already? Oh, well. I wanted to torture you some more, but since you've won the game, you can pee now.",
+        "Wow, that was fun! But, since you've won the game, you can pee now.",
+        "You're in luck, slave: you've won the game! Go ahead and pee now."
     ],
-    "beg_toilet_deny": [
-        "No.",
-        "Too bad. You'll have to wait.",
-        "You'll just have to hold it in.",
-        "You'll just have to hold it in, because I'm not letting you use the toilet yet."
+    "beg_pee_deny": [
+        "In that case, you can piss in your pants. Keep them on until they dry off, as a punishment for your lack of discipline.",
+        "Piss in your pants, then, and don't take them off until they are completely dry. Or you can wait. Your choice.",
+        "If you want to act like a child, you can piss in your pants like one. Keep them on until they dry out as a punishment."
     ],
     "choice_masturbation": [
         "Permission to masturbate."
@@ -49,8 +49,8 @@
     "choice_drink": [
         "Permission to drink something other than water."
     ],
-    "choice_toilet": [
-        "Permission to use the toilet."
+    "choice_pee": [
+        "Permission to pee."
     ],
     "choice_fun": [
         "Permission to entertain myself."
@@ -260,22 +260,22 @@
         "Time's up, <python>random.choice([lib.slave.name, 'slave'])</python>!",
         "Alright, it's time to stop now."
     ],
-    "toilet_accept": [
+    "pee_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
-        "Permission granted to use the toilet.",
-        "You may use the toilet now.",
-        "<python>lib.message.load_text('extra', 'ok')</python>. You may use the toilet."
+        "Permission granted to pee.",
+        "You may pee now.",
+        "<python>lib.message.load_text('extra', 'ok')</python>. You may pee."
     ],
-    "toilet_deny": [
+    "pee_deny": [
         "<python>lib.message.load_text('request', 'common_deny')</python>",
         "You will hold it in for now.",
-        "You will have to wait to use the toilet.",
-        "I won't allow you to use the toilet right now.",
-        "You will not use the toilet at this time.",
+        "You will have to wait to pee.",
+        "I won't allow you to pee right now.",
+        "You will not pee at this time.",
         "You will just have to wait."
     ],
-    "toilet_sick": [
-        "<python>lib.message.load_text('request', 'toilet_accept')</python> Let me know when you're done."
+    "pee_sick": [
+        "<python>lib.message.load_text('request', 'pee_accept')</python> Let me know when you're done."
     ],
     "too_long": [
         "You took too long!",
