@@ -8,25 +8,13 @@
     "rules_math": [
         "You will be given a series of math problems. You are to enter the solution to each problem. You can do it in your head, on paper, or with a calculator; I don't care. For every problem you answer correctly, you will get one point. For every problem you answer incorrectly, you will lose one point. To win, you must get a certain number of points. I won't tell you how many, though, since that wouldn't be as fun!"
     ],
-    "taunt_bed": [
-        "Aw, are you sleepy? Too bad! The game's not over yet.",
-        "Tired, my little slut? There's still more to go!",
-        "I hope you're not about to fall asleep, my toy.",
-        "Forcing you to stay awake like this is so fun!",
-        "I'd bet you're tired, which is too bad, because we're not done yet!"
-    ],
-    "taunt_toilet": [
+    "taunt_pee": [
         "I'd bet your bladder is about to explode, isn't it?",
         "You must really need to go. But too bad for you! The game isn't over yet.",
         "Don't go pissing your pants now!",
         "How's your bladder, my little slut?",
         "It's so fun to torture your bladder like this.",
         "Having trouble holding it in, slave?"
-    ],
-    "wait_bed": [
-        "Before you go to bed, I want to play a little game. You can go to bed when you win the game.",
-        "You know what? I want to play a game before you go to bed. You will be allowed to go to bed once you win the game.",
-        "Before you go to bed, I have decided to toy with you. We will play a game. When you win, you can go to bed."
     ],
     "correct": [
         "Correct!",
