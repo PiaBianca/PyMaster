@@ -133,6 +133,9 @@
         ]
     },
     "golden_shower": {
+        "activities": [
+            "pee"
+        ],
         "text": [
             "Piss on your feet. You may not clean them after this for <python>random.randint(2, 5) * 10</python> minutes.",
             "<python>'Piss on your stomache.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your stomache.'</python> You may not clean yourself up after this for <python>random.randint(2, 5) * 10</python> minutes."
@@ -240,19 +243,26 @@
     },
     "piss_mop": {
         "activities": [
-            "change_underwear"
+            "change_underwear",
+            "pee"
         ],
         "text": [
             "Clean one of the floors with your piss, scrubbing with the underwear you are currently wearing. Then, while wearing that underwear, clean the floor normally. You can then change or wash your underwear."
         ]
     },
     "piss_outdoor": {
+        "activities": [
+            "pee"
+        ],
         "requires": "lib.slave.get_fact('outdoor_privacy')",
         "text": [
             "Take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>."
         ]
     },
     "piss_snow": {
+        "activities": [
+            "pee"
+        ],
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('outdoor_privacy') and lib.slave.get_fact('snow')",
         "text": [
             "Use your piss to draw a heart in the snow, and then the letter \"<python>lib.master.name[0]</python>\" (for \"<python>lib.master.name</python>\") in the middle. You're not allowed to cover it up."
@@ -260,7 +270,7 @@
     },
     "piss_target": {
         "activities": [
-            "toilet"
+            "pee"
         ],
         "requires": "lib.slave.sex == MALE",
         "text": [
