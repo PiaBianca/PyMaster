@@ -93,17 +93,24 @@ def main():
                                           load_text("assign_{}".format(i)))
                         break
 
-            for i in sorted(lib.routines_dict.keys(),
-                            key=lambda _: random.random()):
-                if not lib.slave.sick:
-                    T = time.time()
-                    if i in lib.slave.routines:
-                        if T >= lib.slave.routines[i]:
-                            lib.assign.routine(i)
-                    else:
-                        lib.slave.add_routine(i)
+        def assign_routines():
+            for i in sorted(lib.slave.routines.keys(),
+                            key=lambda j: lib.slave.routines[j]):
+                if i in lib.routines_dict:
+                    if not lib.slave.sick:
+                        T = time.time()
+                        if i in lib.slave.routines:
+                            if T >= lib.slave.routines[i]:
+                                lib.assign.routine(i)
+                                auto_grant()
+                        else:
+                            lib.slave.add_routine(i)
+                else:
+                    print("Warning: Deleting invalid routine \"{}\"".format(i))
+                    del lib.slave.routines[i]
 
         auto_grant()
+        assign_routines()
         choices = [load_text("choice_ask"), load_text("choice_request"),
                    load_text("choice_tell"), load_text("choice_nothing")]
         choice = lib.message.get_choice(load_text("ask_what"), choices,
@@ -116,6 +123,7 @@ def main():
              lambda: None][choice]()
             lib.settings.save()
             auto_grant()
+            assign_routines()
             choice = lib.message.get_choice(load_text("ask_what_else"),
                                             choices, len(choices) - 1)
     finally:
