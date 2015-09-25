@@ -68,6 +68,9 @@
         ]
     },
     "midnight_piss": {
+        "activities": [
+            "pee"
+        ],
         "text": [
             "Drink a glass of water before going to bed. Set your alarm to <python>random.randint(3, 5)</python> hours from now. Do not use the toilet between now and then. When the alarm goes off, take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>."
         ]
