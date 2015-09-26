@@ -39,7 +39,9 @@ set of extensions without having to manually indicate the -e option
 every time.
 
 The extension directory consists of a number of files. Each file is
-entirely optional. We will go into each of the files now.
+entirely optional. In most cases, these files are used to extend
+existing files in the data directory with the same name. We will go
+through each of the files now.
 
 PYMASTER TEXT
 
@@ -109,6 +111,12 @@ file with the name "rules.json". This is a standard JSON file containing
 an array of strings; each string is a different rule. The <python> tag
 is supported within the rule strings.
 
+A rules.json file in an extension *replaces* the existing rules.json
+file rather than extending it. So if you wish to add on new rules, you
+should copy the existing rules.json file from the data directory and
+modify it. It's designed this way so that you can also remove rules,
+or modify them.
+
 OATH
 
 The slave's "oath of servitude" is specified in the file with the name
@@ -124,6 +132,11 @@ The files, "names_male.txt" and "names_female.txt", indicate the
 possible names that can be given to masters and mistresses,
 respectively. Each line in these text files indicates a possible name.
 Blank lines are ignored. The <python> tag is NOT supported here.
+
+A names file in an extension *replaces* the respective existing names
+file rather than extending it. So if you wish to keep those names as
+possible options, you must copy them over. It's designed this way so
+that you can also remove names from the list.
 
 RESTRICTED ACTIVITIES AND MISDEEDS
 
@@ -316,6 +329,16 @@ A routine with an ID of "foo" will add the following text IDs to the
   the routine.
 - "routine_foo_end": Text from the master telling the slave that he or
   she can stop doing the routine.
+
+RESTRICTED ACTIVITIES, MISDEEDS, AND ROUTINES DELETION
+
+In some cases, the base data might have a restricted activity, misdeed,
+or routine you don't want. To get rid of these, you can add the files
+"restricted_activities_del.json", "misdeeds_del.json", and/or
+"routines_del.json", which allow you to delete restricted activities,
+misdeeds, and routines, respectively. Each of these is a standard JSON
+file containing an array of the activity, misdeed, or routine IDs you
+wish to delete.
 
 FACTS
 

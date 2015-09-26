@@ -130,7 +130,7 @@ def load():
             with open(fname, 'r') as f:
                 new_activities = json.load(f)
         except OSError:
-            continue
+            pass
         else:
             for i, activity in new_activities:
                 for j in range(len(activities)):
@@ -139,6 +139,21 @@ def load():
                         break
                 else:
                     activities.append((i, activity))
+
+        fname = os.path.join(d, "restricted_activities_del.json")
+        try:
+            with open(fname, 'r') as f:
+                del_activities = json.load(f)
+        except OSError:
+            pass
+        else:
+            for i in del_activities:
+                for j in range(len(activities)):
+                    if i == activities[j][0]:
+                        del activities[j]
+                        break
+                else:
+                    print("Warning: Deleting activity \"{}\", which doesn't exist.".format(i))
 
     def sort_key(i, activities=activities):
         return (i[0] in SPECIAL_ACTIVITIES, activities.index(i))
@@ -157,9 +172,8 @@ def load():
         try:
             with open(fname, 'r') as f:
                 new_misdeeds = json.load(f)
-                break
         except OSError:
-            continue
+            pass
         else:
             for i, misdeed in new_misdeeds:
                 for j in range(len(misdeeds)):
@@ -168,6 +182,21 @@ def load():
                         break
                 else:
                     misdeeds.append((i, misdeed))
+
+        fname = os.path.join(d, "misdeeds_del.json")
+        try:
+            with open(fname, 'r') as f:
+                del_misdeeds = json.load(f)
+        except OSError:
+            pass
+        else:
+            for i in del_misdeeds:
+                for j in range(len(misdeeds)):
+                    if i == misdeeds[j][0]:
+                        del misdeeds[j]
+                        break
+                else:
+                    print("Warning: Deleting misdeed \"{}\", which doesn't exist.".format(i))
 
     def sort_key(i, misdeeds=misdeeds):
         return (i[0] in SPECIAL_ACTIVITIES, misdeeds.index(i))
@@ -185,7 +214,20 @@ def load():
             with open(fname, 'r') as f:
                 new_routines = json.load(f)
         except OSError:
-            continue
+            pass
         else:
             for i in new_routines:
                 lib.routines_dict[i] = new_routines[i]
+
+        fname = os.path.join(d, "routines_del.json")
+        try:
+            with open(fname, 'r') as f:
+                del_routines = json.load(f)
+        except OSError:
+            pass
+        else:
+            for i in del_routines:
+                if i in lib.routines_dict:
+                    del lib.routines_dict[i]
+                else:
+                    print("Warning: Deleting routine \"{}\", which doesn't exist.".format(i))
