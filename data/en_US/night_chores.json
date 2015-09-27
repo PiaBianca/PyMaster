@@ -12,6 +12,9 @@
         ]
     },
     "closet": {
+        "similar": [
+            "nobed"
+        ],
         "text": [
             "Sleep in a small closet tonight."
         ]
@@ -84,6 +87,9 @@
         ]
     },
     "nobed": {
+        "similar": [
+            "closet"
+        ],
         "text": [
             "Sleep on the floor tonight."
         ]
