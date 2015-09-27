@@ -129,7 +129,7 @@
         ],
         "requires": "lib.slave.sex == FEMALE",
         "text": [
-            "Fuck yourself with an edible penis-shaped item, such as a carrot or peeled banana, for <python>random.randint(1, 3) * 5</python> minutes, without cumming. You must then eat the item entirely."
+            "Fuck yourself with an edible penis-shaped item, such as a carrot, for <python>random.randint(1, 3) * 5</python> minutes, without cumming. You must then eat the item entirely."
         ]
     },
     "golden_shower": {
