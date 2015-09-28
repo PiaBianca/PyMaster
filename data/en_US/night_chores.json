@@ -100,6 +100,14 @@
             "Sleep with no clothes, sheets, or blankets tonight."
         ]
     },
+    "orgasm_overload": {
+        "activities": [
+            "masturbation"
+        ],
+        "text": [
+            "Set alarms to ring 2 hours from now, 4 hours from now, and 6 hours from now. Each time an alarm goes off, you may not go back to sleep until you masturbate to orgasm."
+        ]
+    },
     "sissy": {
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('sissy_nightie')",
         "text": [
