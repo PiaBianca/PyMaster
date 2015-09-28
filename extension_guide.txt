@@ -325,8 +325,10 @@ following keys:
 A routine with an ID of "foo" will add the following text IDs to the
 "assign" section:
 
-- "routine_foo_assign": Text from the master ordering the slave to do
-  the routine.
+- "routine_foo_assign": Text from the master telling the slave that it's
+  time to do the routine, and asking if it can be done.
+- "routine_foo_start": Text from the master telling the slave to do the
+  routine. Not used if "script" is specified.
 - "routine_foo_end": Text from the master telling the slave that he or
   she can stop doing the routine.
 
