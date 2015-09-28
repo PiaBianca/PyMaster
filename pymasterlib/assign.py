@@ -15,6 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import sys
 import datetime
 import time
 import random
@@ -132,16 +133,22 @@ def routine(i):
     script = r.get("script")
 
     if i not in lib.slave.routine_skips:
-        if script:
-            eval(script)()
-            lib.slave.add_routine(i)
-        else:
-            m = load_text("routine_{}_assign".format(i))
-            lib.message.show_timed(m, time_)
-            lib.slave.add_routine(i)
-            lib.message.beep()
+        if lib.message.get_bool(load_text("routine_{}_assign".format(i))):
+            if script:
+                eval(script)()
+                lib.slave.add_routine(i)
+            else:
+                m = load_text("routine_{}_start".format(i))
+                lib.message.show_timed(m, time_)
+                lib.slave.add_routine(i)
+                lib.message.beep()
+
             m = load_text("routine_{}_end".format(i))
             lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+        else:
+            m = load_text("return_when_ready")
+            lib.message.show(m, lib.message.load_text("phrases", "assent"))
+            sys.exit()
     else:
         lib.slave.routine_skips.discard(i)
         lib.slave.add_routine(i)

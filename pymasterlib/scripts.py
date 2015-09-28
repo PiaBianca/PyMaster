@@ -287,9 +287,6 @@ def rhythm(category, rate_min, rate_max, accel_choices,
     """
     def load_text(ID): return lib.message.load_text("rhythm", ID)
 
-    m = load_text("{}_intro".format(category))
-    lib.message.show(m, lib.message.load_text("phrases", "assent"))
-
     m = load_text("{}_start".format(category))
     lib.message.show_timed(m, 5)
 
