@@ -287,7 +287,7 @@ def rhythm(category, rate_min, rate_max, accel_choices,
     """
     def load_text(ID): return lib.message.load_text("rhythm", ID)
 
-    m = load_text("{}_start".format(category))
+    m = load_text(category)
     lib.message.show_timed(m, 5)
 
     rate = rate_min
@@ -309,8 +309,6 @@ def rhythm(category, rate_min, rate_max, accel_choices,
         loop_start_time += loop_time
         rate += loop_time * accel
         rate = max(rate_min, min(rate, rate_max))
-
-    lib.message.show(load_text("{}_end".format(category)))
 
 
 def rhythm_vaginal_sex(category="sex_vaginal", duration=None):
