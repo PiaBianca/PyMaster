@@ -94,17 +94,18 @@ def main():
                         break
 
         def assign_routines():
+            for i in lib.routines_dict:
+                if i not in lib.slave.routines:
+                    lib.slave.add_routine(i)
+
             for i in sorted(lib.slave.routines.keys(),
                             key=lambda j: lib.slave.routines[j]):
                 if i in lib.routines_dict:
                     if not lib.slave.sick:
                         T = time.time()
-                        if i in lib.slave.routines:
-                            if T >= lib.slave.routines[i]:
-                                lib.assign.routine(i)
-                                auto_grant()
-                        else:
-                            lib.slave.add_routine(i)
+                        if T >= lib.slave.routines[i]:
+                            lib.assign.routine(i)
+                            auto_grant()
                 else:
                     print("Warning: Deleting invalid routine \"{}\"".format(i))
                     del lib.slave.routines[i]
