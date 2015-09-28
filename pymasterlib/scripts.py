@@ -287,10 +287,8 @@ def rhythm(category, rate_min, rate_max, accel_choices,
     """
     def load_text(ID): return lib.message.load_text("rhythm", ID)
 
-    lib.message.show(load_text("{}_intro".format(category)))
-
-    m = load_text("{}_setup".format(category))
-    lib.message.show(m, lib.message.load_text("phrases", "finished"))
+    m = load_text("{}_intro".format(category))
+    lib.message.show(m, lib.message.load_text("phrases", "assent"))
 
     m = load_text("{}_start".format(category))
     lib.message.show_timed(m, 5)
@@ -321,13 +319,19 @@ def rhythm(category, rate_min, rate_max, accel_choices,
 def rhythm_vaginal_sex(category="sex_vaginal", duration=None):
     if duration is None:
         duration = random.uniform(5 * ONE_MINUTE, 30 * ONE_MINUTE)
-    rhythm(category, 0.5, 2.5, (-0.05, 0, 0.05), 10, duration)
+    rhythm(category, 1 / 2, 5 / 2, (-0.05, 0, 0.05), 10, duration)
 
 
 def rhythm_anal_sex(category="sex_anal", duration=None):
     if duration is None:
         duration = random.uniform(5 * ONE_MINUTE, 30 * ONE_MINUTE)
-    rhythm(category, 1 / 3, 1.5, (-0.025, 0, 0.025), 10, duration)
+    rhythm(category, 1 / 3, 3 / 2, (-0.025, 0, 0.025), 10, duration)
+
+
+def rhythm_spanking(category="spanking", duration=None):
+    if duration is None:
+        duration = random.uniform(ONE_MINUTE, 5 * ONE_MINUTE)
+    rhythm(category, 1 / 2, 3 / 2, (-0.05, 0, 0.05), 10, duration)
 
 
 def masturbate():

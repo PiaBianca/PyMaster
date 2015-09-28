@@ -42,13 +42,12 @@ def _assign_chore(c, i, text_choices):
     lib.message.show(text)
 
 
-def chore():
-    """Assign a random chore to the slave."""
+def _chore(fname):
     lib.slave.forget()
 
     chores = {}
     for d in [lib.data_dir] + lib.ext_dirs:
-        fname = os.path.join(d, "chores.json")
+        fname = os.path.join(d, fname)
         try:
             with open(fname, 'r') as f:
                 nchores = json.load(f)
@@ -105,48 +104,18 @@ def chore():
             lib.message.show(load_text("no_chores"))
 
 
+def chore():
+    """Assign a random chore to the slave."""
+    _chore("chores.json")
+
+
 def night_chore():
     """
     Assign a random night chore to the slave.  Night chores are the same
     as regular chores techically, but are separated so whether the slave
     is asleep can be taken into account.
     """
-    lib.slave.forget()
-
-    chores = {}
-    for d in [lib.data_dir] + lib.ext_dirs:
-        fname = os.path.join(d, "night_chores.json")
-        try:
-            with open(fname, 'r') as f:
-                nchores = json.load(f)
-            for i in nchores:
-                chores[i] = nchores[i]
-        except OSError:
-            continue
-
-    while chores:
-        keys = list(chores.keys())
-        i = random.choice(keys)
-        requires = chores[i].setdefault("requires")
-        text_choices = chores[i].setdefault("text", [])
-
-        if text_choices:
-            allowed = True
-            for activity in chores[i].setdefault("activities", []):
-                allow_chance = lib.activities_dict.get(activity, {}).get(
-                    "chore_allow_chance", 0)
-                if (not lib.request.get_allowed(activity) and
-                        random.random() >= allow_chance):
-                    allowed = False
-                    break
-
-            if allowed and (not requires or eval(requires)):
-                _assign_chore(chores[i], i, text_choices)
-                break
-
-        del chores[i]
-    else:
-        lib.message.show(load_text("no_chores"))
+    _chore("night_chores.json")
 
 
 def routine(i):
@@ -165,6 +134,7 @@ def routine(i):
     if i not in lib.slave.routine_skips:
         if script:
             eval(script)()
+            lib.slave.add_routine(i)
         else:
             m = load_text("routine_{}_assign".format(i))
             lib.message.show_timed(m, time_)
