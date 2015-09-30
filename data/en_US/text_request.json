@@ -87,7 +87,7 @@
     ],
     "chore_sick_no": [
         "I appreciate the gesture, but I want you to get better as soon as possible. So no, thank you.",
-        "It's good that you want to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>, but what's important right now is for you to get better. You can ask for some extra chores then.",
+        "It's good that you want to please your <python>'mistress' if lib.master.sex == FEMALE else 'master'</python>, but what's important right now is for you to get better. You can ask for a task then.",
         "No, thank you. Get some rest. You will go back to doing tasks for me when you recover from your illness."
     ],
     "common_accept": [
