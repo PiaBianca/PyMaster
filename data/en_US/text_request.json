@@ -133,10 +133,10 @@
         "Drink some water instead."
     ],
     "drink_alternative_sick": [
-        "If you need something for your throat, try some plain hot water.",
-        "If your throat is bothering you, try heating up some water and drinking it plain.",
-        "If your throat is bothering you, I suggest some plain hot water.",
-        "Have you ever tried plain hot water? That might help."
+        "If you need something for your throat or stomache, try some plain hot water.",
+        "If your throat or stomache is bothering you, try heating up some water and drinking it plain.",
+        "If your throat or stomache is bothering you, I suggest some plain hot water.",
+        "Have you ever tried plain hot water?"
     ],
     "drink_deny": [
         "<python>lib.message.load_text('request', 'common_deny')</python> <python>lib.message.load_text('request', 'drink_alternative')</python>",
