@@ -140,8 +140,9 @@ def allow(ID, activity, msg, other_ID=None):
 def deny(ID, activity):
     flags = activity.get("flags", [])
     if lib.slave.sick and "sick_deny" in flags:
-        m = load_text("{}_sick".format(ID))
-        if not m:
+        id_ = "{}_sick".format(ID)
+        m = load_text(id_)
+        if m == id_:
             m = load_text("{}_deny".format(ID))
         a = lib.message.load_text("phrases", "assent")
         lib.message.show(m, a)

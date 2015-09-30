@@ -185,7 +185,7 @@
         "<python>lib.message.load_text('request', 'common_deny')</python>",
         "You're sick. You can't have junk food while you're sick.",
         "No, you will not have junk food while you are sick.",
-        "I want you to get better. Junk food isn't going to help you do that."
+        "I want you to get better as soon as possible. Junk food isn't going to help you do that."
     ],
     "masturbation_accept": [
         "<python>lib.message.load_text('request', 'common_accept')</python>",
@@ -199,7 +199,8 @@
     "masturbation_sick": [
         "<python>lib.message.load_text('request', 'common_deny')</python>",
         "You're sick. You need rest, not orgasms.",
-        "No, not while you're sick."
+        "No, not while you're sick.",
+        "You will not be doing that until you feel better."
     ],
     "porn_accept_no_masturbation": [
         "<python>lib.message.load_text('extra', 'ok')</python>. I will let you look at your porn. Don't forget: no masturbating.",
@@ -246,9 +247,6 @@
         "My slave will stay dirty for now.",
         "Maybe later. For now, you will stay dirty."
     ],
-    "shower_sick": [
-        "<python>lib.message.load_text('request', 'shower_accept')</python> Let me know when you're done."
-    ],
     "time_limit": [
         " You have {}.",
         " I'm giving you {}.",
@@ -273,9 +271,6 @@
         "I won't allow you to pee right now.",
         "You will not pee at this time.",
         "You will just have to wait."
-    ],
-    "pee_sick": [
-        "<python>lib.message.load_text('request', 'pee_accept')</python> Let me know when you're done."
     ],
     "too_long": [
         "You took too long!",
