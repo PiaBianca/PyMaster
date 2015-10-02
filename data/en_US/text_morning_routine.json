@@ -75,7 +75,7 @@
         "That's right, slave.",
         "That's right. Don't forget your place.",
         "That's a good <python>'boy' if lib.slave.sex == MALE else 'girl' if lib.slave.sex == FEMALE else 'slave'</python>.",
-        "It pleases me to know that my slave knows <python>'her' if lib.slave.sex == FEMALE else 'his'</python> place.",
+        "It pleases me to know that my slave knows <python>'her' if lib.slave.sex == FEMALE else 'his' if lib.slave.sex == MALE else 'its'</python> place.",
         "Good.",
         "That's right. Know your place, slave.",
         "That's right. All worthless slaves should know their place.",

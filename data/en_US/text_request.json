@@ -133,9 +133,9 @@
         "Drink some water instead."
     ],
     "drink_alternative_sick": [
-        "If you need something for your throat, <python>random.choice(['try', 'I suggest'])</python> some plain hot water.",
-        "If your throat is bothering you, <python>random.choice(['try', 'I suggest'])</python> heating up some water and drinking it plain.",
-        "If your throat is bothering you, <python>random.choice(['try', 'I suggest'])</python> some plain hot water."
+        "If you need something to make you feel better, <python>random.choice(['try', 'I suggest'])</python> some plain hot water.",
+        "If you want to make yourself feel better, <python>random.choice(['try', 'I suggest'])</python> heating up some water and drinking it plain.",
+        "If you were looking to drink something to make yourself feel better, <python>random.choice(['try', 'I suggest'])</python> some plain hot water."
     ],
     "drink_deny": [
         "<python>lib.message.load_text('request', 'common_deny')</python> <python>lib.message.load_text('request', 'drink_alternative')</python>",
