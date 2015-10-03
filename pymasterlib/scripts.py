@@ -227,7 +227,7 @@ def morning_routine():
     if not lib.slave.sick and STARTUP_DAY[1:] == lib.slave.birthday:
         m = load_text("gift_birthday")
         lib.message.show(m)
-        gift()
+        lib.assign.gift()
 
 
 def evening_routine():
@@ -554,63 +554,3 @@ def game_math(taunt):
 def wait_game(taunt):
     games = [game_exercise, game_letters, game_math]
     random.choice(games)(taunt)
-
-
-def gift_surf():
-    def load_text(ID): return lib.message.load_text("masturbate", ID)
-
-    orgasm_time = time.time() + random.uniform(20 * ONE_MINUTE, 30 * ONE_MINUTE)
-    m = load_text("gift_surf_start")
-    a = [load_text("naughty_orgasm")]
-    i = lib.message.get_interruption(m, orgasm_time, a)
-
-    if i == 0:
-        lib.tell.did_without_permission("masturbation")
-        m = load_text("masturbate_stop_order")
-        lib.message.show(m, lib.message.load_text("phrases", "assent"))
-    else:
-        lib.message.beep()
-        m = load_text("orgasm_signal")
-        limit = lib.request.get_time_limit("__orgasm")
-        a = [lib.message.load_text("phrases", "finished")]
-        if lib.message.get_interruption(m, limit, a) is None:
-            lib.message.beep()
-            m = load_text("gift_surf_abort")
-            lib.message.show(m, lib.message.load_text("phrases", "assent"))
-
-
-def gift_other():
-    def load_text(ID): return lib.message.load_text("morning_routine", ID)
-
-    m = lib.message.load_text("morning_routine", "gift_special_permission")
-
-    gifts = {}
-    for d in [lib.data_dir] + lib.ext_dirs:
-        fname = os.path.join(d, "gifts.json")
-        try:
-            with open(fname, 'r') as f:
-                ngifts = json.load(f)
-            for i in ngifts:
-                gifts[i] = ngifts[i]
-        except OSError:
-            continue
-
-    while gifts:
-        keys = list(gifts.keys())
-        i = random.choice(keys)
-        requires = gifts[i].setdefault("requires")
-        text_choices = gifts[i].setdefault("text", [])
-
-        if text_choices and (not requires or eval(requires)):
-            m = lib.parse.python_tag(random.choice(text_choices))
-            lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
-            break
-
-        del gifts[i]
-    else:
-        lib.message.show(load_text("gift_none"))
-
-
-def gift():
-    gifts = [gift_surf, gift_other, gift_other, gift_other, gift_other]
-    random.choice(gifts)()

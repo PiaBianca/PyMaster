@@ -332,16 +332,6 @@ A routine with an ID of "foo" will add the following text IDs to the
 - "routine_foo_end": Text from the master telling the slave that he or
   she can stop doing the routine.
 
-RESTRICTED ACTIVITIES, MISDEEDS, AND ROUTINES DELETION
-
-In some cases, the base data might have a restricted activity, misdeed,
-or routine you don't want. To get rid of these, you can add the files
-"restricted_activities_del.json", "misdeeds_del.json", and/or
-"routines_del.json", which allow you to delete restricted activities,
-misdeeds, and routines, respectively. Each of these is a standard JSON
-file containing an array of the activity, misdeed, or routine IDs you
-wish to delete.
-
 FACTS
 
 "facts.json" indicates possible facts about the slave that the master
@@ -388,7 +378,19 @@ night_chores.json.
 GIFTS
 
 Gifts are specified in the file with the name "gifts.json". It follows
-the same format as "chores.json".
+the same format as "chores.json", but without the "activities" and
+"similar" keys.
+
+RESTRICTED ACTIVITIES, MISDEEDS, ROUTINES, CHORES, AND GIFTS DELETION
+
+In some cases, the base data might have a restricted activity, misdeed,
+routine, chore, or gift you don't want. To get rid of these, you can add
+the files "restricted_activities_del.json", "misdeeds_del.json",
+"routines_del.json", "chores_del.json", "night_chores_del.json", and/or
+"gifts_del.json", which allow you to delete restricted activities,
+misdeeds, routines, chores, night chores, and gifts, respectively. Each
+of these is a standard JSON file containing an array of the activity,
+misdeed, routine, chore, or gift IDs you wish to delete.
 
 PUNISHMENTS
 
@@ -400,3 +402,13 @@ For punishments to be assigned, you must list their IDs in the file,
 object with keys being the IDs of restricted activities and misdeeds,
 and values being lists of possible punishment IDs for doing that misdeed
 or doing that restricted activity without permission.
+
+PUNISHMENTS DELETION
+
+There is never a particular point in deleting a particular punishment,
+since it isn't used unless explicitly listed in the punishments lists,
+but there can be a point in removing the punishment from the punishments
+lists. To do this, a file called "punishments_list_del.json" can be
+added. This file has the same format as "punishments_list.json", but
+removes the listed punishments as possibilities for the respective
+restricted activities and misdeeds, rather than adding them.

@@ -43,19 +43,33 @@ def _assign_chore(c, i, text_choices):
     lib.message.show(text)
 
 
-def _chore(fname):
+def _chore(add_fname, del_fname):
     lib.slave.forget()
 
     chores = {}
     for d in [lib.data_dir] + lib.ext_dirs:
-        fname = os.path.join(d, fname)
+        fname = os.path.join(d, add_fname)
         try:
             with open(fname, 'r') as f:
                 nchores = json.load(f)
+        except OSError:
+            pass
+        else:
             for i in nchores:
                 chores[i] = nchores[i]
+
+        fname = os.path.join(d, del_fname)
+        try:
+            with open(fname, 'r') as f:
+                del_chores = json.load(f)
         except OSError:
-            continue
+            pass
+        else:
+            for i in del_chores:
+                if i in chores:
+                    del chores[i]
+                else:
+                    print("Warning: Deleting chore \"{}\", which doesn't exist.".format(i))
 
     backup_chores = {}
 
@@ -107,7 +121,7 @@ def _chore(fname):
 
 def chore():
     """Assign a random chore to the slave."""
-    _chore("chores.json")
+    _chore("chores.json", "chores_del.json")
 
 
 def night_chore():
@@ -116,7 +130,54 @@ def night_chore():
     as regular chores techically, but are separated so whether the slave
     is asleep can be taken into account.
     """
-    _chore("night_chores.json")
+    _chore("night_chores.json", "night_chores_del.json")
+
+
+def gift():
+    """
+    Assign a random gift to the slave.  Gifts are like chores, but
+    whether or not they are done is not tracked, and their purpose is to
+    serve as special permission grants.
+    """
+    gifts = {}
+    for d in [lib.data_dir] + lib.ext_dirs:
+        fname = os.path.join(d, "gifts.json")
+        try:
+            with open(fname, 'r') as f:
+                ngifts = json.load(f)
+        except OSError:
+            pass
+        else:
+            for i in ngifts:
+                gifts[i] = ngifts[i]
+
+        fname = os.path.join(d, "gifts_del.json")
+        try:
+            with open(fname, 'r') as f:
+                del_gifts = json.load(f)
+        except OSError:
+            pass
+        else:
+            for i in del_gifts:
+                if i in gifts:
+                    del gifts[i]
+                else:
+                    print("Warning: Deleting gift \"{}\", which doesn't exist.".format(i))
+
+    while gifts:
+        keys = list(gifts.keys())
+        i = random.choice(keys)
+        requires = gifts[i].setdefault("requires")
+        text_choices = gifts[i].setdefault("text", [])
+
+        if text_choices and (not requires or eval(requires)):
+            m = lib.parse.python_tag(random.choice(text_choices))
+            lib.message.show(m, lib.message.load_text("phrases", "thank_you"))
+            break
+
+        del gifts[i]
+    else:
+        lib.message.show(load_text("no_gifts"))
 
 
 def routine(i):
@@ -164,22 +225,39 @@ def punishment(misdeed):
         try:
             with open(fname, 'r') as f:
                 upunishments = json.load(f)
+        except OSError:
+            pass
+        else:
             for i in upunishments:
                 punishments[i] = upunishments[i]
-        except OSError:
-            continue
 
     punishments_list = {}
     for d in [lib.data_dir] + lib.ext_dirs:
         fname = os.path.join(d, "punishments_list.json")
-        if os.path.isfile(fname):
+        try:
             with open(fname, 'r') as f:
                 upunishments_list = json.load(f)
+        except OSError:
+            pass
+        else:
             for i in upunishments_list:
                 if i in punishments_list:
                     punishments_list[i].extend(upunishments_list[i])
                 else:
                     punishments_list[i] = upunishments_list[i]
+
+        fname = os.path.join(d, "punishments_list_del.json")
+        try:
+            with open(fname, 'r') as f:
+                del_punishments_list = json.load(f)
+        except OSError:
+            pass
+        else:
+            for i in del_punishments_list:
+                if i in punishments_list:
+                    for punishment in del_punishments_list[i]:
+                        while punishment in punishments_list[i]:
+                            punishments_list[i].remove(punishment)
 
     punishment_choices = punishments_list.setdefault(misdeed, [])
 

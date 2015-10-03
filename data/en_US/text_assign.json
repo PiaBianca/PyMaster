@@ -4,6 +4,9 @@
         "Hm... I'm out of ideas for tasks to give you.",
         "I'm sorry, I've run out of ideas for tasks to give you."
     ],
+    "no_gifts": [
+        "Huh, I can't think of any more ideas for what to give you. I guess you won't be getting a gift this year."
+    ],
     "return_when_ready": [
         "Come back when you're ready, then, and not a monent later.",
         "Then you will come back when you are ready, and no later than that.",
