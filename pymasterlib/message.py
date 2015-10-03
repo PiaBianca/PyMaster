@@ -220,9 +220,9 @@ def get_bool(message):
     print(_insert_newlines(message), "[Y/N]", end=" ")
     while True:
         ans = input().lower()
-        if ans in ("y", "1", "yes"):
+        if ans in {"y", "1", "yes"}:
             return True
-        elif ans in ("n", "0", "no"):
+        elif ans in {"n", "0", "no"}:
             return False
         else:
             m = "Error: invalid entry. Please type \"Y\" (for yes) or \"N\" (for no)."
