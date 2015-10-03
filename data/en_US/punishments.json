@@ -55,6 +55,15 @@
             "Take a cold <python>random.randint(5, 10)</python>-minute shower. You must be entirely in the shower for the duration, and I want you to clean every inch of your body. You are not allowed to dry yourself afterwards."
         ]
     },
+    "condom_cum": {
+        "activities": [
+            "masturbation"
+        ],
+        "requires": "lib.slave.sex == MALE",
+        "text": [
+            "Masturbate while wearing a condom and cum into it. Then eat all of your cum out of the condom."
+        ]
+    },
     "food_gross": {
         "text": [
             "Eat a full serving of a food you hate the taste of. You are not permitted to use any additional seasoning; just eat the food item by itself."
