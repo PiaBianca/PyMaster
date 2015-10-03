@@ -123,7 +123,7 @@ def allow_timed(activity, m=None):
 def allow(ID, activity, msg, other_ID=None):
     flags = activity.get("flags", [])
     if lib.slave.sick and "sick_accept" in flags:
-        lib.message.show(msg, lib.message.load_text("phrases", "thank_you"))
+        lib.message.show(msg, lib.message.load_text("phrases", "finished"))
     else:
         other = lib.activities_dict.get(other_ID, {})
         script = activity.get("script") or other.get("script")
@@ -133,7 +133,7 @@ def allow(ID, activity, msg, other_ID=None):
         elif "time_limit" in activity:
             allow_timed(ID, msg)
         else:
-            a = lib.message.load_text("phrases", "thank_you")
+            a = lib.message.load_text("phrases", "finished")
             lib.message.show(msg, a)
 
 

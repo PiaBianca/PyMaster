@@ -66,7 +66,9 @@ def main():
                      load_text("too_early_request")]
                 choice = lib.message.get_choice(m, c, 0)
                 if choice == 1:
-                    lib.slave.add_misdeed("too_early")
+                    if not lib.slave.sick:
+                        lib.slave.add_misdeed("too_early")
+
                     a = lib.message.load_text("phrases", "thank_you")
                     lib.message.show(load_text("too_early_request_accept"), a)
                     lib.request.what()
