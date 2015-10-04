@@ -52,6 +52,15 @@
             "Set your alarm to <python>random.randint(3, 4)</python> hours from now. When it goes off, do <python>random.randint(5, 8) * 10</python> sit-ups (total, not necessarily all at once). Do not go back to sleep until you are finished."
         ]
     },
+    "exposed": {
+        "requires": "lib.slave.get_fact('temperature') >= 25",
+        "similar": [
+            "noblankets"
+        ],
+        "text": [
+            "Sleep with no clothes, sheets, or blankets tonight."
+        ]
+    },
     "game": {
         "activities": [
             "fun"
@@ -95,9 +104,11 @@
         ]
     },
     "noblankets": {
+        "similar": [
+            "exposed"
+        ],
         "text": [
-            "Sleep without any blankets or pillows tonight.",
-            "Sleep with no clothes, sheets, or blankets tonight."
+            "Sleep without any blankets or pillows tonight."
         ]
     },
     "orgasm_overload": {
