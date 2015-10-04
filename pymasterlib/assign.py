@@ -91,7 +91,7 @@ def _chore(add_fname, del_fname):
 
             if allowed:
                 repeat = False
-                for done_chore in lib.slave.chores:
+                for done_chore in lib.slave.chores + lib.slave.abandoned_chores:
                     did = done_chore.get("id")
                     if did == i or did in chores[i].get("similar", []):
                         repeat = True
