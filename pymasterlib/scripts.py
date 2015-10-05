@@ -239,6 +239,11 @@ def evening_routine():
         lib.settings.save()
         sys.exit()
 
+    if not lib.message.get_bool(load_text("confirm")):
+        m = load_text("return_when_ready")
+        lib.message.show(m, lib.message.load_text("phrases", "assent"))
+        return
+
     if (lib.slave.queued_chore is not None and
             lib.message.get_bool(load_text("chore_ask_completed"))):
         lib.tell.completed_chore()
@@ -252,10 +257,6 @@ def evening_routine():
                 print("Warning: Didn't find activity \"{}\" at the time of this chore.".format(activity))
         lib.slave.abandoned_chores.append(lib.slave.queued_chore)
         lib.slave.queued_chore = None
-
-    if not lib.message.get_bool(load_text("tasks_ask_completed")):
-        m = load_text("tasks_finish")
-        lib.message.show(m, lib.message.load_text("phrases", "finished"))
 
     if (not lib.slave.sick and
             lib.message.get_bool(load_text("ask_night_chore"))):

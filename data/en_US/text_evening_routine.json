@@ -16,20 +16,22 @@
         "<python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> your task?",
         "I assigned you a task earlier. <python>random.choice(['Have you done', 'Have you completed', 'Have you finished', 'Did you do', 'Did you complete', 'Did you finish'])</python> it?"
     ],
+    "confirm": [
+        "Are you sure you're ready for bed? You did everything you need to do to get ready?",
+        "Did you do everything you need to do before going to bed tonight?",
+        "Are you ready to go to bed right now? Did you take care of everything you need to take care of before doing so?",
+        "Is everything done that needs to be done before you go to bed?"
+    ],
     "goodnight": [
         "You can go to bed now. Good night.",
         "Good night.",
         "Good night, <python>lib.slave.name</python>.",
         "You can go to bed now, <python>lib.slave.name</python>."
     ],
-    "tasks_ask_completed": [
-        "Did you do everything you need to do to be ready for bed?",
-        "Is everything done that needs to be done before you go to bed?",
-        "Are you ready for bed? Did you do everything you need to do?"
-    ],
-    "tasks_finish": [
-        "Do everything you need to do to get ready for bed.",
-        "Get ready for bed, then.",
-        "Do it now, then."
+    "return_when_ready": [
+        "Ask again when you're ready to go to bed, then.",
+        "Then do what you need to do first, and ask again when you're done.",
+        "Let me know when you're ready to go to bed, then. You can just ask to go to bed again at that time.",
+        "OK then, when you're actually ready to go to bed, ask again."
     ]
 }
