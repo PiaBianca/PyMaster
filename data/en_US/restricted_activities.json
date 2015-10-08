@@ -7,9 +7,9 @@
             "interval_good": "10 * ONE_HOUR",
             "limit": 45,
             "chore_allow_chance": 0.05,
-            "time_limit": "15 * ONE_MINUTE",
-            "time_limit_min": "5 * ONE_MINUTE",
-            "time_limit_max": "ONE_HOUR",
+            "time_limit": "30 * ONE_MINUTE",
+            "time_limit_min": "10 * ONE_MINUTE",
+            "time_limit_max": "2 * ONE_HOUR",
             "penalty": 1.25,
             "script": "lib.scripts.masturbate",
             "flags": [
