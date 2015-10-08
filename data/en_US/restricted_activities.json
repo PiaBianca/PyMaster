@@ -40,7 +40,7 @@
         {
             "forget_time": "7 * ONE_DAY",
             "interval": "2 * ONE_DAY",
-            "interval_good": "20 * ONE_HOUR",
+            "interval_good": "25 * ONE_HOUR",
             "limit": 21,
             "chore_allow_chance": 0.5,
             "time_limit": "20 * ONE_MINUTE",
