@@ -172,6 +172,11 @@ or misdeed. Restricted activities have the following properties:
   offenses should have a penalty of about 1.25, very bad offenses should
   have a penalty of about 1.5, and a penalty of 2.0 should be reserved
   for the worst offenses (e.g. lying).
+- "chance" (optional): Indicates the chance of permission to do the
+  activity being granted as a fraction of 1. If this check fails, the
+  time the slave must wait is extended in the same way as if permission
+  had been granted (effectively skipping an instance of a permission
+  grant).
 - "script" (optional): If specified, indicates a Python function which
   should be called any time permission is granted to do the activity.
   This should typically be something placed in lib.scripts, though it's
@@ -316,6 +321,10 @@ following keys:
   required to do the routine as a string of Python code.
 - "skip_chance" (optional): Indicates the chance of the routine being
   skipped any time it would be assigned as a fraction of 1.
+- "chance" (optional): Indicates the chance of the routine being
+  assigned as a fraction of 1. If this check fails, the instance of the
+  routine is skipped, extending the time the master waits until
+  assigning it.
 - "script" (optional): If specified, indicates a Python function which
   should be called any time the routine is assigned. This should
   typically be something placed in lib.scripts, though it's also

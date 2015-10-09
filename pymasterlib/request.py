@@ -66,6 +66,7 @@ def get_allowed(activity):
 
         interval = eval(activity_d.get("interval", "0"))
         interval_good = eval(activity_d.get("interval_good", repr(interval)))
+        chance = activity_d.get("chance", 1)
         nchores = len(lib.slave.chores) - len(lib.slave.abandoned_chores)
         chore_bonus = 1 / ((interval / interval_good) ** (1 / CHORES_TARGET))
         interval *= chore_bonus ** max(nchores, 0)
@@ -83,7 +84,10 @@ def get_allowed(activity):
 
         if ((limit is None or len(lib.slave.activities[activity]) < limit) and
                 (last_time is None or time.time() >= last_time + interval)):
-            return True
+            if random.random() < chance:
+                return True
+            else:
+                lib.slave.add_activity(activity)
 
     return False
 
