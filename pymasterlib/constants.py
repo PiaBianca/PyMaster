@@ -101,7 +101,7 @@ FEMALE = "f"
 # FORGET_TIME_TARGET, and if there are no misdeeds on  record,
 # restricted activities are granted at an interval of the respective
 # GRANT_INTERVAL_GOOD.
-CHORES_TARGET = 14
+CHORES_TARGET = 7
 
 # The effective maximum number of chores; if the number of chores is
 # greater than CHORES_TARGET, and the number of chores + misdeeds is
@@ -109,11 +109,11 @@ CHORES_TARGET = 14
 # chore is forgotten).  Note that the effective maximum number of chores
 # is reduced if any misdeeds are in memory, and can be as low as
 # CHORES_TARGET.
-CHORES_MAX = 17
+CHORES_MAX = 10
 
 # Forgetfulness
-FORGET_TIME_TARGET = 14 * ONE_DAY
-FORGET_TIME = 28 * ONE_DAY
+FORGET_TIME_TARGET = 7 * ONE_DAY
+FORGET_TIME = 14 * ONE_DAY
 FORGET_TIME_ADJUST = (FORGET_TIME - FORGET_TIME_TARGET) / (CHORES_TARGET ** 3)
 FORGET_TIME_NEGATIVE_ADJUST = (-FORGET_TIME_TARGET /
                                ((CHORES_TARGET - (CHORES_MAX + 1)) ** 3))
