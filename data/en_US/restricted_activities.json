@@ -2,7 +2,7 @@
     [
         "masturbation",
         {
-            "forget_time": "28 * ONE_DAY",
+            "forget_time": "14 * ONE_DAY",
             "interval": "4 * ONE_DAY",
             "interval_good": "5 * ONE_HOUR",
             "limit": 45,
@@ -21,7 +21,7 @@
     [
         "porn",
         {
-            "forget_time": "28 * ONE_DAY",
+            "forget_time": "7 * ONE_DAY",
             "interval": "4 * ONE_DAY",
             "interval_good": "5 * ONE_HOUR",
             "limit": 28,
@@ -108,7 +108,7 @@
     [
         "pee",
         {
-            "forget_time": "ONE_DAY",
+            "forget_time": "12 * ONE_HOUR",
             "interval": "3 * ONE_HOUR",
             "interval_good": "ONE_HOUR",
             "limit": 16,
