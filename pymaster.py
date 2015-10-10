@@ -93,7 +93,8 @@ def main():
                     if lib.request.request(i):
                         lib.request.allow(i, activity,
                                           load_text("assign_{}".format(i)))
-                        break
+                        return True
+            return False
 
         def assign_routines():
             for i in lib.routines_dict:
@@ -111,6 +112,10 @@ def main():
                 else:
                     print("Warning: Deleting invalid routine \"{}\"".format(i))
                     del lib.slave.routines[i]
+
+            while True:
+                if not auto_grant():
+                    break
 
         auto_grant()
         assign_routines()

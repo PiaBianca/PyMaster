@@ -6,7 +6,7 @@
     },
     "bondage_tape": {
         "firstcheck": "lib.message.get_bool('Do you have bondage tape (i.e. tape that you can safely use ANYWHERE on your body, including on your eyes and hair)?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "buckets": {
         "firstcheck": "lib.message.get_int('How many buckets do you have available?')",
@@ -15,91 +15,91 @@
     },
     "buttplug": {
         "firstcheck": "lib.message.get_bool('Do you have a buttplug?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
         
     },
     "buttplug_vibrating": {
         "firstcheck": "Do you have a vibrating buttplug?",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "clean_floor": {
         "firstcheck": "lib.message.get_bool('Is your floor clean enough to eat off of?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "ONE_DAY"
     },
     "clothespins": {
         "firstcheck": "lib.message.get_int('How many clothespins do you have?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "cockring": {
         "firstcheck": "lib.message.get_bool('Do you have a cock ring that fits you?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "cold_winters": {
         "firstcheck": "lib.message.get_bool('Do you have cold winters?')",
-        "forget": "1826 * ONE_DAY"
+        "forget": "365 * ONE_DAY"
     },
     "collar": {
         "firstcheck": "lib.message.get_bool('Do you have a collar?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "dildo_ass": {
         "firstcheck": "lib.message.get_bool('Do you have a dildo that you can safely fuck yourself with in the ass? (It needs to have something at the end stopping it from going in all the way.)')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "dildo_deepthroat": {
         "firstcheck": "lib.message.get_bool('Do you have a dildo that you can safely deep-throat?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "dildo_suck": {
         "firstcheck": "lib.message.get_bool('Do you have a dildo or penis-shaped object that you can safely suck?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "ONE_DAY"
     },
     "foreskin": {
         "firstcheck": "lib.message.get_bool('Do you have a foreskin?')"
     },
     "grits": {
         "firstcheck": "lib.message.get_bool('Do you have dry (uncooked) grits or rice?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "ONE_DAY"
     },
     "hair_long": {
         "firstcheck": "lib.message.get_bool('Do you have long hair?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "handcuffs": {
         "firstcheck": "lib.message.get_bool('Do you have a pair of (real, double-locking) handcuffs?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "hemisphere": {
         "firstcheck": "lib.message.get_choice('What hemisphere do you live in?', ['Northern', 'Southern'])",
-        "forget": "1826 * ONE_DAY"
+        "forget": "365 * ONE_DAY"
     },
     "maid": {
         "firstcheck": "lib.message.get_bool('Do you have a maid outfit?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "language": {
         "firstcheck": "lib.message.get_bool('Are you able to write in language which is not commonly spoken where you live?')",
         "forget": "365 * ONE_DAY"
     },
     "nippleclamps": {
-        "firstcheck": "lib.message.get_int('How many nipple clamps and clothespins do you have combined?')",
-        "forget": "30 * ONE_DAY"
+        "firstcheck": "lib.message.get_bool('Do you have nipple clamps?')",
+        "forget": "7 * ONE_DAY"
     },
     "outdoor_privacy": {
         "firstcheck": "lib.message.get_bool('Is there a place outside where you would be able to get some privacy (e.g. a place in your yard hidden from view, or a nature trail without many people on it)?')",
-        "forget": "365 * ONE_DAY"
+        "forget": "ONE_DAY"
     },
     "photo": {
         "firstcheck": "lib.message.get_bool('Do you have something that can take pictures?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "sissy": {
         "firstcheck": "lib.message.get_bool('Do you have a girly outfit you can wear?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "sissy_nightie": {
         "firstcheck": "lib.message.get_bool('Do you have a girly nightgown you can wear?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "snow": {
         "firstcheck": "lib.slave.get_fact('cold_winters') and datetime.date.today().month in ([1, 2, 3, 12] if lib.slave.get_fact('hemisphere') == 0 else [6, 7, 8, 9]) and lib.message.get_bool('Is there snow outside?')",
@@ -107,18 +107,18 @@
     },
     "temperature": {
         "firstcheck": "lib.message.get_int('What is the current outdoor temperature in Celsius?')",
-        "forget": "8 * ONE_HOUR"
+        "forget": "ONE_HOUR"
     },
     "vibrator": {
         "firstcheck": "lib.message.get_bool('Do you have a vibrator?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "video": {
         "firstcheck": "lib.message.get_bool('Do you have something that can record videos?')",
-        "forget": "30 * ONE_DAY"
+        "forget": "7 * ONE_DAY"
     },
     "waxplay": {
         "firstcheck": "lib.message.get_bool('Do you have a candle suitable for dripping hot wax on your skin?')",
-        "forget": "7 * ONE_DAY"
+        "forget": "ONE_DAY"
     }
 }

@@ -154,17 +154,17 @@
         ]
     },
     "maid_clamped": {
-        "requires": "lib.slave.get_fact('nippleclamps') >= 2",
+        "requires": "lib.slave.get_fact('nippleclamps')",
         "similar": [
             "maid",
             "maid_other",
             "maid_plugged"
         ],
         "text": [
-            "Clean a room in your house with a nipple clamp or clothespin on each of your nipples.",
-            "Clean a room in your house while wearing nothing but a nipple clamp or clothespin on each of your nipples.",
-            "Do the dishes with a nipple clamp or clothespin on each of your nipples.",
-            "Do the dishes while wearing nothing but a nipple clamp or clothespin on each of your nipples."
+            "Clean a room in your house while wearing nipple clamps.",
+            "Clean a room in your house while wearing nothing but nipple clamps.",
+            "Do the dishes while wearing nipple clamps.",
+            "Do the dishes while wearing nothing but nipple clamps."
         ]
     },
     "maid_other": {
