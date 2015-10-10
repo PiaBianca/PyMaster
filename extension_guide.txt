@@ -176,7 +176,9 @@ or misdeed. Restricted activities have the following properties:
   activity being granted as a fraction of 1. If this check fails, the
   time the slave must wait is extended in the same way as if permission
   had been granted (effectively skipping an instance of a permission
-  grant).
+  grant). It should be noted that this special entry in the master's
+  memory also counts towards the "limit" property, so that property
+  should be adjusted accordingly.
 - "script" (optional): If specified, indicates a Python function which
   should be called any time permission is granted to do the activity.
   This should typically be something placed in lib.scripts, though it's
