@@ -317,12 +317,10 @@ following keys:
   ONE_DAY (for example, "4 * ONE_HOUR" would be 4 hours).
 - "interval_max": Indicates the maximum interval at which the routine is
   assigned as a string of Python code.
-- "time_min": Indicates the minimum amount of time the slave can be
-  required to do the routine as a string of Python code.
-- "time_max": Indicates the maximum amount of time the slave can be
-  required to do the routine as a string of Python code.
-- "skip_chance" (optional): Indicates the chance of the routine being
-  skipped any time it would be assigned as a fraction of 1.
+- "time_min" (optional): Indicates the minimum amount of time the slave
+  can be required to do the routine as a string of Python code.
+- "time_max" (optional): Indicates the maximum amount of time the slave
+  can be required to do the routine as a string of Python code.
 - "chance" (optional): Indicates the chance of the routine being
   assigned as a fraction of 1. If this check fails, the instance of the
   routine is skipped, extending the time the master waits until

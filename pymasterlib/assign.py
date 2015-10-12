@@ -188,9 +188,18 @@ def routine(i):
     them.
     """
     r = lib.routines_dict.get(i, {})
-    time_min = eval(r.get("time_min", "0"))
-    time_max = eval(r.get("time_max", "0"))
-    time_ = random.uniform(time_min, time_max)
+    time_min = r.get("time_min")
+    time_max = r.get("time_max")
+    if time_min:
+        time_min = eval(time_min)
+        if time_max:
+            time_max = eval(time_max)
+            time_ = random.uniform(time_min, time_max)
+        else:
+            time_ = time_min
+    else:
+        time_ = eval(time_max) if time_max else None
+
     script = r.get("script")
 
     if i not in lib.slave.routine_skips:
@@ -200,7 +209,11 @@ def routine(i):
                 lib.slave.add_routine(i)
             else:
                 m = load_text("routine_{}_start".format(i))
-                lib.message.show_timed(m, time_)
+                if time_:
+                    lib.message.show_timed(m, time_)
+                else:
+                    a = lib.message.load_text("phrases", "finished")
+                    lib.message.show(m, a)
                 lib.slave.add_routine(i)
                 lib.message.beep()
 
