@@ -86,6 +86,9 @@ def main():
                 lib.scripts.morning_routine()
 
         def auto_grant():
+            if QUICK:
+                return False
+
             for i, activity in sorted(lib.activities,
                                       key=lambda _: random.random()):
                 flags = activity.get("flags", [])
@@ -97,6 +100,9 @@ def main():
             return False
 
         def assign_routines():
+            if QUICK:
+                return
+
             for i in lib.routines_dict:
                 if i not in lib.slave.routines:
                     lib.slave.add_routine(i)

@@ -21,7 +21,7 @@ import time
 import argparse
 import json
 
-__all__ = ["DATADIRS", "SAVEDIR", "EXTDIRS", "RESET", "RESET_FACTS",
+__all__ = ["DATADIRS", "SAVEDIR", "EXTDIRS", "QUICK", "RESET", "RESET_FACTS",
 
            "STARTUP_DATETIME", "STARTUP_DAY", "STARTUP_TIME",
 
@@ -54,6 +54,10 @@ parser.add_argument(
     "-e", "--ext-dirs", nargs="*",
     help="Directories to search for extensions in.")
 parser.add_argument(
+    "-q", "--quick",
+    help="Disable automatic checks for activities and routines. Do NOT abuse this; this is to enable you to ask for permission to do things like pee when something like your job legitimately prevents you from doing auto-activities or routines. It does NOT count as checking in with your master or mistress.",
+    action="store_true")
+parser.add_argument(
     "--reset",
     help="Reset PyMaster to its original state, deleting all user data",
     action="store_true")
@@ -79,6 +83,7 @@ if args.ext_dirs:
 else:
     EXTDIRS = []
 
+QUICK = args.quick
 RESET = args.reset
 RESET_FACTS = args.reset_facts
 
