@@ -356,10 +356,10 @@ def masturbate():
             asked_orgasm = True
 
             if time.time() > orgasm_denied:
-                if random.randrange(100) < ORGASM_CHANCE:
+                if random.random() < ORGASM_CHANCE:
                     orgasmed = True
                     asked_orgasm = False
-                    if random.randrange(100) < ORGASM_WAIT_CHANCE:
+                    if random.random() < ORGASM_WAIT_CHANCE:
                         m = load_text("orgasm_later")
                         a = [load_text("naughty_orgasm")]
                         wait = ORGASM_WAIT

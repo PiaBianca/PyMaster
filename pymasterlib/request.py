@@ -157,7 +157,7 @@ def deny(ID, activity):
                  load_text("beg_{}".format(ID))]
             if lib.message.get_choice(m, a, 0):
                 if request("__beg"):
-                    if random.randrange(100) < BEG_GAME_CHANCE:
+                    if random.random() < BEG_GAME_CHANCE:
                         m = load_text("beg_{}_accept_game".format(ID))
                         a = lib.message.load_text("phrases", "assent")
                         lib.message.show(m, a)
