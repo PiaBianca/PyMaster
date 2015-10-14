@@ -135,7 +135,7 @@
             "interval": "ONE_DAY",
             "interval_good": "2 * ONE_HOUR",
             "limit": 56,
-            "chance": 0.75,
+            "chance": 0.5,
             "chore_allow_chance": 0.05,
             "time_limit": "30 * ONE_MINUTE",
             "time_limit_min": "10 * ONE_MINUTE",
