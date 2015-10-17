@@ -99,12 +99,6 @@
             "Edge for me! Masturbate until you're just about to cum, then stop. Do this <python>random.randint(2, 7)</python> times. No cumming."
         ]
     },
-    "exposed_erection": {
-        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('cockring')",
-        "text": [
-            "Give yourself a nice, hard erection, then put a cock ring on and go out for a walk in public for at least <python>random.randint(2, 4) * 5</python> minutes."
-        ]
-    },
     "food_birth": {
         "requires": "lib.slave.sex == FEMALE",
         "text": [
