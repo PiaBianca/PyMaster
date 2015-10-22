@@ -40,6 +40,15 @@
             "Write \"<python>random.choice(['Slave', 'Property of {}'.format(lib.master.name)])</python>\" in a language that is not commonly spoken where you live <python>random.choice(['on one of your arms', 'on one of your thighs', 'on one of your feet', 'on your {}'.format('boobs' if lib.slave.sex == FEMALE else 'chest'), 'above your {}'.format('dick' if lib.slave.sex == MALE else 'pussy' if lib.slave.sex == FEMALE else 'genitals'), 'on one of your shoulders', 'on one of your hands', 'somewhere on your body'])</python> with a permanent marker."
         ]
     },
+    "bound_porn": {
+        "activities": [
+            "porn"
+        ],
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('handcuffs')",
+        "text": [
+            "Tie yourself to a chair in a way that prevents you from standing up out of it, put on a porn video that's at least 10 minutes long, and cuff your hands behind your back. Do not take off the handcuffs until the video is over. You must watch the video for the entire duration. If the video fails to sexually arouse you, choose a different video and start over again."
+        ]
+    },
     "collar": {
         "requires": "lib.slave.get_fact('collar')",
         "text": [
