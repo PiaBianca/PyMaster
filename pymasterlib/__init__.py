@@ -68,7 +68,7 @@ class slave:
     def forget(cls):
         def get_forget_time(chores_add=0, misdeeds_add=0):
             memory_num = len(cls.chores) + chores_add
-            if memory_num <= CHORES_TARGET:
+            if memory_num - len(cls.abandoned_chores) <= CHORES_TARGET:
                 f = FORGET_TIME_ADJUST
             else:
                 f = FORGET_TIME_NEGATIVE_ADJUST
