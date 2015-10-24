@@ -330,17 +330,76 @@
             "Masturbate to orgasm on a public toilet."
         ]
     },
+    "shopping_buttplug": {
+        "requires": "not lib.slave.get_fact('buttplug') and lib.slave.get_fact('money') >= 40",
+        "similar": [
+            "shopping_buttplug_vibrating",
+            "shopping_handcuffs",
+            "shopping_sissy",
+            "shopping_vibrator"
+        ],
+        "text": [
+            "Buy yourself a buttplug."
+        ]
+    },
+    "shopping_buttplug_vibrating": {
+        "requires": "not lib.slave.get_fact('buttplug_vibrating') and lib.slave.get_fact('money') >= 100",
+        "similar": [
+            "shopping_buttplug",
+            "shopping_handcuffs",
+            "shopping_sissy",
+            "shopping_vibrator"
+        ],
+        "text": [
+            "Buy yourself a vibrating buttplug."
+        ]
+    },
+    "shopping_handcuffs": {
+        "requires": "not lib.slave.get_fact('handcuffs') and lib.slave.get_fact('money') >= 80",
+        "similar": [
+            "shopping_buttplug",
+            "shopping_buttplug_vibrating",
+            "shopping_sissy",
+            "shopping_vibrator"
+        ],
+        "text": [
+            "Buy a pair of real, double-locking handcuffs."
+        ]
+    },
+    "shopping_sissy": {
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('money') >= 100",
+        "similar": [
+            "shopping_buttplug",
+            "shopping_buttplug_vibrating",
+            "shopping_handcuffs",
+            "shopping_vibrator"
+        ],
+        "text": [
+            "Buy yourself a new article of women's clothing.",
+            "I want you to expand your sissy wardrobe. Go buy yourself a new article of women's clothing.",
+            "Look for an article of girly clothing you like. Buy it.",
+            "Find a girly shirt you like. Buy it.",
+            "Go shopping for a nice, girly new skirt for yourself.",
+            "Find a girly nightie and buy it for yourself.",
+            "Buy yourself a new pair of panties."
+        ]
+    },
+    "shopping_vibrator": {
+        "requires": "not lib.slave.get_fact('vibrator') and lib.slave.get_fact('money') >= 60",
+        "similar": [
+            "shopping_buttplug",
+            "shopping_buttplug_vibrating",
+            "shopping_handcuffs",
+            "shopping_sissy"
+        ],
+        "text": [
+            "Buy a new vibrator for yourself."
+        ]
+    },
     "sissy_only": {
         "requires": "lib.slave.sex == MALE",
         "text": [
             "Wear only women's clothes for an hour straight. (If you don't have any women's clothes, you'll just have to wear nothing for that time.)"
-        ]
-    },
-    "sissy_shopping": {
-        "requires": "lib.slave.sex == MALE",
-        "text": [
-            "Go to a store that sells women's clothes. Browse for at least <python>random.randint(1, 4) * 5</python> minutes. If you can afford it, buy an article of women's clothing.",
-            "Go to a store that sells women's clothes and has a changing room. Try on at least <python>random.randint(3, 7)</python> outfits consisting entirely of women's clothes. If you can afford it, buy one of the outfits you tried on."
         ]
     },
     "sissy_walk": {

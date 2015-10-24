@@ -81,6 +81,10 @@
         "firstcheck": "lib.message.get_bool('Are you able to write in language which is not commonly spoken where you live?')",
         "forget": "365 * ONE_DAY"
     },
+    "money": {
+        "firstcheck": "lib.message.get_int('How much money can you currently afford to spend on extra things for me, in U.S. dollars?')",
+        "forget": "ONE_HOUR"
+    },
     "nippleclamps": {
         "firstcheck": "lib.message.get_bool('Do you have nipple clamps?')",
         "forget": "7 * ONE_DAY"
