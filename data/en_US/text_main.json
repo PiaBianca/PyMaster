@@ -59,6 +59,11 @@
         "Now go to sleep.",
         "Now go the fuck back to sleep."
     ],
+    "assign_masturbation": [
+        "I'm going to let you masturbate. <python>lib.message.load_text('request', 'get_cum_allowed')</python>",
+        "I have a treat for you, slave. I'm going to let you masturbate. <python>lib.message.load_text('request', 'get_cum_allowed')</python>",
+        "I have decided to let you masturbate now, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>. <python>lib.message.load_text('request', 'get_cum_allowed')</python>"
+    ],
     "assign_shower": [
         "You have my permission to take a bath or shower now<python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>.",
         "It's time for my slave to wash up. Go take a bath or shower.",
@@ -71,6 +76,14 @@
         "You can change your underwear now<python>', {}'.format(lib.slave.name) if random.random() < 0.5 else ''</python>.",
         "That underwear of yours is getting filthy. Put a new pair on, or wash what you're wearing."
     ],
+    "assign_junk_food": [
+        "I'm going to let you have a little junk food now, if you want.",
+        "I've decided to let you have a treat, slave. You can eat some junk food now."
+    ],
+    "assign_junk_food": [
+        "I've decided to let you have a drink of something other than water now.",
+        "Because I'm so nice, I'm going to let you have any one drink you want now."
+    ],
     "assign_pee": [
         "You have permission to pee now.",
         "How's your bladder, <python>lib.slave.name if random.random() < 0.5 else 'slave'</python>? Well, time to give it a break. You can pee now.",
@@ -79,5 +92,12 @@
         "I'm giving you a chance to pee now.",
         "I think you've earned a bathroom break. Go pee.",
         "Time to give my slave's bladder a break, I think. Go pee now."
+    ],
+    "assign_fun": [
+        "You have my permission to entertain yourself now.",
+        "You can entertain yourself now if you want.",
+        "I have decided to let you entertain yourself now.",
+        "I have decided to give you a chance to entertain yourself.",
+        "I'm giving you a chance to entertain yourself now."
     ]
 }

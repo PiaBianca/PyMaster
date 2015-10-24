@@ -59,6 +59,7 @@ class slave:
     chores = []
     abandoned_chores = []
     activities = {}
+    activity_auto_next = {}
     routines = {}
     routine_skips = set()
     misdeeds = {}

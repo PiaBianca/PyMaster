@@ -33,6 +33,7 @@ def save():
                       "chores": lib.slave.chores,
                       "abandoned_chores": lib.slave.abandoned_chores,
                       "activities": lib.slave.activities,
+                      "activity_auto_next": lib.slave.activity_auto_next,
                       "routines": lib.slave.routines,
                       "routine_skips": list(lib.slave.routine_skips),
                       "misdeeds": lib.slave.misdeeds,
@@ -70,6 +71,7 @@ def load():
     lib.slave.chores = s_slave.get("chores", [])
     lib.slave.abandoned_chores = s_slave.get("abandoned_chores", [])
     lib.slave.activities = s_slave.get("activities", {})
+    lib.slave.activity_auto_next = s_slave.get("activity_auto_next", {})
     lib.slave.routines = s_slave.get("routines", {})
     lib.slave.routine_skips = set(s_slave.get("routine_skips", []))
     lib.slave.misdeeds = s_slave.get("misdeeds", {})

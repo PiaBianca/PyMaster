@@ -13,6 +13,7 @@
             "time_limit_max": "2 * ONE_HOUR",
             "penalty": 1.25,
             "script": "lib.scripts.masturbate",
+            "auto_chance": 0.05,
             "flags": [
                 "sick_deny"
             ]
@@ -50,8 +51,8 @@
             "time_limit_min": "5 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.05,
+            "auto_chance": 0.95,
             "flags": [
-                "auto",
                 "sick_accept"
             ]
         }
@@ -66,9 +67,7 @@
             "chance": 0.25,
             "chore_allow_chance": 0.5,
             "penalty": 1.08,
-            "flags": [
-                "auto"
-            ]
+            "auto_chance": 0.95
         }
     ],
     [
@@ -84,6 +83,7 @@
             "time_limit_min": "15 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.08,
+            "auto_chance": 0.05,
             "flags": [
                 "sick_deny"
             ]
@@ -102,6 +102,7 @@
             "time_limit_min": "15 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.08,
+            "auto_chance": 0.05,
             "flags": [
                 "sick_deny"
             ]
@@ -120,8 +121,8 @@
             "time_limit_min": "5 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.1,
+            "auto_chance": 0.25,
             "flags": [
-                "auto",
                 "can_beg",
                 "night_possible",
                 "sick_accept"
@@ -140,7 +141,8 @@
             "time_limit": "30 * ONE_MINUTE",
             "time_limit_min": "10 * ONE_MINUTE",
             "time_limit_max": "2 * ONE_HOUR",
-            "penalty": 1.2
+            "penalty": 1.2,
+            "auto_chance": 0.2
         }
     ],
     [

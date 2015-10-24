@@ -200,11 +200,16 @@ or misdeed. Restricted activities have the following properties:
 - "time_limit_max" (optional): Indicates the maximum amount of time the
   slave has to do the activity when given permission as a string of
   Python code.
+- "auto_chance" (optional): Indicates the chance as a fraction of 1 of
+  the activity being checked automatically. If this is non-zero, it
+  effectively restricts the slave's ability to determine at what times
+  the activity is done.
+- "auto_interval" (optional): Indicates the interval at which to check
+  for auto-granting of the activity as a string of Python code. Defaults
+  to one hour.
 - "flags" (optional): Indicates a list of flags which indicate special
   properties of the activity. Currently, the following flags are
   supported:
-  - "auto": Causes the master to automatically give the slave permission
-    to do the activity when enough time passes.
   - "can_beg": Allows the slave to beg the master for permission.
   - "night_possible": Indicates that the master may grant permission to
     do the activity in the middle of the night. Any activity without
@@ -271,8 +276,9 @@ to "bar", the following additional text IDs will be added to the
 - "foo_deny_bar": Text from the master saying that permission to do
   "bar" is denied.
 
-If the restricted activity with an ID of "foo" has the "auto" flag, the
-following text IDs will be added to the "main" section:
+If the restricted activity with an ID of "foo" has "auto_chance"
+specified as something other than 0, the following text IDs will be
+added to the "main" section:
 
 - "assign_foo": Text from the master telling the slave that he or she
   has permission to do the activity.

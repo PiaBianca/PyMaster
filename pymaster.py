@@ -91,12 +91,17 @@ def main():
 
             for i, activity in sorted(lib.activities,
                                       key=lambda _: random.random()):
-                flags = activity.get("flags", [])
-                if "auto" in flags and not lib.slave.sick:
-                    if lib.request.request(i):
-                        lib.request.allow(i, activity,
-                                          load_text("assign_{}".format(i)))
-                        return True
+                auto_chance = activity.get("auto_chance", 0)
+                auto_interval = eval(activity.get("auto_interval", "ONE_HOUR"))
+                auto_t = lib.slave.activity_auto_next.get(i, time.time())
+                if time.time() >= auto_t:
+                    lib.slave.activity_auto_next[i] = (time.time() +
+                                                       auto_interval)
+                    if not lib.slave.sick and random.random() < auto_chance:
+                        if lib.request.request(i):
+                            lib.request.allow(i, activity,
+                                              load_text("assign_{}".format(i)))
+                            return True
             return False
 
         def assign_routines():
