@@ -19,7 +19,7 @@
         
     },
     "buttplug_vibrating": {
-        "firstcheck": "Do you have a vibrating buttplug?",
+        "firstcheck": "lib.message.get_bool('Do you have a vibrating buttplug?')",
         "forget": "7 * ONE_DAY"
     },
     "clean_floor": {
