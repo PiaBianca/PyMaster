@@ -121,7 +121,7 @@
             "time_limit_min": "5 * ONE_MINUTE",
             "time_limit_max": "30 * ONE_MINUTE",
             "penalty": 1.1,
-            "auto_chance": 0.25,
+            "auto_chance": 0.5,
             "flags": [
                 "can_beg",
                 "night_possible",
