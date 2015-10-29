@@ -149,8 +149,8 @@
         "__beg",
         {
             "forget_time": "7 * ONE_DAY",
-            "interval": "ONE_DAY",
-            "interval_good": "ONE_HOUR",
+            "interval": "ONE_HOUR",
+            "interval_good": "20 * ONE_MINUTE",
             "limit": 5,
             "chance": 0.75,
             "chore_allow_chance": 1,
