@@ -25,6 +25,7 @@ Chris
 Clark
 Cody
 Craig
+Dan
 Daniel
 David
 Dennis
@@ -102,9 +103,11 @@ Samuel
 Sean
 Seth
 Stanley
+Steve
 Steven
 Stewart
 Ted
+Terry
 Theodore
 Tim
 Timothy
