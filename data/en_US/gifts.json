@@ -32,6 +32,16 @@
             "You can play whatever competitive multiplayer games you want today, on one condition: you must play intentionally badly, but in a way that's subtle so the people you're playing with don't notice it's intentional. Try to lose as much as possible."
         ]
     },
+    "pay_for_drink": {
+        "text": [
+            "You can have a drink of something other than water for free today, on one condition: you must buy the drink with your own money, and also buy the same drink for at least <python>random.randint(2, 4)</python> other people and offer it to them."
+        ]
+    },
+    "pay_for_junk": {
+        "text": [
+            "You can eat a junk food item for free today, on one condition: you must pay for it with your own money, and also buy the same junk food for at least <python>random.randint(2, 4)</python> other people and offer it to them."
+        ]
+    },
     "pornstar": {
         "requires": "lib.slave.get_fact('video')",
         "text": [
@@ -41,7 +51,7 @@
     "soil_underwear": {
         "requires": "lib.slave.sex == MALE",
         "text": [
-            "I'm going to let you masturbate and cum once for free today, on one condition: you must cum in the underwear you are currently wearing."
+            "I'm going to let you masturbate and cum once for free today, on one condition: you must cum in your underwear, then wear it for the rest of the day."
         ]
     },
     "vaginal_masturbation": {
