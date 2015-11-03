@@ -387,7 +387,7 @@ def masturbate():
                                 lib.message.beep()
                                 message = load_text("orgasm_too_long")
                         else:
-                            lib.tell.had_orgasm()
+                            lib.tell.did_without_permission("masturbation")
                             m = load_text("masturbate_stop_order")
                             r = lib.message.load_text("phrases", "assent")
                             lib.message.show(m, r)
