@@ -44,7 +44,7 @@
     "chew_the_cud": {
         "requires": "lib.slave.get_fact('clean_floor')",
         "text": [
-            "Fill your mouth with food and chew it for 45 seconds. Spit it out on the floor. Look at it for 5 seconds, spread it out, and then lick it all back up and swallow it."
+            "Fill your mouth with food and chew it for 45 seconds, without swallowing any of it. Spit it out on the floor. Look at it for 5 seconds, spread it out, and then lick it all back up and swallow it."
         ]
     },
     "cold_shower": {
@@ -74,7 +74,7 @@
             "pee"
         ],
         "text": [
-            "<python>'Piss on your face.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your face.'</python> Stay there for <python>random.randint(2, 5) * 10</python> minutes. You may not wash up afterwards."
+            "<python>'Piss on your face.' if lib.slave.sex == MALE else 'Piss in a container, then pour it all on your face.'</python> Stay where you are for <python>random.randint(2, 5) * 5</python> minutes."
         ]
     },
     "grits": {
@@ -116,7 +116,7 @@
     },
     "lick_table": {
         "text": [
-            "Lick the entire surface of your table. If it isn't clean now, you will clean it with your tongue!"
+            "Lick the entire surface of your table."
         ]
     },
     "lick_toilet": {
@@ -156,7 +156,7 @@
             "pee"
         ],
         "text": [
-            "Piss in a container. You must drink it all back up."
+            "Piss in a container, then drink it all back up."
         ]
     },
     "piss_gag": {
@@ -185,26 +185,26 @@
     },
     "slap_face": {
         "text": [
-            "Slap your face <python>random.randint(2, 4) * 5</python> times on each cheek. If you stop or lose count, start over."
+            "Slap your face <python>random.randint(10, 20) * 5</python> times on each cheek. If you stop or lose count, start over."
         ]
     },
     "slap_penis": {
         "requires": "lib.slave.sex == MALE",
         "text": [
-            "Slap your glans <python>random.randint(4, 6) * 10</python> times. If you stop or lose count, start over."
+            "Slap your glans <python>random.randint(15, 25) * 5</python> times. If you stop or lose count, start over."
         ]
     },
     "slap_pussy": {
         "requires": "lib.slave.sex == FEMALE",
         "text": [
-            "Slap your pussy <python>random.randint(4, 6) * 10</python> times. If you stop or lose count, start over.",
-            "Slap your pussy with a hairbrush <python>random.randint(3, 5) * 10</python> times. If you stop or lose count, start over."
+            "Slap your pussy <python>random.randint(15, 25) * 5</python> times. If you stop or lose count, start over.",
+            "Slap your pussy with a hairbrush <python>random.randint(10, 20) * 5</python> times. If you stop or lose count, start over."
         ]
     },
     "slap_tits": {
         "text": [
-            "Smack each of your nipples <python>random.randint(4, 6) * 5</python> times. If you stop or lose count, start over.",
-            "Smack each of your nipples with a wooden spoon <python>random.randint(3, 5) * 5</python> times. If you stop or lose count, start over."
+            "Smack each of your nipples <python>random.randint(15, 25) * 5</python> times. If you stop or lose count, start over.",
+            "Smack each of your nipples with a wooden spoon <python>random.randint(15, 25) * 5</python> times. If you stop or lose count, start over."
         ]
     },
     "soiled_underwear": {
@@ -217,18 +217,18 @@
     },
     "spanking_light": {
         "text": [
-            "Give yourself a spanking: <python>random.randint(1, 3) * 5</python> swats on each cheek."
+            "Give yourself a spanking: <python>random.randint(5, 10) * 5</python> swats on each cheek."
         ]
     },
     "spanking_medium": {
         "text": [
-            "Give yourself a good spanking: <python>random.randint(4, 6) * 5</python> swats on each cheek. If you stop or lose count, start over."
+            "Give yourself a good spanking: <python>random.randint(15, 25) * 5</python> swats on each cheek. If you stop or lose count, start over."
         ]
     },
     "spanking_hard": {
         "text": [
-            "Give yourself a hard spanking: <python>random.randint(4, 6) * 10</python> swats on each cheek. If you stop or lose count, start over.",
-            "Give yourself a hard spanking with a wooden spoon: <python>random.randint(4, 6) * 10</python> swats on each cheek. If you stop or lose count, start over."
+            "Give yourself a hard spanking: <python>random.randint(15, 25) * 10</python> swats on each cheek. If you stop or lose count, start over.",
+            "Give yourself a hard spanking with a wooden spoon: <python>random.randint(15, 25) * 10</python> swats on each cheek. If you stop or lose count, start over."
         ]
     },
     "spice": {
