@@ -2,37 +2,37 @@
     [
         "bed",
         {
-            "penalty": 1.2
+            "penalty": 2.5
         }
     ],
     [
         "tardy",
         {
-            "penalty": 1.1
+            "penalty": 2.0
         }
     ],
     [
         "lie",
         {
-            "penalty": 2.0
+            "penalty": 5.0
         }
     ],
     [
         "oath_fail",
         {
-            "penalty": 1.1
+            "penalty": 2.0
         }
     ],
     [
         "too_early",
         {
-            "penalty": 1.03
+            "penalty": 1.2
         }
     ],
     [
         "too_late",
         {
-            "penalty": 1.03
+            "penalty": 1.2
         }
     ]
 ]
