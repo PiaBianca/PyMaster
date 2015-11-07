@@ -216,7 +216,8 @@
             "fun"
         ],
         "text": [
-            "Create a new account on a non-creative public Minetest server. Build me a house with three stories and a basement. You are not allowed to use dirt, sand, or ladders in any part of it, it must be well-lit at night, the roof must not be flat, and it must look nice. When you are finished, place a sign on the front of the house which says \"Property of <python>lib.master.name</python>\". If you don't have Minetest, download it from http://www.minetest.net/."
+            "Build me a nice house on a public Minetest server. When you are finished, place a sign on the front of the house which says \"Property of <python>lib.master.name</python>\". If you don't have Minetest, download it from http://www.minetest.net/.",
+            "Go to a non-creative public Minetest server. Obtain or craft the following items: at least <python>random.randint(10, 20) * 10</python> coal lumps, at least <python>random.randint(5, 15) * 10</python> brick blocks, at least <python>random.randint(1, 5) * 10</python> iron ingots, at least <python>random.randint(5, 15)</python> silver ingots, and at least <python>random.randint(2, 5)</python> <python>random.choice('mese crystals', 'diamonds')</python>.  Then put them all into an unlocked chest, and put a sign next to it that says \"Free stuff\"."
         ]
     },
     "no_furniture": {
