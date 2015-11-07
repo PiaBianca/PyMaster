@@ -312,24 +312,6 @@ def rhythm(category, rate_min, rate_max, accel_choices,
         rate = max(rate_min, min(rate, rate_max))
 
 
-def rhythm_vaginal_sex(category="sex_vaginal", duration=None):
-    if duration is None:
-        duration = random.uniform(5 * ONE_MINUTE, 30 * ONE_MINUTE)
-    rhythm(category, 1 / 2, 5 / 2, (-0.05, 0, 0.05), 10, duration)
-
-
-def rhythm_anal_sex(category="sex_anal", duration=None):
-    if duration is None:
-        duration = random.uniform(5 * ONE_MINUTE, 30 * ONE_MINUTE)
-    rhythm(category, 1 / 3, 3 / 2, (-0.025, 0, 0.025), 10, duration)
-
-
-def rhythm_spanking(category="spanking", duration=None):
-    if duration is None:
-        duration = random.uniform(ONE_MINUTE, 5 * ONE_MINUTE)
-    rhythm(category, 1 / 2, 3 / 2, (-0.05, 0, 0.05), 10, duration)
-
-
 def masturbate():
     def load_text(ID): return lib.message.load_text("masturbate", ID)
     asked_orgasm = False
