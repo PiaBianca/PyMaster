@@ -72,9 +72,6 @@
     },
     "handcuffs": {
         "requires": "lib.slave.get_fact('handcuffs')",
-        "similar": [
-            "sockcuffs"
-        ],
         "text": [
             "Cuff your hands behind your back. Do not take them off until the morning."
         ]
