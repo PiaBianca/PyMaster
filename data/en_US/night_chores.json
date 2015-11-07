@@ -73,7 +73,13 @@
     "handcuffs": {
         "requires": "lib.slave.get_fact('handcuffs')",
         "text": [
-            "Cuff your hands behind your back. Do not take them off until the morning."
+            "Cuff your hands behind your back and double-lock the handcuffs. Do not take them off until the morning."
+        ]
+    },
+    "handcuffs_bedpost": {
+        "requires": "lib.slave.get_fact('handcuffs')",
+        "text": [
+            "Cuff one of your hands to your bedpost and double-lock the handcuffs. Stay like this until you wake up in the morning."
         ]
     },
     "midnight_piss": {
