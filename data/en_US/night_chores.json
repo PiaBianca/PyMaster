@@ -42,7 +42,7 @@
             "masturbation"
         ],
         "text": [
-            "Set an alarm to ring one hour from now, loud enough to wake you up, before going to bed. Every time you wake up, edge <python>random.randint(2, 7)</python> times. Then, if you are going back to sleep, you must first set another alarm to ring one hour from that time, loud enough to wake you up."
+            "Set alarms to ring 2 hours from now, 4 hours from now, and 6 hours from now, loud enough to wake you up. Every time you wake up (whether because of the alarms or for some other reason), edge <python>random.randint(2, 7)</python> times."
         ]
     },
     "edging": {
