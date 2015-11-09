@@ -253,6 +253,11 @@
             "Strip down and sit still in the corner for <python>random.randint(1, 3) * 5</python> minutes."
         ]
     },
+    "titty_twisters": {
+        "text": [
+            "Give yourself <python>random.randint(10, 20) * 5</python> titty twisters: pinch both of your nipples, and twist them painfully. If you stop or lose count, start over."
+        ]
+    },
     "wax_clit": {
         "requires": "lib.slave.sex == FEMALE and lib.slave.get_fact('waxplay')",
         "text": [
