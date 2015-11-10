@@ -257,6 +257,13 @@
             "Masturbate to orgasm somewhere outside."
         ]
     },
+    "panties": {
+        "activities": "change_underwear",
+        "requires": "lib.slave.sex == MALE and lib.slave.get_fact('panties')",
+        "text": [
+            "Change your underwear to panties. This will be your underwear until I decide to let you change it again."
+        ]
+    },
     "piss_mop": {
         "activities": [
             "change_underwear",
@@ -437,7 +444,7 @@
     },
     "tease": {
         "text": [
-            "I want you to tease <python>'your cock' if lib.slave.sex == MALE else 'your pussy' if lib.slave.sex == FEMALE else 'yourself'</python>. <python>'Give yourself an erection' if lib.slave.sex == MALE else 'Get your pussy wet' if lib.slave.sex == FEMALE else 'Get yourself sexually excited'</python> without actually masturbating<python>', and without so much as touching your clit' if lib.slave.sex == FEMALE else ''</python>. Then wait until <python>'your dick goes flaccid again' if lib.slave.sex == MALE else 'your pussy is dry again' if lib.slave.sex == FEMALE else 'you are no longer sexually excited'</python>. Do this <python>random.randint(2, 5)</python> times."
+            "I want you to tease <python>'your cock' if lib.slave.sex == MALE else 'your pussy' if lib.slave.sex == FEMALE else 'yourself'</python>. <python>'Give yourself an erection' if lib.slave.sex == MALE else 'Get your pussy wet' if lib.slave.sex == FEMALE else 'Get yourself sexually excited'</python> without actually masturbating. Then wait until <python>'your dick goes flaccid again' if lib.slave.sex == MALE else 'your pussy is dry again' if lib.slave.sex == FEMALE else 'you are no longer sexually excited'</python>. Do this <python>random.randint(2, 5)</python> times."
         ]
     },
     "trampled_food": {

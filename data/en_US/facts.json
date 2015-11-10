@@ -93,6 +93,10 @@
         "firstcheck": "lib.message.get_bool('Is there a place outside where you would be able to get some privacy (e.g. a place in your yard hidden from view, or a nature trail without many people on it)?')",
         "forget": "ONE_DAY"
     },
+    "panties": {
+        "firstcheck": "lib.message.get_bool('Do you own a pair of panties?')",
+        "forget": "7 * ONE_DAY"
+    },
     "photo": {
         "firstcheck": "lib.message.get_bool('Do you have something that can take pictures?')",
         "forget": "7 * ONE_DAY"

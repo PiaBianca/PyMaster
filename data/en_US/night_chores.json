@@ -22,6 +22,7 @@
     "collar": {
         "requires": "lib.slave.get_fact('collar')",
         "text": [
+            "Wear a collar to bed tonight."
             "Sleep with nothing but your collar on tonight."
         ]
     },
@@ -90,10 +91,13 @@
             "Cuff one of your hands to your bedpost and double-lock the handcuffs. Stay like this until you wake up in the morning."
         ]
     },
+    "midnight_ass_fuck": {
+        "requires": "lib.slave.get_fact('dildo_ass') or lib.slave.get_fact('buttplug')",
+        "text": [
+            "Set your alarm to <python>random.randint(3, 5)</python> hours from now. When it goes off, fuck yourself in the ass with a dildo or buttplug for <python>random.randint(1, 4) * 5</python> minutes. Wash off the dildo or buttplug you used before going back to bed."
+        ]
+    },
     "midnight_piss": {
-        "activities": [
-            "pee"
-        ],
         "text": [
             "Drink a glass of water before going to bed. Set your alarm to <python>random.randint(3, 5)</python> hours from now. Do not use the toilet between now and then. When the alarm goes off, take a piss somewhere outside<python>' by pulling down your pants and squatting down, like a girl' if lib.slave.sex == MALE else ''</python>."
         ]
@@ -128,6 +132,11 @@
         ],
         "text": [
             "Set alarms to ring 2 hours from now, 4 hours from now, and 6 hours from now. Each time an alarm goes off, you may not go back to sleep until you masturbate to orgasm."
+        ]
+    },
+    "pissy": {
+        "text": [
+            "Drink a glass of water before going to bed. Set your alarm to <python>random.randint(3, 5)</python> hours from now. Do not use the toilet between now and then. When the alarm goes off, piss in a bottle. Then transport all of your piss to the toilet by sucking it into a straw with your mouth, sealing the top of the straw with your tongue, and then releasing the seal over the toilet."
         ]
     },
     "sissy": {
