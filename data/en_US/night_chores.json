@@ -22,7 +22,7 @@
     "collar": {
         "requires": "lib.slave.get_fact('collar')",
         "text": [
-            "Wear a collar to bed tonight."
+            "Wear a collar to bed tonight.",
             "Sleep with nothing but your collar on tonight."
         ]
     },

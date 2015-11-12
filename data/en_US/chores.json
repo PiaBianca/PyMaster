@@ -261,7 +261,7 @@
         "activities": "change_underwear",
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('panties')",
         "text": [
-            "Change your underwear to panties. This will be your underwear until I decide to let you change it again."
+            "Change your underwear to a pair of panties. Wear these panties for the rest of the day. After that, they will continue to be the underwear you use until I decide to let you change it again."
         ]
     },
     "piss_mop": {
