@@ -79,19 +79,9 @@
             "Cum onto some food, then eat it."
         ]
     },
-    "develop_pymaster_chore": {
+    "develop_pymaster": {
         "text": [
-            "Come up with a new idea for a task or punishment to add to PyMaster. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(lib.data_dir, 'chores.json')</python>\" and \"<python>os.path.join(lib.data_dir, 'punishments.json')</python>\". Send your idea to FreedomOfRestriction@openmailbox.org."
-        ]
-    },
-    "develop_pymaster_gift": {
-        "text": [
-            "Come up with a new idea for a birthday gift I could give to slaves. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(lib.data_dir, 'gifts.json')</python>\". Send your idea to FreedomOfRestriction@openmailbox.org."
-        ]
-    },
-    "develop_pymaster_nightchore": {
-        "text": [
-            "Come up with a new idea for a task I could have slaves do at night. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(lib.data_dir, 'night_chores.json')</python>\". Send your idea to FreedomOfRestriction@openmailbox.org."
+            "Come up with a new idea for a task, punishment, or birthday gift to add to PyMaster. Make sure your idea isn't already in PyMaster by checking \"<python>os.path.join(lib.data_dir, 'chores.json')</python>\", \"<python>os.path.join(lib.data_dir, 'night_chores.json')</python>\", \"<python>os.path.join(lib.data_dir, 'punishments.json')</python>\", and \"<python>os.path.join(lib.data_dir, 'night_chores.json')</python>\". Send your idea to FreedomOfRestriction@openmailbox.org."
         ]
     },
     "dildo_blowjob": {

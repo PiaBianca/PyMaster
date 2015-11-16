@@ -53,6 +53,12 @@
             "You can masturbate and cum once for free today, on one condition: you must record a video of you doing it and upload the video to a porn site within the next week. You may edit the video to hide your identity."
         ]
     },
+    "rushed_masturbation": {
+        "requires": "lib.slave.sex == FEMALE",
+        "text": [
+            "I'm going to let you masturbate and cum all you want today, on one condition: you may only masturbate for up to 5 minutes at a time, and then you must wait at least 15 minutes before starting again."
+        ]
+    },
     "soil_underwear": {
         "requires": "lib.slave.sex == MALE",
         "text": [
