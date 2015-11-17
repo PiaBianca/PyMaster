@@ -207,7 +207,7 @@
         ],
         "text": [
             "Build me a nice house on a public Minetest server. When you are finished, place a sign on the front of the house which says \"Property of <python>lib.master.name</python>\". If you don't have Minetest, download it from http://www.minetest.net/.",
-            "Go to a non-creative public Minetest server. Obtain or craft the following items: at least <python>random.randint(10, 20) * 10</python> coal lumps, at least <python>random.randint(5, 15) * 10</python> brick blocks, at least <python>random.randint(1, 5) * 10</python> iron ingots, at least <python>random.randint(5, 15)</python> silver ingots, and at least <python>random.randint(2, 5)</python> <python>random.choice('mese crystals', 'diamonds')</python>.  Then put them all into an unlocked chest, and put a sign next to it that says \"Free stuff\"."
+            "Go to a non-creative public Minetest server. Obtain or craft the following items: at least <python>random.randint(10, 20) * 10</python> coal lumps, at least <python>random.randint(5, 15) * 10</python> brick blocks, at least <python>random.randint(1, 5) * 10</python> iron ingots, at least <python>random.randint(5, 15)</python> silver ingots, and at least <python>random.randint(2, 5)</python> <python>random.choice(['mese crystals', 'diamonds'])</python>.  Then put them all into an unlocked chest, and put a sign next to it that says \"Free stuff\"."
         ]
     },
     "no_furniture": {
@@ -248,7 +248,9 @@
         ]
     },
     "panties": {
-        "activities": "change_underwear",
+        "activities": [
+            "change_underwear"
+        ],
         "requires": "lib.slave.sex == MALE and lib.slave.get_fact('panties')",
         "text": [
             "Change your underwear to a pair of panties. Wear these panties for the rest of the day. After that, they will continue to be the underwear you use until I decide to let you change it again."
