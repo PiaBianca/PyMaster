@@ -47,7 +47,7 @@ def _insert_newlines(text, linesize=72):
 
         new_lines.append(new_line.strip())
 
-    return '\n'.join(new_lines)
+    return '\n'.join(new_lines) + os.linesep
 
 
 def init():
@@ -84,7 +84,7 @@ def get_printed_time(time_, round_down=False):
         minutes_text = load_text("phrases", "time_1_minute")
     else:
         minutes_text = load_text("phrases", "time_minutes").format(minutes)
-    
+
     if hours > 0:
         if minutes > 0:
             join_text = load_text("phrases", "time_hours_and_minutes")
@@ -120,11 +120,11 @@ def show(message, answer=None):
     If ``answer`` is not None, it will be used as the slave's response.
     """
     if answer is None:
-        print(_insert_newlines(message), end=" ")
-        input("[...]")
+        print(_insert_newlines(message), end="")
+        input("[...]\n")
     else:
         print(_insert_newlines(message))
-        input("[{}]".format(answer))
+        input("[{}]\n".format(answer))
 
 
 def show_timed(message, time_):
@@ -198,12 +198,14 @@ def get_choice(message, choices, default=None):
                 c = ''.join([c[:69], "..."])
             print(c)
         if default is None:
-            ans = input("Enter the number of your choice: ")
+            ans = input(os.linesep + "Enter the number of your choice: ")
         else:
             m = "Enter the number of your choice [{}]: ".format(default)
-            ans = input(m)
+            ans = input(os.linesep + m)
             if not ans:
                 ans = default
+
+        print()
 
         try:
             ans = int(ans)
@@ -217,7 +219,7 @@ def get_choice(message, choices, default=None):
 
 def get_bool(message):
     """Ask the slave a "yes" or "no" question and return True or False."""
-    print(_insert_newlines(message), "[Y/N]", end=" ")
+    print(_insert_newlines(message), "[Y/N]", end="")
     while True:
         ans = input().lower()
         if ans in {"y", "1", "yes"}:
@@ -231,9 +233,10 @@ def get_bool(message):
 
 def get_int(message):
     """Ask the slave for a number and return it."""
-    print(_insert_newlines(message), end=" ")
+    print(_insert_newlines(message), end="")
     while True:
         ans = input("> ")
+        print()
         try:
             return int(ans)
         except ValueError:
@@ -242,8 +245,11 @@ def get_int(message):
 
 def get_string(message):
     """Ask the slave for a string of text and return it."""
-    print(_insert_newlines(message))
-    return input("> ")
+    print(_insert_newlines(message), end="")
+    ans = input("> ")
+    print()
+
+    return ans
 
 
 def beep():
@@ -252,4 +258,4 @@ def beep():
     # Python 3.2 support is no longer needed
     print("\a", end="")
     sys.stdout.flush()
-    
+
